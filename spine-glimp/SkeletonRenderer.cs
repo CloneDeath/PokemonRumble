@@ -16,7 +16,7 @@ namespace Spine {
 			List<Slot> DrawOrder = skeleton.DrawOrder;
 
 			float depth = 0;
-			float depth_offset = -0.01f;
+			float depth_offset = 0.0001f;
 			for (int i = 0; i < DrawOrder.Count; i++) {
 				Slot slot = DrawOrder[i];
 				RegionAttachment regionAttachment = slot.Attachment as RegionAttachment;

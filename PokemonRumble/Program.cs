@@ -14,29 +14,78 @@ namespace PokemonRumble {
 		static void Main(string[] args) {
 			GraphicsManager.SetTitle("Pokemon Rumble");
 			GraphicsManager.Render += new GraphicsManager.Renderer(Draw);
-			GraphicsManager.SetBackground(Color.Black);
+			GraphicsManager.Update += new GraphicsManager.Updater(GraphicsManager_Update);
+			GraphicsManager.SetBackground(Color.SkyBlue);
 			gameTime.Start();
+			GraphicsManager.EnableMipmap = true;
 
 			GraphicsManager.CameraUp = Vector3.UnitY;
 
-			GraphicsManager.SetCamera(new OpenTK.Vector3d(0, 1, -10));
+			GraphicsManager.SetCamera(new OpenTK.Vector3d(0, 1, 3));
 			GraphicsManager.SetLookAt(new OpenTK.Vector3d(0, 0, 0));
-
 
 			ResourceManager.Initialize();
 			GraphicsManager.Start();
+		}
+
+		static void GraphicsManager_Update() {
+			if (KeyboardManager.IsDown(OpenTK.Input.Key.A)) {
+				if (ResourceManager.state.Animation.Name != "walk") {
+					ResourceManager.state.SetAnimation("walk", true);
+				}
+				ResourceManager.skeleton.X -= 0.02f;
+				ResourceManager.skeleton.FlipX = true;
+			} else if (KeyboardManager.IsDown(OpenTK.Input.Key.D)) {
+				if (ResourceManager.state.Animation.Name != "walk") {
+					ResourceManager.state.SetAnimation("walk", true);
+				}
+				ResourceManager.skeleton.X += 0.02f;
+				ResourceManager.skeleton.FlipX = false;
+			} else {
+				if (ResourceManager.state.Animation.Name != "jump") {
+					ResourceManager.state.SetAnimation("jump", true);
+				}
+			}
 		}
 
 		static void Draw() {
 			ResourceManager.state.Update(gameTime.ElapsedMilliseconds / 1000f);
 			gameTime.Restart();
 			ResourceManager.state.Apply(ResourceManager.skeleton);
-			ResourceManager.skeleton.RootBone.ScaleX = 1 / 100f;
-			ResourceManager.skeleton.RootBone.ScaleY = 1 / 100f;
+			ResourceManager.skeleton.RootBone.ScaleX = 1 / 300f;
+			ResourceManager.skeleton.RootBone.ScaleY = 1 / 300f;
 			ResourceManager.skeleton.UpdateWorldTransform();
 			ResourceManager.skeletonRenderer.Draw(ResourceManager.skeleton);
 
-			GraphicsManager.DrawQuad(new Vector3d(-10, 0, -10), new Vector3d(-10, 0, 10), new Vector3d(10, 0, 10), new Vector3d(10, 0, -10), ResourceManager.Dirt);
+			for (int z = -4; z <= 1; z++) {
+				for (int x = -6; x < 6; x++) {
+					int scale = 10;
+					int left = x * scale;
+					int right = (x + 1) * scale;
+					int bottom = z * scale;
+					int top = (z + 1) * scale;
+					GraphicsManager.SetTexture(ResourceManager.Grass);
+					GraphicsManager.DrawQuad(new Vector3d(left, 0, bottom), 
+											 new Vector3d(left, 0, top), 
+											 new Vector3d(right, 0, top), 
+											 new Vector3d(right, 0, bottom),
+											 new Vector2d(5, 5));
+				}
+			}
+
+			GraphicsManager.SetTexture(ResourceManager.Dirt);
+			GraphicsManager.DrawQuad(new Vector3d(-10, 0.01, -5),
+									 new Vector3d(-10, 0.01, 5),
+									 new Vector3d(10, 0.01, 5),
+									 new Vector3d(10, 0.01, -5), 
+									 new Vector2d(2, 4));
+
+			GraphicsManager.DrawQuad(new Vector3d(ResourceManager.skeleton.X - 0.4, 0.02, -0.3),
+									 new Vector3d(ResourceManager.skeleton.X + 0.4, 0.02, -0.3),
+									 new Vector3d(ResourceManager.skeleton.X + 0.4, 0.02, 0.3),
+									 new Vector3d(ResourceManager.skeleton.X - 0.4, 0.02, 0.3),
+									 ResourceManager.Shadow);
+			
 		}
 	}
 }
