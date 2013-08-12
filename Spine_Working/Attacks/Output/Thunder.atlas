@@ -1,0 +1,19 @@
+
+Thunder.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Thunder_01
+  rotate: false
+  xy: 2, 56
+  size: 22, 70
+  orig: 22, 70
+  offset: 0, 0
+  index: -1
+Thunder_02
+  rotate: false
+  xy: 2, 2
+  size: 23, 52
+  orig: 23, 52
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,25 @@
+{
+"bones": [
+	{ "name": "root" },
+	{ "name": "Bolt", "parent": "root", "y": 35 },
+	{ "name": "Flash", "parent": "Bolt", "y": -5 }
+],
+"slots": [
+	{ "name": "Flash", "bone": "Flash", "attachment": "Thunder_02" },
+	{ "name": "Bolt", "bone": "Bolt", "attachment": "Thunder_01" }
+],
+"skins": {
+	"default": {
+		"Bolt": {
+			"Thunder_01": { "width": 22, "height": 70 }
+		},
+		"Flash": {
+			"Thunder_02": { "y": -4, "width": 23, "height": 52 }
+		}
+	}
+},
+"events": {},
+"animations": {
+	"animation": {}
+}
+}

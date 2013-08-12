@@ -1,0 +1,20 @@
+{
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Bubble", "bone": "root", "attachment": "Bubble_01" }
+],
+"skins": {
+	"default": {
+		"Bubble": {
+			"Bubble_01": { "width": 34, "height": 33 },
+			"Bubble_02": { "width": 36, "height": 35 }
+		}
+	}
+},
+"events": {},
+"animations": {
+	"idle": {}
+}
+}

@@ -1,0 +1,38 @@
+{
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Ember", "bone": "root", "attachment": "Ember_01" }
+],
+"skins": {
+	"default": {
+		"Ember": {
+			"Ember_01": { "width": 2, "height": 3 },
+			"Ember_02": { "y": 2, "width": 4, "height": 7 },
+			"Ember_03": { "x": 0.04, "y": 3.04, "width": 8, "height": 12 },
+			"Ember_04": { "x": 1.52, "y": 6.51, "width": 15, "height": 18 },
+			"Ember_05": { "x": 2.51, "y": 5.16, "width": 16, "height": 17 },
+			"Ember_06": { "x": -0.6, "y": 3.19, "width": 10, "height": 13 }
+		}
+	}
+},
+"events": {},
+"animations": {
+	"burn": {
+		"slots": {
+			"Ember": {
+				"attachment": [
+					{ "time": 0, "name": "Ember_01" },
+					{ "time": 0.0666, "name": "Ember_02" },
+					{ "time": 0.1333, "name": "Ember_03" },
+					{ "time": 0.2, "name": "Ember_04" },
+					{ "time": 0.2666, "name": "Ember_05" },
+					{ "time": 0.3333, "name": "Ember_06" }
+				]
+			}
+		}
+	},
+	"idle": {}
+}
+}
