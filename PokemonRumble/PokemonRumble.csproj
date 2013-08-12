@@ -71,6 +71,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Input\Button.cs" />
+    <Compile Include="Input\ControlEnum.cs" />
+    <Compile Include="Input\Controls.cs" />
+    <Compile Include="Input\JoystickAxis.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceManager.cs" />

@@ -6,6 +6,7 @@ using GLImp;
 using System.Drawing;
 using System.Diagnostics;
 using OpenTK;
+using PokemonRumble.Input;
 
 namespace PokemonRumble {
 	class Program {
@@ -16,27 +17,26 @@ namespace PokemonRumble {
 			GraphicsManager.Render += new GraphicsManager.Renderer(Draw);
 			GraphicsManager.Update += new GraphicsManager.Updater(GraphicsManager_Update);
 			GraphicsManager.SetBackground(Color.SkyBlue);
-			gameTime.Start();
 			GraphicsManager.EnableMipmap = true;
-
 			GraphicsManager.CameraUp = Vector3.UnitY;
-
 			ResourceManager.Initialize();
+
+			gameTime.Start();
 			GraphicsManager.Start();
 		}
 
 		static void GraphicsManager_Update() {
-			if (KeyboardManager.IsDown(OpenTK.Input.Key.A)) {
+			if (Controls.IsDown(Control.Left)){
 				if (ResourceManager.state.Animation.Name != "walk") {
 					ResourceManager.state.SetAnimation("walk", true);
 				}
-				ResourceManager.skeleton.X -= 0.02f;
+				ResourceManager.skeleton.X -= 0.04f;
 				ResourceManager.skeleton.FlipX = false;
-			} else if (KeyboardManager.IsDown(OpenTK.Input.Key.D)) {
+			} else if (Controls.IsDown(Control.Right)){
 				if (ResourceManager.state.Animation.Name != "walk") {
 					ResourceManager.state.SetAnimation("walk", true);
 				}
-				ResourceManager.skeleton.X += 0.02f;
+				ResourceManager.skeleton.X += 0.04f;
 				ResourceManager.skeleton.FlipX = true;
 			} else {
 				if (ResourceManager.state.Animation.Name != "idle") {
