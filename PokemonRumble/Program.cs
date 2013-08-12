@@ -21,9 +21,6 @@ namespace PokemonRumble {
 
 			GraphicsManager.CameraUp = Vector3.UnitY;
 
-			GraphicsManager.SetCamera(new OpenTK.Vector3d(0, 1, 3));
-			GraphicsManager.SetLookAt(new OpenTK.Vector3d(0, 0, 0));
-
 			ResourceManager.Initialize();
 			GraphicsManager.Start();
 		}
@@ -34,26 +31,29 @@ namespace PokemonRumble {
 					ResourceManager.state.SetAnimation("walk", true);
 				}
 				ResourceManager.skeleton.X -= 0.02f;
-				ResourceManager.skeleton.FlipX = true;
+				ResourceManager.skeleton.FlipX = false;
 			} else if (KeyboardManager.IsDown(OpenTK.Input.Key.D)) {
 				if (ResourceManager.state.Animation.Name != "walk") {
 					ResourceManager.state.SetAnimation("walk", true);
 				}
 				ResourceManager.skeleton.X += 0.02f;
-				ResourceManager.skeleton.FlipX = false;
+				ResourceManager.skeleton.FlipX = true;
 			} else {
-				if (ResourceManager.state.Animation.Name != "jump") {
-					ResourceManager.state.SetAnimation("jump", true);
+				if (ResourceManager.state.Animation.Name != "idle") {
+					ResourceManager.state.SetAnimation("idle", true);
 				}
 			}
+
+			GraphicsManager.SetCamera(new OpenTK.Vector3d(ResourceManager.skeleton.X, ResourceManager.skeleton.Y + 1, 3));
+			GraphicsManager.SetLookAt(new OpenTK.Vector3d(ResourceManager.skeleton.X, ResourceManager.skeleton.Y, 0));
 		}
 
 		static void Draw() {
 			ResourceManager.state.Update(gameTime.ElapsedMilliseconds / 1000f);
 			gameTime.Restart();
 			ResourceManager.state.Apply(ResourceManager.skeleton);
-			ResourceManager.skeleton.RootBone.ScaleX = 1 / 300f;
-			ResourceManager.skeleton.RootBone.ScaleY = 1 / 300f;
+			ResourceManager.skeleton.RootBone.ScaleX = 1 / 50f;
+			ResourceManager.skeleton.RootBone.ScaleY = 1 / 50f;
 			ResourceManager.skeleton.UpdateWorldTransform();
 			ResourceManager.skeletonRenderer.Draw(ResourceManager.skeleton);
 
@@ -74,16 +74,16 @@ namespace PokemonRumble {
 			}
 
 			GraphicsManager.SetTexture(ResourceManager.Dirt);
-			GraphicsManager.DrawQuad(new Vector3d(-10, 0.01, -5),
-									 new Vector3d(-10, 0.01, 5),
-									 new Vector3d(10, 0.01, 5),
-									 new Vector3d(10, 0.01, -5), 
+			GraphicsManager.DrawQuad(new Vector3d(-10, 0.00001, -5),
+									 new Vector3d(-10, 0.00001, 5),
+									 new Vector3d(10, 0.00001, 5),
+									 new Vector3d(10, 0.00001, -5), 
 									 new Vector2d(2, 4));
 
-			GraphicsManager.DrawQuad(new Vector3d(ResourceManager.skeleton.X - 0.4, 0.02, -0.3),
-									 new Vector3d(ResourceManager.skeleton.X + 0.4, 0.02, -0.3),
-									 new Vector3d(ResourceManager.skeleton.X + 0.4, 0.02, 0.3),
-									 new Vector3d(ResourceManager.skeleton.X - 0.4, 0.02, 0.3),
+			GraphicsManager.DrawQuad(new Vector3d(ResourceManager.skeleton.X - 0.4, 0.00002, -0.3),
+									 new Vector3d(ResourceManager.skeleton.X + 0.4, 0.00002, -0.3),
+									 new Vector3d(ResourceManager.skeleton.X + 0.4, 0.00002, 0.3),
+									 new Vector3d(ResourceManager.skeleton.X - 0.4, 0.00002, 0.3),
 									 ResourceManager.Shadow);
 			
 		}

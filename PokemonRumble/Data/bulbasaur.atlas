@@ -1,0 +1,145 @@
+
+bulbasaur.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+BackLeg/BackLeg_01
+  rotate: false
+  xy: 49, 63
+  size: 10, 9
+  orig: 10, 9
+  offset: 0, 0
+  index: -1
+BackLeg/BackLeg_02
+  rotate: false
+  xy: 48, 51
+  size: 11, 10
+  orig: 11, 10
+  offset: 0, 0
+  index: -1
+BackLeg/BackLeg_03
+  rotate: false
+  xy: 54, 115
+  size: 8, 11
+  orig: 8, 11
+  offset: 0, 0
+  index: -1
+BackLeg/BackLeg_04
+  rotate: false
+  xy: 50, 32
+  size: 10, 9
+  orig: 10, 9
+  offset: 0, 0
+  index: -1
+Body/Body_02
+  rotate: false
+  xy: 2, 89
+  size: 26, 16
+  orig: 26, 16
+  offset: 0, 0
+  index: -1
+Body/Body_03
+  rotate: false
+  xy: 2, 107
+  size: 26, 19
+  orig: 26, 19
+  offset: 0, 0
+  index: -1
+Bulb/Bulb_01
+  rotate: false
+  xy: 26, 43
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+Bulb/Bulb_02
+  rotate: false
+  xy: 26, 65
+  size: 21, 20
+  orig: 21, 20
+  offset: 0, 0
+  index: -1
+FrontLeg/FrontLeg_01
+  rotate: false
+  xy: 54, 106
+  size: 8, 7
+  orig: 8, 7
+  offset: 0, 0
+  index: -1
+FrontLeg/FrontLeg_02
+  rotate: false
+  xy: 49, 74
+  size: 9, 11
+  orig: 9, 11
+  offset: 0, 0
+  index: -1
+FrontLeg/FrontLeg_03
+  rotate: false
+  xy: 48, 43
+  size: 10, 6
+  orig: 10, 6
+  offset: 0, 0
+  index: -1
+FrontLeg/FrontLeg_04
+  rotate: false
+  xy: 50, 22
+  size: 10, 8
+  orig: 10, 8
+  offset: 0, 0
+  index: -1
+Head/Head_01
+  rotate: false
+  xy: 2, 2
+  size: 22, 19
+  orig: 22, 19
+  offset: 0, 0
+  index: -1
+Head/Head_02
+  rotate: false
+  xy: 30, 87
+  size: 22, 17
+  orig: 22, 17
+  offset: 0, 0
+  index: -1
+Head/Head_03
+  rotate: false
+  xy: 26, 4
+  size: 22, 17
+  orig: 22, 17
+  offset: 0, 0
+  index: -1
+Head/Head_04
+  rotate: false
+  xy: 26, 23
+  size: 22, 18
+  orig: 22, 18
+  offset: 0, 0
+  index: -1
+Head/Head_05
+  rotate: false
+  xy: 30, 106
+  size: 22, 20
+  orig: 22, 20
+  offset: 0, 0
+  index: -1
+Head/Head_06
+  rotate: false
+  xy: 2, 67
+  size: 22, 20
+  orig: 22, 20
+  offset: 0, 0
+  index: -1
+Head/Head_07
+  rotate: false
+  xy: 2, 45
+  size: 22, 20
+  orig: 22, 20
+  offset: 0, 0
+  index: -1
+Head/Head_08
+  rotate: false
+  xy: 2, 23
+  size: 22, 20
+  orig: 22, 20
+  offset: 0, 0
+  index: -1

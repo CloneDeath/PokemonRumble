@@ -13,7 +13,7 @@ namespace PokemonRumble {
 		internal static void Initialize() {
 			skeletonRenderer = new SkeletonRenderer();
 
-			String name = "spineboy"; // "goblins";
+			String name = "bulbasaur"; // "goblins";
 
 			Atlas atlas = new Atlas("Data/" + name + ".atlas", new GLImpTextureLoader());
 			SkeletonJson json = new SkeletonJson(atlas);
@@ -23,14 +23,14 @@ namespace PokemonRumble {
 
 			// Define mixing between animations.
 			AnimationStateData stateData = new AnimationStateData(skeleton.Data);
-			if (name == "spineboy") {
-				stateData.SetMix("walk", "jump", 0.2f);
-				stateData.SetMix("jump", "walk", 0.4f);
+			if (name == "bulbasaur") {
+				stateData.SetMix("walk", "idle", 0.2f);
+				stateData.SetMix("idle", "walk", 0.4f);
 			}
 
 			state = new AnimationState(stateData);
 			state.SetAnimation("walk", false);
-			state.AddAnimation("jump", false);
+			state.AddAnimation("idle", false);
 			state.AddAnimation("walk", true);
 
 			//skeleton.X = 320;
@@ -38,7 +38,7 @@ namespace PokemonRumble {
 			//skeleton.UpdateWorldTransform();
 
 			skeleton.X = 0;
-			skeleton.Y = 0;
+			skeleton.Y = 0.1f;
 			skeleton.UpdateWorldTransform();
 		}
 
