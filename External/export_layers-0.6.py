@@ -17,8 +17,16 @@ gettext.install("gimp20-python", gimp.locale_directory, unicode=True)
 def format_filename(img, layer):
 	imgname = img.name.decode('utf-8')
 	layername = layer.name.decode('utf-8')
-	regex = re.compile("[^-\w]", re.UNICODE) 
-	filename = regex.sub('_', layername) + '.png'
+	normal_regex = re.compile("[^-\w]", re.UNICODE)
+	group_regex = re.compile("[^(-\\)\w]", re.UNICODE)
+  
+	group = "";
+	clayer = layer.parent;
+	while (clayer is not None):
+		group = clayer.name.decode('utf-8') + "\\" + group;
+		clayer = clayer.parent;
+	
+	filename = group + normal_regex.sub('_', layername) + '.png'
 	return filename
 
 def get_layers(layers, only_visible):
@@ -56,6 +64,8 @@ def export_layers(img, drw, path, only_visible=True, flatten=False, remove_offse
 		layer.visible = 1
 		filename = format_filename(img, layer)
 		fullpath = os.path.join(path, filename);
+		if not os.path.exists(os.path.dirname(fullpath)):
+			os.makedirs(os.path.dirname(fullpath))
 		tmp = dupe.duplicate()
 		tmp.merge_visible_layers(0)
 		if (flatten):
