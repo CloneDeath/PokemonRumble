@@ -13,7 +13,7 @@ namespace PokemonRumble {
 		internal static void Initialize() {
 			skeletonRenderer = new SkeletonRenderer();
 
-			String name = "bulbasaur"; // "goblins";
+			String name = "Pokemon/bulbasaur"; // "goblins";
 
 			Atlas atlas = new Atlas("Data/" + name + ".atlas", new GLImpTextureLoader());
 			SkeletonJson json = new SkeletonJson(atlas);
