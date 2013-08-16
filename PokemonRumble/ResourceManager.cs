@@ -42,8 +42,7 @@ namespace PokemonRumble {
 			skeleton.UpdateWorldTransform();
 		}
 
-		public static Texture Dirt = new Texture(@"Data\Dirt.JPG");
-		public static Texture Grass = new Texture(@"Data\Grass 00 seamless.jpg");
+		
 		public static Texture Shadow = new Texture(@"Data\shadow.png");
 	}
 }
