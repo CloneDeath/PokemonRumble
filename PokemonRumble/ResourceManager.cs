@@ -10,44 +10,8 @@ using System.IO;
 
 namespace PokemonRumble {
 	class ResourceManager {
-		public static SkeletonRenderer skeletonRenderer;
-		public static Skeleton skeleton;
-		public static AnimationState state;
 		internal static void Initialize() {
 			InitializeScripts();
-			InitializeSkeletons();
-		}
-
-		private static void InitializeSkeletons() {
-			skeletonRenderer = new SkeletonRenderer();
-
-			String name = "Pokemon/bulbasaur"; // "goblins";
-
-			Atlas atlas = new Atlas("Data/" + name + ".atlas", new GLImpTextureLoader());
-			SkeletonJson json = new SkeletonJson(atlas);
-			skeleton = new Skeleton(json.ReadSkeletonData("Data/" + name + ".json"));
-			if (name == "goblins") skeleton.SetSkin("goblingirl");
-			skeleton.SetSlotsToSetupPose(); // Without this the skin attachments won't be attached. See SetSkin.
-
-			// Define mixing between animations.
-			AnimationStateData stateData = new AnimationStateData(skeleton.Data);
-			if (name == "bulbasaur") {
-				stateData.SetMix("walk", "idle", 0.2f);
-				stateData.SetMix("idle", "walk", 0.4f);
-			}
-
-			state = new AnimationState(stateData);
-			state.SetAnimation("walk", false);
-			state.AddAnimation("idle", false);
-			state.AddAnimation("walk", true);
-
-			//skeleton.X = 320;
-			//skeleton.Y = 440;
-			//skeleton.UpdateWorldTransform();
-
-			skeleton.X = 0;
-			skeleton.Y = 0.1f;
-			skeleton.UpdateWorldTransform();
 		}
 
 		private static void InitializeScripts() {
@@ -57,11 +21,7 @@ namespace PokemonRumble {
 			//scope.SetVariable("progress", ProgressModule.Instance);
 			//scope.SetVariable("spawns", SpawnsModule.Instance);
 
-			RecursivelyRunScriptsIn(@"Data\", engine, scope);
-			
-			
-
-			
+			RecursivelyRunScriptsIn(@"Data\", engine, scope);			
 		}
 
 		private static void RecursivelyRunScriptsIn(string Location, ScriptEngine engine, ScriptScope scope) {

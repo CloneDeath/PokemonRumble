@@ -48,31 +48,18 @@ namespace PokemonRumble {
 
 			GraphicsManager.SetCamera(new OpenTK.Vector3d(ResourceManager.skeleton.X, ResourceManager.skeleton.Y + 1, Zoom));
 			GraphicsManager.SetLookAt(new OpenTK.Vector3d(ResourceManager.skeleton.X, ResourceManager.skeleton.Y, 0));
-
-			
 		}
 
 		static void Draw() {
 			float dt = DrawTime.ElapsedMilliseconds / 1000f;
 			DrawTime.Restart();
 
-			ResourceManager.state.Update(dt);
-			
-
-			ResourceManager.state.Apply(ResourceManager.skeleton);
-			ResourceManager.skeleton.RootBone.ScaleX = 1 / 50f;
-			ResourceManager.skeleton.RootBone.ScaleY = 1 / 50f;
-			ResourceManager.skeleton.UpdateWorldTransform();
-			ResourceManager.skeletonRenderer.Draw(ResourceManager.skeleton);
+			Player1.Draw(dt);
 
 			Arena.Update(dt);
 			Arena.Draw();
 
-			GraphicsManager.DrawQuad(new Vector3d(ResourceManager.skeleton.X - 0.4, 0.00002, -0.3),
-									 new Vector3d(ResourceManager.skeleton.X + 0.4, 0.00002, -0.3),
-									 new Vector3d(ResourceManager.skeleton.X + 0.4, 0.00002, 0.3),
-									 new Vector3d(ResourceManager.skeleton.X - 0.4, 0.00002, 0.3),
-									 ResourceManager.Shadow);
+
 			
 		}
 	}

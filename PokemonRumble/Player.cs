@@ -5,11 +5,19 @@ using System.Text;
 using Box2DX.Dynamics;
 using PokemonRumble.Input;
 using Box2DX.Common;
+using OpenTK;
+using GLImp;
 
 namespace PokemonRumble {
 	class Player {
 		Body body;
+		Animation anim;
 		public Player(BattleArena arena) {
+			InitPhysics(arena);
+			anim = new Animation("Pokemon/bulbasaur");
+		}
+
+		private void InitPhysics(BattleArena arena) {
 			// Define the dynamic body. We set its position and call the body factory.
 			BodyDef bodyDef = new BodyDef();
 			bodyDef.Position.Set(0.0f, 4.0f);
@@ -38,30 +46,46 @@ namespace PokemonRumble {
 		internal void Update(float dt) {
 			float speed = 2.0f;
 			if (Controls.IsDown(Control.Left)) {
-				if (ResourceManager.state.Animation.Name != "walk") {
-					ResourceManager.state.SetAnimation("walk", true);
+				if (anim.state.Animation.Name != "walk") {
+					anim.state.SetAnimation("walk", true);
 				}
-				ResourceManager.skeleton.X -= speed * dt;
-				ResourceManager.skeleton.FlipX = false;
+				anim.skeleton.X -= speed * dt;
+				anim.skeleton.FlipX = false;
 				body.ApplyForce(new Vec2(-speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
 			} else if (Controls.IsDown(Control.Right)) {
-				if (ResourceManager.state.Animation.Name != "walk") {
-					ResourceManager.state.SetAnimation("walk", true);
+				if (anim.state.Animation.Name != "walk") {
+					anim.state.SetAnimation("walk", true);
 				}
-				ResourceManager.skeleton.X += speed * dt;
-				ResourceManager.skeleton.FlipX = true;
+				anim.skeleton.X += speed * dt;
+				anim.skeleton.FlipX = true;
 				body.ApplyForce(new Vec2(speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
 			} else {
-				if (ResourceManager.state.Animation.Name != "idle") {
-					ResourceManager.state.SetAnimation("idle", true);
+				if (anim.state.Animation.Name != "idle") {
+					anim.state.SetAnimation("idle", true);
 				}
 				body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * speed, 0), new Vec2(.1f, .1f));
 			}
 
-			if (Controls.IsPressed(Control.Up)){
+			if (Controls.IsPressed(Control.Jump)){
 				body.ApplyForce(new Vec2(0, 100), new Vec2(.1f, .1f));
 			}
+		}
 
+		public void Draw(float dt) {
+			anim.state.Update(dt);
+
+
+			anim.state.Apply(anim.skeleton);
+			anim.skeleton.RootBone.ScaleX = 1 / 50f;
+			anim.skeleton.RootBone.ScaleY = 1 / 50f;
+			anim.skeleton.UpdateWorldTransform();
+			anim.skeletonRenderer.Draw(anim.skeleton);
+
+			GraphicsManager.DrawQuad(new Vector3d(anim.skeleton.X - 0.4, 0.00002, -0.3),
+						 new Vector3d(anim.skeleton.X + 0.4, 0.00002, -0.3),
+						 new Vector3d(anim.skeleton.X + 0.4, 0.00002, 0.3),
+						 new Vector3d(anim.skeleton.X - 0.4, 0.00002, 0.3),
+						 ResourceManager.Shadow);
 		}
 	}
 }
