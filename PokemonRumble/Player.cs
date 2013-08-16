@@ -17,6 +17,18 @@ namespace PokemonRumble {
 			anim = new Animation("Pokemon/bulbasaur");
 		}
 
+		public double X {
+			get {
+				return body.GetPosition().X;
+			}
+		}
+
+		public double Y {
+			get {
+				return body.GetPosition().Y;
+			}
+		}
+
 		private void InitPhysics(BattleArena arena) {
 			// Define the dynamic body. We set its position and call the body factory.
 			BodyDef bodyDef = new BodyDef();
@@ -44,19 +56,17 @@ namespace PokemonRumble {
 		}
 
 		internal void Update(float dt) {
-			float speed = 2.0f;
+			float speed = 3.0f;
 			if (Controls.IsDown(Control.Left)) {
 				if (anim.state.Animation.Name != "walk") {
 					anim.state.SetAnimation("walk", true);
 				}
-				anim.skeleton.X -= speed * dt;
 				anim.skeleton.FlipX = false;
 				body.ApplyForce(new Vec2(-speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
 			} else if (Controls.IsDown(Control.Right)) {
 				if (anim.state.Animation.Name != "walk") {
 					anim.state.SetAnimation("walk", true);
 				}
-				anim.skeleton.X += speed * dt;
 				anim.skeleton.FlipX = true;
 				body.ApplyForce(new Vec2(speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
 			} else {
@@ -74,6 +84,8 @@ namespace PokemonRumble {
 		public void Draw(float dt) {
 			anim.state.Update(dt);
 
+			anim.skeleton.X = (float)this.X;
+			anim.skeleton.Y = (float)this.Y - 0.15f;
 
 			anim.state.Apply(anim.skeleton);
 			anim.skeleton.RootBone.ScaleX = 1 / 50f;
@@ -82,10 +94,12 @@ namespace PokemonRumble {
 			anim.skeletonRenderer.Draw(anim.skeleton);
 
 			GraphicsManager.DrawQuad(new Vector3d(anim.skeleton.X - 0.4, 0.00002, -0.3),
-						 new Vector3d(anim.skeleton.X + 0.4, 0.00002, -0.3),
-						 new Vector3d(anim.skeleton.X + 0.4, 0.00002, 0.3),
-						 new Vector3d(anim.skeleton.X - 0.4, 0.00002, 0.3),
+						 new Vector3d(anim.skeleton.X + 0.4, 0.002, -0.3),
+						 new Vector3d(anim.skeleton.X + 0.4, 0.002, 0.3),
+						 new Vector3d(anim.skeleton.X - 0.4, 0.002, 0.3),
 						 ResourceManager.Shadow);
 		}
+
+		
 	}
 }

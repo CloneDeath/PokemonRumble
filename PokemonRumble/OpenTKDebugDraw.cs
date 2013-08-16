@@ -8,6 +8,7 @@ using OpenTK.Graphics.OpenGL;
 
 namespace PokemonRumble {
 	class OpenTKDebugDraw : DebugDraw {
+		const float ZLayer = -0.01f;
 		public override void DrawCircle(Vec2 center, float radius, Color color) {
 			float k_segments = 16.0f;
 			float k_increment = 2.0f * (float)System.Math.PI / k_segments;
@@ -17,7 +18,7 @@ namespace PokemonRumble {
 			GL.Begin(BeginMode.LineLoop);
 			for (int i = 0; i < k_segments; ++i) {
 				Vec2 v = center + radius * new Vec2((float)System.Math.Cos(theta), (float)System.Math.Sin(theta));
-				GL.Vertex3(v.X, v.Y, 0);
+				GL.Vertex3(v.X, v.Y, ZLayer);
 				theta += k_increment;
 			}
 			GL.End();
@@ -29,7 +30,7 @@ namespace PokemonRumble {
 			GL.Disable(EnableCap.Texture2D);
 			GL.Begin(BeginMode.LineLoop);
 			for (int i = 0; i < vertexCount; ++i) {
-				GL.Vertex3(vertices[i].X, vertices[i].Y, 0);
+				GL.Vertex3(vertices[i].X, vertices[i].Y, ZLayer);
 			}
 			GL.End();
 			GL.Enable(EnableCap.Texture2D);
@@ -40,8 +41,8 @@ namespace PokemonRumble {
 			GL.Disable(EnableCap.Texture2D);
 			GL.Begin(BeginMode.Lines);
 			{
-				GL.Vertex3(p1.X, p1.Y, 0);
-				GL.Vertex3(p2.X, p2.Y, 0);
+				GL.Vertex3(p1.X, p1.Y, ZLayer);
+				GL.Vertex3(p2.X, p2.Y, ZLayer);
 			}
 			GL.End();
 			GL.Enable(EnableCap.Texture2D);
@@ -56,7 +57,7 @@ namespace PokemonRumble {
 			GL.Begin(BeginMode.TriangleFan);
 			for (int i = 0; i < k_segments; ++i) {
 				Vec2 v = center + radius * new Vec2((float)System.Math.Cos(theta), (float)System.Math.Sin(theta));
-				GL.Vertex3(v.X, v.Y, 0);
+				GL.Vertex3(v.X, v.Y, ZLayer);
 				theta += k_increment;
 			}
 			GL.End();
@@ -66,14 +67,14 @@ namespace PokemonRumble {
 			GL.Begin(BeginMode.LineLoop);
 			for (int i = 0; i < k_segments; ++i) {
 				Vec2 v = center + radius * new Vec2((float)System.Math.Cos(theta), (float)System.Math.Sin(theta));
-				GL.Vertex3(v.X, v.Y, 0);
+				GL.Vertex3(v.X, v.Y, ZLayer);
 				theta += k_increment;
 			}
 			GL.End();
 
 			Vec2 p = center + radius * axis;
 			GL.Begin(BeginMode.Lines);
-			GL.Vertex3(center.X, center.Y, 0);
+			GL.Vertex3(center.X, center.Y, ZLayer);
 			GL.Vertex3(p.X, p.Y, 0);
 			GL.End();
 			GL.Enable(EnableCap.Texture2D);
@@ -84,14 +85,14 @@ namespace PokemonRumble {
 			GL.Disable(EnableCap.Texture2D);
 			GL.Begin(BeginMode.TriangleFan);
 			for (int i = 0; i < vertexCount; ++i) {
-				GL.Vertex3(vertices[i].X, vertices[i].Y, 0);
+				GL.Vertex3(vertices[i].X, vertices[i].Y, ZLayer);
 			}
 			GL.End();
 
 			GL.Color4(color.R, color.G, color.B, 1.0f);
 			GL.Begin(BeginMode.LineLoop);
 			for (int i = 0; i < vertexCount; ++i) {
-				GL.Vertex3(vertices[i].X, vertices[i].Y, 0);
+				GL.Vertex3(vertices[i].X, vertices[i].Y, ZLayer);
 			}
 			GL.End();
 			GL.Enable(EnableCap.Texture2D);
@@ -104,14 +105,14 @@ namespace PokemonRumble {
 			GL.Begin(BeginMode.Lines);
 			{
 				GL.Color3(1.0f, 0.0f, 0.0f);
-				GL.Vertex3(p1.X, p1.Y, 0);
+				GL.Vertex3(p1.X, p1.Y, ZLayer);
 				p2 = p1 + k_axisScale * xf.R.Col1;
-				GL.Vertex3(p2.X, p2.Y, 0);
+				GL.Vertex3(p2.X, p2.Y, ZLayer);
 
 				GL.Color3(0.0f, 1.0f, 0.0f);
-				GL.Vertex3(p1.X, p1.Y, 0);
+				GL.Vertex3(p1.X, p1.Y, ZLayer);
 				p2 = p1 + k_axisScale * xf.R.Col2;
-				GL.Vertex3(p2.X, p2.Y, 0);
+				GL.Vertex3(p2.X, p2.Y, ZLayer);
 			}
 			GL.End();
 			GL.Enable(EnableCap.Texture2D);
@@ -122,8 +123,8 @@ namespace PokemonRumble {
 			GL.Disable(EnableCap.Texture2D);
 			GL.Begin(BeginMode.Lines);
 			{
-				GL.Vertex3(p1.X, p1.Y, 0);
-				GL.Vertex3(p2.X, p2.Y, 0);
+				GL.Vertex3(p1.X, p1.Y, ZLayer);
+				GL.Vertex3(p2.X, p2.Y, ZLayer);
 			}
 			GL.End();
 			GL.Enable(EnableCap.Texture2D);

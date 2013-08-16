@@ -46,19 +46,18 @@ namespace PokemonRumble {
 
 			Zoom -= MouseManager.GetMouseWheel() / 3f;
 
-			GraphicsManager.SetCamera(new OpenTK.Vector3d(ResourceManager.skeleton.X, ResourceManager.skeleton.Y + 1, Zoom));
-			GraphicsManager.SetLookAt(new OpenTK.Vector3d(ResourceManager.skeleton.X, ResourceManager.skeleton.Y, 0));
+			GraphicsManager.SetCamera(new OpenTK.Vector3d(Player1.X, Player1.Y + 1, Zoom));
+			GraphicsManager.SetLookAt(new OpenTK.Vector3d(Player1.X, Player1.Y, 0));
 		}
 
 		static void Draw() {
 			float dt = DrawTime.ElapsedMilliseconds / 1000f;
 			DrawTime.Restart();
 
-			Player1.Draw(dt);
-
 			Arena.Update(dt);
 			Arena.Draw();
 
+			Player1.Draw(dt);
 
 			
 		}

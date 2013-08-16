@@ -40,7 +40,7 @@ namespace PokemonRumble {
 			groundBody.CreateFixture(groundShapeDef);
 
 			DebugDraw draw = new OpenTKDebugDraw();
-			draw.Flags = DebugDraw.DrawFlags.Aabb | DebugDraw.DrawFlags.Shape;
+			draw.Flags = DebugDraw.DrawFlags.Shape;
 			_world.SetDebugDraw(draw);
 		}
 
@@ -67,10 +67,10 @@ namespace PokemonRumble {
 			}
 
 			GraphicsManager.SetTexture(Dirt);
-			GraphicsManager.DrawQuad(new Vector3d(-10, 0.00001, -5),
-									 new Vector3d(-10, 0.00001, 5),
-									 new Vector3d(10, 0.00001, 5),
-									 new Vector3d(10, 0.00001, -5),
+			GraphicsManager.DrawQuad(new Vector3d(-10, 0.0001, -5),
+									 new Vector3d(-10, 0.0001, 5),
+									 new Vector3d(10, 0.0001, 5),
+									 new Vector3d(10, 0.0001, -5),
 									 new Vector2d(2, 4));
 		}
 	}

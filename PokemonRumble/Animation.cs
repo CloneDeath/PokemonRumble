@@ -26,6 +26,8 @@ namespace PokemonRumble {
 			//    stateData.SetMix("walk", "idle", 0.2f);
 			//    stateData.SetMix("idle", "walk", 0.4f);
 			//}
+			state = new AnimationState(stateData);
+			state.SetAnimation("idle", false);
 
 			skeleton.X = 0;
 			skeleton.Y = 0.1f;
