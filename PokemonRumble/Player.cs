@@ -93,11 +93,11 @@ namespace PokemonRumble {
 			anim.skeleton.UpdateWorldTransform();
 			anim.skeletonRenderer.Draw(anim.skeleton);
 
-			GraphicsManager.DrawQuad(new Vector3d(anim.skeleton.X - 0.4, 0.00002, -0.3),
-						 new Vector3d(anim.skeleton.X + 0.4, 0.002, -0.3),
-						 new Vector3d(anim.skeleton.X + 0.4, 0.002, 0.3),
-						 new Vector3d(anim.skeleton.X - 0.4, 0.002, 0.3),
-						 ResourceManager.Shadow);
+			GraphicsManager.DrawQuad(new Vector3d(anim.skeleton.X - 0.4, 0.002, -0.3),
+					new Vector3d(anim.skeleton.X + 0.4, 0.002, -0.3),
+					new Vector3d(anim.skeleton.X + 0.4, 0.002, 0.3),
+					new Vector3d(anim.skeleton.X - 0.4, 0.002, 0.3),
+					ResourceManager.Shadow);
 		}
 
 		

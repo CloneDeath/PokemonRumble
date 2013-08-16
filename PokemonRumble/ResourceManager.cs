@@ -18,8 +18,8 @@ namespace PokemonRumble {
 			ScriptEngine engine = Python.CreateEngine();
 
 			ScriptScope scope = engine.Runtime.CreateScope();
-			//scope.SetVariable("progress", ProgressModule.Instance);
-			//scope.SetVariable("spawns", SpawnsModule.Instance);
+			var PokemonModule = engine.CreateModule("Pokemon");
+			PokemonModule.SetVariable("Pokemon", new IronPokemon());
 
 			RecursivelyRunScriptsIn(@"Data\", engine, scope);			
 		}
