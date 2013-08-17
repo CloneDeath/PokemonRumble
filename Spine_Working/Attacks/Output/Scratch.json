@@ -1,0 +1,54 @@
+{
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Scratch_01", "bone": "root", "attachment": "Scratch_01" },
+	{ "name": "Scratch_02", "bone": "root", "attachment": "Scratch_02" },
+	{ "name": "Scratch_03", "bone": "root", "attachment": "Scratch_03" },
+	{ "name": "Scratch_04", "bone": "root", "attachment": "Scratch_04" }
+],
+"skins": {
+	"default": {
+		"Scratch_01": {
+			"Scratch_01": { "x": 4.47, "y": 9.68, "width": 3, "height": 2 }
+		},
+		"Scratch_02": {
+			"Scratch_02": { "x": 0.01, "y": 8.16, "width": 4, "height": 3 }
+		},
+		"Scratch_03": {
+			"Scratch_03": { "x": -4.98, "y": 5.17, "width": 6, "height": 5 }
+		},
+		"Scratch_04": {
+			"Scratch_04": { "x": -4.98, "y": -4.31, "width": 10, "height": 14 }
+		}
+	}
+},
+"animations": {
+	"idle": {
+		"slots": {
+			"Scratch_02": {
+				"color": [
+					{ "time": 0, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 0.0333, "color": "ffffff00" },
+					{ "time": 0.0666, "color": "ffffffff" }
+				]
+			},
+			"Scratch_03": {
+				"color": [
+					{ "time": 0, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 0.1, "color": "ffffff00" },
+					{ "time": 0.1333, "color": "ffffffff" }
+				]
+			},
+			"Scratch_04": {
+				"color": [
+					{ "time": 0, "color": "ffffff00", "curve": "stepped" },
+					{ "time": 0.1666, "color": "ffffff00" },
+					{ "time": 0.2, "color": "ffffffff" }
+				]
+			}
+		}
+	}
+}
+}
