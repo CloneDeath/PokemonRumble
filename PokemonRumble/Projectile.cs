@@ -44,6 +44,8 @@ namespace PokemonRumble {
 
 		public bool Permanent = false;
 
+		Fixture fix2;
+
 		public Projectile(Player creator, float x, float y, float width, float height) {
 			this.creator = creator;
 
@@ -62,7 +64,7 @@ namespace PokemonRumble {
 			//fix.UserData = this;
 
 			fixdef.IsSensor = true;
-			Fixture fix2 = projectile.CreateFixture(fixdef);
+			fix2 = projectile.CreateFixture(fixdef);
 			fix2.UserData = this;
 
 
@@ -83,12 +85,20 @@ namespace PokemonRumble {
 			if (Duration <= 0 && !Permanent) {
 				Unload();
 			}
+
+			if (Dead) {
+				projectile.DestroyFixture(fix);
+				projectile.DestroyFixture(fix2);
+				projectile.GetWorld().DestroyBody(projectile);
+				anim.Unload();
+				GraphicsManager.Update -= GraphicsManager_Update;
+			}
 		}
 
+		bool Dead = false;
+
 		public void Unload() {
-			projectile.GetWorld().DestroyBody(projectile);
-			GraphicsManager.Update -= GraphicsManager_Update;
-			anim.Unload();
+			Dead = true;
 		}
 
 		public void SetVelocity(float x, float y) {

@@ -27,6 +27,7 @@ namespace PokemonRumble {
 			GraphicsManager.SetBackground(Color.SkyBlue);
 			GraphicsManager.EnableMipmap = true;
 			GraphicsManager.CameraUp = Vector3.UnitY;
+			GraphicsManager.SetWindowState(WindowState.Maximized);
 						
 
 			Initialize();

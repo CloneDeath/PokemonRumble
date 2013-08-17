@@ -52,6 +52,8 @@ namespace PokemonRumble {
 			}
 		}
 
+		MoveInstance[] Move = new MoveInstance[4];
+
 		ControlSet Controls;
 
 		public short ID;
@@ -67,6 +69,10 @@ namespace PokemonRumble {
 			this.Controls = Controls;
 			this.HP = Pokemon.HP;
 			this.ID = (short)ID;
+
+			for (int i = 0; i < 4; i++) {
+				Move[i] = new MoveInstance(Pokemon.Move[i]);
+			}
 
 			InitPhysics(arena);
 		}
@@ -129,6 +135,14 @@ namespace PokemonRumble {
 			}
 		}
 
+		int CurrentMove = 0;
+
+		public float Cooldown {
+			set {
+				Move[CurrentMove].Cooldown = value;
+			}
+		}
+
 		internal void Update(float dt) {
 			if (Dead) {
 				if (anim.state.Animation.Name != "dead") {
@@ -141,53 +155,54 @@ namespace PokemonRumble {
 
 			DisableTime -= dt;
 
-			if (!Disabled) {
-				if (OnGround) {
-					if (Controls.IsDown(Control.Left)) {
-						if (anim.state.Animation.Name != "walk") {
-							anim.state.SetAnimation("walk", true);
-						}
-						body.ApplyForce(new Vec2(-Pokemon.Speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
-						Direction = -1;
-					} else if (Controls.IsDown(Control.Right)) {
-						if (anim.state.Animation.Name != "walk") {
-							anim.state.SetAnimation("walk", true);
-						}
-						body.ApplyForce(new Vec2(Pokemon.Speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
-						Direction = 1;
-					} else {
-						if (anim.state.Animation.Name != "idle") {
-							anim.state.SetAnimation("idle", true);
-						}
-						body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * Pokemon.Speed, 0), new Vec2(.1f, .1f));
+			if (OnGround) {
+				if (Controls.IsDown(Control.Left) && !Disabled) {
+					if (anim.state.Animation.Name != "walk") {
+						anim.state.SetAnimation("walk", true);
 					}
+					body.ApplyForce(new Vec2(-Pokemon.Speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
+					Direction = -1;
+				} else if (Controls.IsDown(Control.Right) && !Disabled) {
+					if (anim.state.Animation.Name != "walk") {
+						anim.state.SetAnimation("walk", true);
+					}
+					body.ApplyForce(new Vec2(Pokemon.Speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
+					Direction = 1;
+				} else {
+					if (anim.state.Animation.Name != "idle") {
+						anim.state.SetAnimation("idle", true);
+					}
+					body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * Pokemon.Speed, 0), new Vec2(.1f, .1f));
 				}
 
-				if (Controls.IsPressed(Control.Jump) && OnGround) {
+				if (Controls.IsPressed(Control.Jump) && !Disabled) {
 					if (anim.state.Animation.Name != "jump") {
 						anim.state.SetAnimation("jump", false);
 					}
 					body.ApplyForce(new Vec2(0, 100), new Vec2(.1f, .1f));
 				}
+			}
 
+
+			if (!Disabled) {
 				if (Controls.IsPressed(Control.Move0)) {
-					Pokemon.Move[0].OnUse(this);
+					CurrentMove = 0;
+					Move[0].OnUse(this);
 				}
 
 				if (Controls.IsPressed(Control.Move1)) {
-					Pokemon.Move[1].OnUse(this);
+					CurrentMove = 1;
+					Move[1].OnUse(this);
 				}
 
 				if (Controls.IsPressed(Control.Move2)) {
-					if (Pokemon.Move[2].OnUse != null) {
-						Pokemon.Move[2].OnUse(this);
-					}
+					CurrentMove = 2;
+					Move[2].OnUse(this);
 				}
 
 				if (Controls.IsPressed(Control.Move3)) {
-					if (Pokemon.Move[3].OnUse != null) {
-						Pokemon.Move[3].OnUse(this);
-					}
+					CurrentMove = 3;
+					Move[3].OnUse(this);
 				}
 			}
 		}

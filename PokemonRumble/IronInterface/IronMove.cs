@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PokemonRumble.IronInterface {
 	public class IronMove {
-		public Dictionary<string, Move> Moves = new Dictionary<string, Move>();
+		public static Dictionary<string, Move> Moves = new Dictionary<string, Move>();
 
 		public Move Add(string name) {
 			if (Moves.ContainsKey(name)) {

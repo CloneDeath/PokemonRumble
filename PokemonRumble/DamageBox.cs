@@ -49,8 +49,6 @@ namespace PokemonRumble {
 
 		public void OnCollides(IEntity other) {
 			if (other is Player && other != creator) {
-				((Player)other).TakeDamage(this.Damage);
-
 				if (OnCollidePlayer != null) {
 					OnCollidePlayer((Player)other);
 				}

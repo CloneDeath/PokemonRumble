@@ -4,8 +4,8 @@ Razor = Move.Add("razorleaf");
 
 def Attack(player):
 	player.SetAnimation("leech_seed", False);
-	player.Disable(1);
-	player.SetVelocity(0, 0);
+	player.Disable(0.5);
+	player.Cooldown = 1;
 	seed = player.AddProjectile(player.Direction * 0.3, 0, 0.1, 0.1);
 	seed.SetVelocity(player.Direction * 10, 2);
 	seed.CollisionMask = 0x0001;
@@ -21,6 +21,4 @@ def Attack(player):
 	def Earth():
 		seed.Unload();
 	seed.OnCollideEarth = Earth;
-		
-			
 Razor.OnUse = Attack;

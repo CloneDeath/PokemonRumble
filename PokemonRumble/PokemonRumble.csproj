@@ -104,6 +104,7 @@
     <Compile Include="IronInterface\IronPokemon.cs" />
     <Compile Include="MixItem.cs" />
     <Compile Include="Move.cs" />
+    <Compile Include="MoveReference.cs" />
     <Compile Include="OpenTKDebugDraw.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Pokemon.cs" />
