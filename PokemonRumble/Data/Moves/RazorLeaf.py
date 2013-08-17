@@ -13,12 +13,12 @@ def Attack(player):
 	seed.SetAnimation("idle", True);
 	seed.Z = 0.5;
 	seed.Permanent = True;
-	def Leech(other):
+	def Razor(self, other):
 		other.TakeSpecialDamage(7, player);
-		seed.Unload();
-	seed.OnCollidePlayer = Leech;
+		self.Unload();
+	seed.OnCollidePlayer = Razor;
 	
-	def Earth():
-		seed.Unload();
+	def Earth(self):
+		self.Unload();
 	seed.OnCollideEarth = Earth;
 Razor.OnUse = Attack;

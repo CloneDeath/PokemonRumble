@@ -13,6 +13,7 @@ Bulbasaur.Speed = 45;
 
 Bulbasaur.Width = .8;
 Bulbasaur.Height = .5;
+Bulbasaur.Weight = 6.9;
  
 
 Bulbasaur.Move[0] = Move.Find("tackle");

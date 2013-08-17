@@ -125,6 +125,9 @@ namespace PokemonRumble {
 			// Now tell the dynamic body to compute it's mass properties base
 			// on its shape.
 			body.SetMassFromShapes();
+			var mass = body.GetMassData();
+			mass.Mass = Pokemon.Weight / 10;
+			body.SetMass(mass);
 
 			body.SetFixedRotation(true);
 		}
@@ -156,7 +159,7 @@ namespace PokemonRumble {
 		internal void Update(float dt) {
 			if (Dead) {
 				if (anim.state.Animation.Name != "dead") {
-					anim.state.SetAnimation("dead", true);
+					anim.state.SetAnimation("dead", false);
 				}
 				this.HP = 0;
 				body.ApplyForce(new Vec2(-body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
@@ -176,20 +179,21 @@ namespace PokemonRumble {
 					if (anim.state.Animation.Name != "walk") {
 						anim.state.SetAnimation("walk", true);
 					}
-					body.ApplyForce(new Vec2((Speed / 10) - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
+					body.ApplyForce(new Vec2((Speed/10) - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
 					Direction = 1;
 				} else {
 					if (anim.state.Animation.Name != "idle") {
 						anim.state.SetAnimation("idle", true);
 					}
-					body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * (Speed / 10), 0), new Vec2(.1f, .1f));
+					body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * (Speed), 0), new Vec2(.1f, .1f));
 				}
 
 				if (Controls.IsPressed(Control.Jump) && !Disabled) {
 					if (anim.state.Animation.Name != "jump") {
 						anim.state.SetAnimation("jump", false);
 					}
-					body.ApplyForce(new Vec2(0, 100), new Vec2(.1f, .1f));
+					Vec2 Vel = body.GetLinearVelocity();
+					body.ApplyForce(new Vec2(Vel.X, Speed * 5), new Vec2(.1f, .1f));
 				}
 			}
 
