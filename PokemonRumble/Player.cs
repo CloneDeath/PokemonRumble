@@ -63,9 +63,9 @@ namespace PokemonRumble {
 
 		public short ID;
 
-		public Player(BattleArena arena, ControlSet Controls, int ID) {
+		public Player(BattleArena arena, ControlSet Controls, int ID, string pokemon) {
 			this.World = arena;
-			PokemonName = "bulbasaur";
+			PokemonName = pokemon;
 			anim = new Animation(Pokemon.Animation);
 			anim.state.SetAnimation("idle", true);
 			foreach (MixItem item in Pokemon.MixQueue) {
@@ -107,7 +107,7 @@ namespace PokemonRumble {
 
 			// Define another box shape for our dynamic body.
 			PolygonDef shapeDef = new PolygonDef();
-			shapeDef.SetAsBox(0.4f, 0.25f);
+			shapeDef.SetAsBox(Pokemon.Width / 2, Pokemon.Height / 2);
 
 			// Set the box density to be non-zero, so it will be dynamic.
 			shapeDef.Density = 1.0f;
@@ -255,7 +255,7 @@ namespace PokemonRumble {
 		Vec2 CurrentVelocity = new Vec2();
 		public void Draw(float dt) {
 			anim.skeleton.X = (float)this.X;
-			anim.skeleton.Y = (float)this.Y - 0.15f;
+			anim.skeleton.Y = (float)this.Y - (Pokemon.Height / 2);
 
 			GraphicsManager.DrawQuad(new Vector3d(anim.skeleton.X - 0.4, 0.002, -0.3),
 					new Vector3d(anim.skeleton.X + 0.4, 0.002, -0.3),

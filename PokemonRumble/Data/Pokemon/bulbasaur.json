@@ -1,6 +1,6 @@
 {
 "bones": [
-	{ "name": "root", "y": -0.13 },
+	{ "name": "root" },
 	{ "name": "Hip", "parent": "root", "x": 5.4, "y": 9.44 },
 	{ "name": "BackLeftLeg", "parent": "Hip", "length": 6.41, "x": 2.41, "y": -1.94, "rotation": -49.32 },
 	{ "name": "BackRightLeg", "parent": "Hip", "length": 5.31, "x": -1.99, "y": -1.67, "rotation": -99.04 },
@@ -180,9 +180,9 @@
 				],
 				"translate": [
 					{ "time": 0, "x": 0, "y": 0 },
-					{ "time": 0.1, "x": 1.44, "y": -1.12, "curve": "stepped" },
-					{ "time": 0.2, "x": 1.44, "y": -1.12 },
-					{ "time": 0.4, "x": -4.07, "y": -0.04 },
+					{ "time": 0.1, "x": 1.44, "y": -0.39 },
+					{ "time": 0.2, "x": 1.44, "y": -0.17 },
+					{ "time": 0.4, "x": -4.07, "y": 1.12 },
 					{ "time": 0.6666, "x": 0, "y": 0 }
 				]
 			},
@@ -217,7 +217,8 @@
 			},
 			"Body": {
 				"rotate": [
-					{ "time": 0, "angle": 0, "curve": "stepped" },
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.1, "angle": 0.08 },
 					{ "time": 0.2, "angle": 0, "curve": "stepped" },
 					{ "time": 0.4, "angle": 0, "curve": "stepped" },
 					{ "time": 0.6666, "angle": 0 }
@@ -620,7 +621,8 @@
 					{ "time": 0.6333, "angle": 0 }
 				],
 				"translate": [
-					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.3333, "x": 0, "y": 0.87 },
 					{ "time": 0.6333, "x": 0, "y": 0 }
 				]
 			},
@@ -694,8 +696,10 @@
 			},
 			"Head": {
 				"rotate": [
-					{ "time": 0, "angle": 0, "curve": "stepped" },
-					{ "time": 0.6333, "angle": 0 }
+					{ "time": 0, "angle": 8.34 },
+					{ "time": 0.1, "angle": 11.51 },
+					{ "time": 0.2666, "angle": 0.53 },
+					{ "time": 0.6333, "angle": 8.34 }
 				],
 				"translate": [
 					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },

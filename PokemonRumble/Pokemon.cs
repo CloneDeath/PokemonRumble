@@ -18,6 +18,9 @@ namespace PokemonRumble {
 		public float Speed;
 		public string DisplayName;
 
+		public float Width;
+		public float Height;
+
 		public Move[] Move = new Move[4];
 		public List<MixItem> MixQueue = new List<MixItem>();
 		Dictionary<string, string> AnimationAlias = new Dictionary<string, string>();

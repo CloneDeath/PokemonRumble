@@ -29,7 +29,7 @@ namespace PokemonRumble {
 
 		public void OnUse(Player player) {
 			if (Cooldown <= 0) {
-				if (move != null) {
+				if (move.OnUse != null) {
 					move.OnUse(player);
 				}
 			}

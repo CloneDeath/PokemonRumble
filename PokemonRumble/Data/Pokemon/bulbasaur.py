@@ -11,6 +11,8 @@ Bulbasaur.SpecialAttack = 65;
 Bulbasaur.SpecialDefense = 65;
 Bulbasaur.Speed = 45;
 
+Bulbasaur.Width = .8;
+Bulbasaur.Height = .5;
  
 
 Bulbasaur.Move[0] = Move.Find("tackle");
