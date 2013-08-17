@@ -14,7 +14,7 @@ def Attack(player):
 	seed.Z = 0.5;
 	seed.Permanent = True;
 	def Leech(other):
-		other.HP -= 7;
+		other.TakeSpecialDamage(7, player);
 		seed.Unload();
 	seed.OnCollidePlayer = Leech;
 	

@@ -27,6 +27,11 @@ namespace PokemonRumble {
 				_HP = value;
 			}
 		}
+		public float Attack;
+		public float Defense;
+		public float SpecialAttack;
+		public float SpecialDefense;
+		public float Speed;
 
 		float DisableTime = 0;
 
@@ -68,6 +73,11 @@ namespace PokemonRumble {
 			}
 			this.Controls = Controls;
 			this.HP = Pokemon.HP;
+			this.Attack = Pokemon.Attack;
+			this.Defense = Pokemon.Defense;
+			this.SpecialAttack = Pokemon.SpecialAttack;
+			this.SpecialDefense = Pokemon.SpecialDefense;
+			this.Speed = Pokemon.Speed;
 			this.ID = (short)ID;
 
 			for (int i = 0; i < 4; i++) {
@@ -160,19 +170,19 @@ namespace PokemonRumble {
 					if (anim.state.Animation.Name != "walk") {
 						anim.state.SetAnimation("walk", true);
 					}
-					body.ApplyForce(new Vec2(-Pokemon.Speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
+					body.ApplyForce(new Vec2(-(Speed/10) - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
 					Direction = -1;
 				} else if (Controls.IsDown(Control.Right) && !Disabled) {
 					if (anim.state.Animation.Name != "walk") {
 						anim.state.SetAnimation("walk", true);
 					}
-					body.ApplyForce(new Vec2(Pokemon.Speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
+					body.ApplyForce(new Vec2((Speed / 10) - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
 					Direction = 1;
 				} else {
 					if (anim.state.Animation.Name != "idle") {
 						anim.state.SetAnimation("idle", true);
 					}
-					body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * Pokemon.Speed, 0), new Vec2(.1f, .1f));
+					body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * (Speed / 10), 0), new Vec2(.1f, .1f));
 				}
 
 				if (Controls.IsPressed(Control.Jump) && !Disabled) {
@@ -209,6 +219,14 @@ namespace PokemonRumble {
 
 		public void SetAnimation(string AnimationName, bool Loop) {
 			anim.state.SetAnimation(Pokemon.FilterAnimationAlias(AnimationName), Loop);
+		}
+
+		public void TakeDamage(float Amount, Player other) {
+			this.HP -= Amount * (other.Attack / this.Defense);
+		}
+
+		public void TakeSpecialDamage(float Amount, Player other) {
+			this.HP -= Amount * (other.SpecialAttack / this.SpecialDefense);
 		}
 
 		public void Disable(float time) {

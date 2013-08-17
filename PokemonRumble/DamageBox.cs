@@ -16,9 +16,29 @@ namespace PokemonRumble {
 		public Action<Player> OnCollidePlayer;
 
 		Stopwatch Update = new Stopwatch();
+		Animation anim;
+
+		public void SetSkeleton(string name) {
+			anim = new Animation(name);
+			anim.skeleton.X = fix.Body.GetPosition().X + xoff;
+			anim.skeleton.Y = fix.Body.GetPosition().Y + yoff;
+		}
+
+		public void SetAnimation(string animation, bool loop) {
+			anim.state.SetAnimation(animation, loop);
+		}
+
+		public void FlipAnimation() {
+			anim.skeleton.FlipX = true;
+		}
+
+		float xoff;
+		float yoff;
 
 		public DamageBox(Player creator, float x, float y, float width, float height) {
 			this.creator = creator;
+			xoff = x;
+			yoff = y;
 
 			PolygonDef def = new PolygonDef();
 			def.SetAsBox(width / 2, height / 2, new Vec2(x, y), 0);
@@ -35,15 +55,27 @@ namespace PokemonRumble {
 		void GraphicsManager_Update() {
 			float dt = Update.ElapsedMilliseconds / 1000.0f;
 			Update.Restart();
+
+			if (anim != null) {
+				anim.skeleton.X = fix.Body.GetPosition().X + xoff;
+				anim.skeleton.Y = fix.Body.GetPosition().Y + yoff;
+			}
+
 			Duration -= dt;
 			if (!IsAlive) {
-				Unload();
+				fix.Body.DestroyFixture(fix);
+				if (anim != null) {
+					anim.Unload();
+				}
+				GraphicsManager.Update -= GraphicsManager_Update;
 			}
 		}
 
+		bool Dead = false;
+
 		public bool IsAlive {
 			get {
-				return Duration > 0;
+				return Duration > 0 || Dead;
 			}
 		}
 
@@ -58,9 +90,8 @@ namespace PokemonRumble {
 		public void OnSeperate(IEntity other) {
 		}
 
-		internal void Unload() {
-			fix.Body.DestroyFixture(fix);
-			GraphicsManager.Update -= GraphicsManager_Update;
+		public void Unload() {
+			this.Dead = true;
 		}
 	}
 }

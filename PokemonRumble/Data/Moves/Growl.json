@@ -1,0 +1,75 @@
+{
+"bones": [
+	{ "name": "root" },
+	{ "name": "Growl_Down", "parent": "root", "length": 15, "x": 0.01, "rotation": 315 },
+	{ "name": "Growl_Normal", "parent": "root", "length": 15 },
+	{ "name": "Growl_Up", "parent": "root", "length": 15, "y": 0.02, "rotation": 45 }
+],
+"slots": [
+	{ "name": "Growl_Up", "bone": "Growl_Up", "attachment": "Growl_Up" },
+	{ "name": "Growl_Normal", "bone": "Growl_Normal", "attachment": "Growl_Normal" },
+	{ "name": "Growl_Down", "bone": "Growl_Down", "attachment": "Growl_Down" }
+],
+"skins": {
+	"default": {
+		"Growl_Down": {
+			"Growl_Down": { "x": 12.72, "rotation": 45, "width": 16, "height": 16 }
+		},
+		"Growl_Normal": {
+			"Growl_Normal": { "x": 9, "width": 22, "height": 7 }
+		},
+		"Growl_Up": {
+			"Growl_Up": { "x": 12.71, "y": 0.01, "rotation": -45, "width": 16, "height": 16 }
+		}
+	}
+},
+"animations": {
+	"idle": {
+		"bones": {
+			"root": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 }
+				]
+			},
+			"Growl_Normal": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.3333, "x": 20, "y": 0 }
+				]
+			},
+			"Growl_Down": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.3333, "x": 14.13, "y": -14.13 }
+				]
+			},
+			"Growl_Up": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.3333, "x": 14.13, "y": 14.13 }
+				]
+			}
+		},
+		"slots": {
+			"Growl_Down": {
+				"color": [
+					{ "time": 0, "color": "ffffffff" },
+					{ "time": 0.3333, "color": "ffffff00" }
+				]
+			},
+			"Growl_Normal": {
+				"color": [
+					{ "time": 0, "color": "ffffffff" },
+					{ "time": 0.3333, "color": "ffffff00" }
+				]
+			},
+			"Growl_Up": {
+				"color": [
+					{ "time": 0, "color": "ffffffff" },
+					{ "time": 0.3333, "color": "ffffff00" }
+				]
+			}
+		}
+	}
+}
+}

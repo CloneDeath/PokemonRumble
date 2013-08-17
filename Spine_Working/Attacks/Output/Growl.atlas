@@ -1,0 +1,26 @@
+
+Growl.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Growl_Down
+  rotate: false
+  xy: 2, 11
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+Growl_Normal
+  rotate: false
+  xy: 2, 2
+  size: 22, 7
+  orig: 22, 7
+  offset: 0, 0
+  index: -1
+Growl_Up
+  rotate: false
+  xy: 20, 11
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1

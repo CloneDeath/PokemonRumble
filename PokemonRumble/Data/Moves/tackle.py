@@ -13,6 +13,6 @@ def Attack(player):
 			other.SetVelocity(player.Direction * 5, 3);
 			player.SetVelocity(0, 0);
 			other.Disable(0.25);
-			other.HP -= 10;
+			other.TakeDamage(10, player);
 		Hit.OnCollidePlayer = KnockBack;
 Tackle.OnUse = Attack;

@@ -10,13 +10,18 @@ namespace PokemonRumble {
 			get;
 			private set;
 		}
-		public int Speed;
+		public float HP;
+		public float Attack;
+		public float Defense;
+		public float SpecialAttack;
+		public float SpecialDefense;
+		public float Speed;
 		public string DisplayName;
 
 		public Move[] Move = new Move[4];
 		public List<MixItem> MixQueue = new List<MixItem>();
 		Dictionary<string, string> AnimationAlias = new Dictionary<string, string>();
-		public float HP;
+		
 		public string Animation;
 
 

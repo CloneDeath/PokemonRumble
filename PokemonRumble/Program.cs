@@ -10,7 +10,7 @@ using PokemonRumble.Input;
 
 namespace PokemonRumble {
 	class Program {
-		public static bool DebugDraw = false;
+		public static bool DebugDraw = true;
 
 		static Stopwatch DrawTime = new Stopwatch();
 		static Stopwatch UpdateTime = new Stopwatch();

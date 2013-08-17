@@ -8,8 +8,6 @@ using System.Diagnostics;
 
 namespace PokemonRumble {
 	public class MoveInstance {
-		string movename;
-
 		public float Cooldown = 0;
 
 		Move move;
