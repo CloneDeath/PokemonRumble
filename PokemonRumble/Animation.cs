@@ -37,8 +37,8 @@ namespace PokemonRumble {
 
 			drawtime = new Stopwatch();
 			drawtime.Start();
-			GraphicsManager.Render += Draw;
-			
+
+			Program.MiddleDrawQueue += Draw;
 		}
 
 
@@ -55,7 +55,7 @@ namespace PokemonRumble {
 		}
 
 		internal void Unload() {
-			GraphicsManager.Render -= Draw;
+			Program.MiddleDrawQueue -= Draw;
 		}
 	}
 }

@@ -9,17 +9,14 @@ using Box2DX.Collision;
 using Box2DX.Common;
 
 namespace PokemonRumble {
-	public class BattleArena : ContactListener, IEntity {
+	abstract public class BattleArena : ContactListener, IEntity {
 		protected AABB _worldAABB;
 		public World _world;
 
-		private static Texture Dirt = new Texture(@"Data\Dirt.JPG");
-		private static Texture Grass = new Texture(@"Data\Grass 00 seamless.jpg");
-
 		public BattleArena() {
 			_worldAABB = new AABB();
-			_worldAABB.LowerBound.Set(-200.0f, -100.0f);
-			_worldAABB.UpperBound.Set(200.0f, 200.0f);
+			_worldAABB.LowerBound.Set(-30.0f, -20.0f);
+			_worldAABB.UpperBound.Set(30.0f, 40.0f);
 			Vec2 gravity = new Vec2();
 			gravity.Set(0.0f, -10.0f);
 			bool doSleep = true;
@@ -27,20 +24,14 @@ namespace PokemonRumble {
 			_world.SetContactFilter(new ContactFilter());
 
 			BodyDef groundBodyDef = new BodyDef();
-			groundBodyDef.Position.Set(0.0f, -10.0f);
+			groundBodyDef.Position.Set(0.0f, 0.0f);
 
 			Body groundBody = _world.CreateBody(groundBodyDef);
 
-			// Define the ground box shape.
-			PolygonDef groundShapeDef = new PolygonDef();
-
-			// The extents are the half-widths of the box.
-			groundShapeDef.SetAsBox(50.0f, 10.0f);
-
-			// Add the ground shape to the ground body.
-			Fixture fix = groundBody.CreateFixture(groundShapeDef);
-			fix.UserData = this;
-			fix.Filter.CategoryBits = 0x0001;
+			AddBlock(groundBody, 0, -5, 40, 10);
+			AddBlock(groundBody, -20, 20, 1, 40);
+			AddBlock(groundBody, 20, 20, 1, 40);
+			AddBlock(groundBody, 0, 30, 40, 10);
 
 			DebugDraw draw = new OpenTKDebugDraw();
 			draw.Flags = DebugDraw.DrawFlags.Shape;
@@ -51,34 +42,21 @@ namespace PokemonRumble {
 			_world.SetContactListener(this);
 		}
 
+		private void AddBlock(Body groundBody, float x, float y, float width, float height) {
+			// Define the ground box shape.
+			PolygonDef groundShapeDef = new PolygonDef();
+			groundShapeDef.SetAsBox(width/2, height/2, new Vec2(x, y), 0);
+
+			// Add the ground shape to the ground body.
+			Fixture fix = groundBody.CreateFixture(groundShapeDef);
+			fix.UserData = this;
+			fix.Filter.CategoryBits = 0x0001;
+		}
+
+
 		internal void Update(float dt) {
 			_world.Step(dt, 10, 10);
 			_world.Validate();
-		}
-
-		public void Draw() {
-			for (int z = -4; z <= 1; z++) {
-				for (int x = -6; x < 6; x++) {
-					int scale = 10;
-					int left = x * scale;
-					int right = (x + 1) * scale;
-					int bottom = z * scale;
-					int top = (z + 1) * scale;
-					GraphicsManager.SetTexture(Grass);
-					GraphicsManager.DrawQuad(new Vector3d(left, 0, bottom),
-											 new Vector3d(left, 0, top),
-											 new Vector3d(right, 0, top),
-											 new Vector3d(right, 0, bottom),
-											 new Vector2d(5, 5));
-				}
-			}
-
-			GraphicsManager.SetTexture(Dirt);
-			GraphicsManager.DrawQuad(new Vector3d(-10, 0.0001, -5),
-									 new Vector3d(-10, 0.0001, 5),
-									 new Vector3d(10, 0.0001, 5),
-									 new Vector3d(10, 0.0001, -5),
-									 new Vector2d(2, 4));
 		}
 
 		public void OnCollides(IEntity other) {
@@ -116,5 +94,9 @@ namespace PokemonRumble {
 		public void PreSolve(Contact contact, Manifold oldManifold) {
 			//eh
 		}
+
+		public abstract void DrawBehind();
+
+		public abstract void DrawFront();
 	}
 }

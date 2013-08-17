@@ -90,7 +90,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animation.cs" />
-    <Compile Include="BattleArena.cs" />
+    <Compile Include="Arenas\BattleArena.cs" />
+    <Compile Include="Arenas\Forrest.cs" />
     <Compile Include="DamageBox.cs" />
     <Compile Include="FloatingCamera.cs" />
     <Compile Include="IEntity.cs" />
