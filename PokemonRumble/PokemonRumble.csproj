@@ -95,7 +95,9 @@
     <Compile Include="Input\ControlEnum.cs" />
     <Compile Include="Input\Controls.cs" />
     <Compile Include="Input\JoystickAxis.cs" />
-    <Compile Include="IronPokemon.cs" />
+    <Compile Include="IronInterface\IronMove.cs" />
+    <Compile Include="IronInterface\IronPokemon.cs" />
+    <Compile Include="Move.cs" />
     <Compile Include="OpenTKDebugDraw.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Pokemon.cs" />

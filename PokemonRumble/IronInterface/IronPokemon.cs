@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PokemonRumble {
+namespace PokemonRumble.IronInterface {
 	public class IronPokemon {
 		public Pokemon Add(string Name) {
 			Pokemon pkmn = new Pokemon(Name);

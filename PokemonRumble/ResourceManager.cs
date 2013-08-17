@@ -7,6 +7,7 @@ using GLImp;
 using Microsoft.Scripting.Hosting;
 using IronPython.Hosting;
 using System.IO;
+using PokemonRumble.IronInterface;
 
 namespace PokemonRumble {
 	class ResourceManager {
@@ -18,8 +19,12 @@ namespace PokemonRumble {
 			ScriptEngine engine = Python.CreateEngine();
 
 			ScriptScope scope = engine.Runtime.CreateScope();
+
 			var PokemonModule = engine.CreateModule("Pokemon");
 			PokemonModule.SetVariable("Pokemon", new IronPokemon());
+
+			var MoveModule = engine.CreateModule("Move");
+			MoveModule.SetVariable("Move", new IronMove());
 
 			RecursivelyRunScriptsIn(@"Data\", engine, scope);			
 		}

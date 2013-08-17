@@ -9,6 +9,7 @@ namespace PokemonRumble {
 		public SkeletonRenderer skeletonRenderer;
 		public Skeleton skeleton;
 		public AnimationState state;
+		public AnimationStateData stateData;
 
 		public Animation(string AnimationFile) {
 			skeletonRenderer = new SkeletonRenderer();
@@ -21,11 +22,7 @@ namespace PokemonRumble {
 			skeleton.SetSlotsToSetupPose();
 
 			// Define mixing between animations.
-			AnimationStateData stateData = new AnimationStateData(skeleton.Data);
-			//if (name == "bulbasaur") {
-			//    stateData.SetMix("walk", "idle", 0.2f);
-			//    stateData.SetMix("idle", "walk", 0.4f);
-			//}
+			stateData = new AnimationStateData(skeleton.Data);
 			state = new AnimationState(stateData);
 			state.SetAnimation("idle", false);
 

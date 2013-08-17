@@ -9,7 +9,7 @@ using Box2DX.Collision;
 using Box2DX.Common;
 
 namespace PokemonRumble {
-	class BattleArena {
+	public class BattleArena {
 		protected AABB _worldAABB;
 		public World _world;
 

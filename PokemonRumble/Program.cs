@@ -29,9 +29,11 @@ namespace PokemonRumble {
 		}
 
 		private static void Initialize() {
+			ResourceManager.Initialize();
+
 			Arena = new BattleArena();
 			Player1 = new Player(Arena);
-			ResourceManager.Initialize();
+			
 			DrawTime.Start();
 			UpdateTime.Start();
 		}

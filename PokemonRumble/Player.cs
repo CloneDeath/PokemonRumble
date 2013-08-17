@@ -10,11 +10,15 @@ using GLImp;
 using Box2DX.Collision;
 
 namespace PokemonRumble {
-	class Player {
+	public class Player {
 		Body body;
 		Animation anim;
 		string PokemonName;
 		BattleArena World;
+
+		float DisableTime = 0;
+
+		public int Direction = -1;
 
 		public Pokemon Pokemon {
 			get {
@@ -26,7 +30,10 @@ namespace PokemonRumble {
 			this.World = arena;
 			InitPhysics(arena);
 			PokemonName = "bulbasaur";
-			anim = new Animation("Pokemon/" + PokemonName);
+			anim = new Animation("Pokemon/" + Pokemon.Name);
+			foreach (MixItem item in Pokemon.MixQueue) {
+				anim.stateData.SetMix(item.From, item.To, item.Time);
+			}
 		}
 
 		public double X {
@@ -67,30 +74,69 @@ namespace PokemonRumble {
 			body.SetFixedRotation(true);
 		}
 
+		public bool OnGround {
+			get {
+				return Accel.Y == 0;
+			}
+		}
+
+		public bool Disabled {
+			get {
+				return DisableTime > 0;
+			}
+		}
+
 		internal void Update(float dt) {
 			float speed = Pokemon.Speed;
-			if (Controls.IsDown(Control.Left)) {
-				if (anim.state.Animation.Name != "walk") {
-					anim.state.SetAnimation("walk", true);
-				}
-				anim.skeleton.FlipX = false;
-				body.ApplyForce(new Vec2(-speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
-			} else if (Controls.IsDown(Control.Right)) {
-				if (anim.state.Animation.Name != "walk") {
-					anim.state.SetAnimation("walk", true);
-				}
-				anim.skeleton.FlipX = true;
-				body.ApplyForce(new Vec2(speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
-			} else {
-				if (anim.state.Animation.Name != "idle") {
-					anim.state.SetAnimation("idle", true);
-				}
-				body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * speed, 0), new Vec2(.1f, .1f));
-			}
+			DisableTime -= dt;
 
-			if (Controls.IsPressed(Control.Jump) && System.Math.Abs(Accel.Y) == 0){
-				body.ApplyForce(new Vec2(0, 100), new Vec2(.1f, .1f));
+			if (!Disabled) {
+				if (OnGround) {
+					if (Controls.IsDown(Control.Left)) {
+						if (anim.state.Animation.Name != "walk") {
+							anim.state.SetAnimation("walk", true);
+						}
+						anim.skeleton.FlipX = false;
+						body.ApplyForce(new Vec2(-speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
+						Direction = -1;
+					} else if (Controls.IsDown(Control.Right)) {
+						if (anim.state.Animation.Name != "walk") {
+							anim.state.SetAnimation("walk", true);
+						}
+						anim.skeleton.FlipX = true;
+						body.ApplyForce(new Vec2(speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
+						Direction = 1;
+					} else {
+						if (anim.state.Animation.Name != "idle") {
+							anim.state.SetAnimation("idle", true);
+						}
+						body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * speed, 0), new Vec2(.1f, .1f));
+					}
+				}
+
+				if (Controls.IsPressed(Control.Jump) && OnGround) {
+					if (anim.state.Animation.Name != "jump") {
+						anim.state.SetAnimation("jump", false);
+					}
+					body.ApplyForce(new Vec2(0, 100), new Vec2(.1f, .1f));
+				}
+
+				if (Controls.IsPressed(Control.Attack)) {
+					Pokemon.Move[0].OnUse(this);
+				}
 			}
+		}
+
+		public void SetAnimation(string AnimationName, bool Loop) {
+			anim.state.SetAnimation(Pokemon.FilterAnimationAlias(AnimationName), Loop);
+		}
+
+		public void Disable(float time) {
+			DisableTime = time;
+		}
+
+		public void SetVelocity(float XVel, float YVel) {
+			body.SetLinearVelocity(new Vec2(XVel, YVel));
 		}
 
 		Vec2 Accel {
