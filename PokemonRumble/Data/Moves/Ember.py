@@ -6,16 +6,16 @@ def Attack(player):
 	player.SetAnimation("ember", False);
 	player.Disable(0.5);
 	player.Cooldown = 1;
-	for i in range(Random.Next(2) + 3):
+	for i in range(Random.Next(3) + 6):
 		fire = player.AddProjectile(player.Direction * 0.3, 0, 0.1, 0.1);
-		fire.SetVelocity(player.Direction * 10 * Random.NextDouble(), 2);
+		fire.SetVelocity(player.Direction * (Random.NextDouble() + 4), 2 + (Random.NextDouble()/3));
 		fire.CollisionMask = 0x0001;
 		fire.SetSkeleton("Moves/Ember");
 		fire.SetAnimation("idle", True);
 		fire.Z = Random.NextDouble() - 0.5;
 		fire.Permanent = True;
 		def Hit(self, other):
-			other.TakeSpecialDamage(7, player);
+			other.TakeSpecialDamage(2, player);
 			self.SetAnimation("burn", True);
 			self.Duration = 0.5;
 			self.Permanent = False;

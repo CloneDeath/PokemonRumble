@@ -12,7 +12,8 @@ Charmander.SpecialDefense = 50;
 Charmander.Speed = 65;
 
 Charmander.Width = .4;
-Charmander.Height =  .6
+Charmander.Height =  .6;
+Charmander.Weight = 8.5;
 
 Charmander.Move[0] = Move.Find("scratch");
 Charmander.Move[1] = Move.Find("ember");
