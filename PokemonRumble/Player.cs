@@ -10,15 +10,32 @@ using GLImp;
 using Box2DX.Collision;
 
 namespace PokemonRumble {
-	public class Player {
-		Body body;
+	public class Player : IEntity {
+		public Body body;
 		Animation anim;
 		string PokemonName;
 		BattleArena World;
+		bool Dead = false;
+
+		public float HP = 100;
 
 		float DisableTime = 0;
 
-		public int Direction = -1;
+		private int _direction = -1;
+
+		public int Direction {
+			get {
+				return _direction;
+			}
+			set {
+				_direction = value;
+				if (_direction < 0) {
+					anim.skeleton.FlipX = false;
+				} else {
+					anim.skeleton.FlipX = true;
+				}
+			}
+		}
 
 		public Pokemon Pokemon {
 			get {
@@ -26,7 +43,9 @@ namespace PokemonRumble {
 			}
 		}
 
-		public Player(BattleArena arena) {
+		ControlSet Controls;
+
+		public Player(BattleArena arena, ControlSet Controls) {
 			this.World = arena;
 			InitPhysics(arena);
 			PokemonName = "bulbasaur";
@@ -34,6 +53,8 @@ namespace PokemonRumble {
 			foreach (MixItem item in Pokemon.MixQueue) {
 				anim.stateData.SetMix(item.From, item.To, item.Time);
 			}
+			this.Controls = Controls;
+			this.HP = Pokemon.HP;
 		}
 
 		public double X {
@@ -65,13 +86,18 @@ namespace PokemonRumble {
 			//shapeDef.Friction = 2f;
 
 			// Add the shape to the body.
-			body.CreateFixture(shapeDef);
+			Fixture fix = body.CreateFixture(shapeDef);
+			fix.UserData = this;
 
 			// Now tell the dynamic body to compute it's mass properties base
 			// on its shape.
 			body.SetMassFromShapes();
 
 			body.SetFixedRotation(true);
+		}
+
+		internal void SetPosition(float X, float Y) {
+			body.SetPosition(new Vec2(X, Y));
 		}
 
 		public bool OnGround {
@@ -87,8 +113,23 @@ namespace PokemonRumble {
 		}
 
 		internal void Update(float dt) {
-			float speed = Pokemon.Speed;
+			if (Dead) {
+				this.HP = 0;
+				body.ApplyForce(new Vec2(-body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
+				return;
+			}
+
 			DisableTime -= dt;
+
+			for (int i = 0; i < DamageBoxes.Count(); i++){
+				DamageBox box = DamageBoxes[i];
+				box.Update(dt);
+				if (!box.IsAlive) {
+					box.Unload();
+					DamageBoxes.Remove(box);
+					i--;
+				}
+			}
 
 			if (!Disabled) {
 				if (OnGround) {
@@ -96,21 +137,19 @@ namespace PokemonRumble {
 						if (anim.state.Animation.Name != "walk") {
 							anim.state.SetAnimation("walk", true);
 						}
-						anim.skeleton.FlipX = false;
-						body.ApplyForce(new Vec2(-speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
+						body.ApplyForce(new Vec2(-Pokemon.Speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
 						Direction = -1;
 					} else if (Controls.IsDown(Control.Right)) {
 						if (anim.state.Animation.Name != "walk") {
 							anim.state.SetAnimation("walk", true);
 						}
-						anim.skeleton.FlipX = true;
-						body.ApplyForce(new Vec2(speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
+						body.ApplyForce(new Vec2(Pokemon.Speed - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
 						Direction = 1;
 					} else {
 						if (anim.state.Animation.Name != "idle") {
 							anim.state.SetAnimation("idle", true);
 						}
-						body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * speed, 0), new Vec2(.1f, .1f));
+						body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * Pokemon.Speed, 0), new Vec2(.1f, .1f));
 					}
 				}
 
@@ -121,10 +160,14 @@ namespace PokemonRumble {
 					body.ApplyForce(new Vec2(0, 100), new Vec2(.1f, .1f));
 				}
 
-				if (Controls.IsPressed(Control.Attack)) {
+				if (Controls.IsPressed(Control.Move0)) {
 					Pokemon.Move[0].OnUse(this);
 				}
 			}
+		}
+
+		public void TakeDamage(float amount) {
+			this.HP -= amount;
 		}
 
 		public void SetAnimation(string AnimationName, bool Loop) {
@@ -137,6 +180,13 @@ namespace PokemonRumble {
 
 		public void SetVelocity(float XVel, float YVel) {
 			body.SetLinearVelocity(new Vec2(XVel, YVel));
+		}
+
+		List<DamageBox> DamageBoxes = new List<DamageBox>();
+		public DamageBox AddDamageBox(float x, float y, float width, float height) {
+			var box = new DamageBox(this, x, y, width, height);
+			DamageBoxes.Add(box);
+			return box;
 		}
 
 		Vec2 Accel {
@@ -169,6 +219,16 @@ namespace PokemonRumble {
 			CurrentVelocity = body.GetLinearVelocity();
 		}
 
-		
+		public void OnCollides(IEntity other) {
+			
+		}
+
+		public void OnSeperate(IEntity other) {
+			
+		}
+
+		internal void Kill() {
+			this.Dead = true;
+		}
 	}
 }

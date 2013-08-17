@@ -10,11 +10,15 @@ using PokemonRumble.Input;
 
 namespace PokemonRumble {
 	class Program {
+		public static bool DebugDraw = false;
+
 		static Stopwatch DrawTime = new Stopwatch();
 		static Stopwatch UpdateTime = new Stopwatch();
 
 		static BattleArena Arena;
 		static Player Player1;
+		static Player Player2;
+		static FloatingCamera Camera;
 
 		static void Main(string[] args) {
 			GraphicsManager.SetTitle("Pokemon Rumble");
@@ -23,6 +27,7 @@ namespace PokemonRumble {
 			GraphicsManager.SetBackground(Color.SkyBlue);
 			GraphicsManager.EnableMipmap = true;
 			GraphicsManager.CameraUp = Vector3.UnitY;
+						
 
 			Initialize();
 			GraphicsManager.Start();
@@ -32,24 +37,33 @@ namespace PokemonRumble {
 			ResourceManager.Initialize();
 
 			Arena = new BattleArena();
-			Player1 = new Player(Arena);
+			Player1 = new Player(Arena, Controls.Player1);
+			Player2 = new Player(Arena, Controls.Player2);
+
+			Player1.SetPosition(-5, 1);
+			Player2.SetPosition(5, 1);
+			Player1.Direction = 1;
+
+			Camera = new FloatingCamera(Player1, Player2);
 			
 			DrawTime.Start();
 			UpdateTime.Start();
 		}
-
-		static float Zoom = 3;
 
 		static void GraphicsManager_Update() {
 			float dt = UpdateTime.ElapsedMilliseconds / 1000f;
 			UpdateTime.Restart();
 
 			Player1.Update(dt);
+			Player2.Update(dt);
 
-			Zoom -= MouseManager.GetMouseWheel() / 3f;
+			if (Player1.HP < 0) {
+				Player1.Kill();
+			}
 
-			GraphicsManager.SetCamera(new OpenTK.Vector3d(Player1.X, Player1.Y + 1, Zoom));
-			GraphicsManager.SetLookAt(new OpenTK.Vector3d(Player1.X, Player1.Y, 0));
+			if (Player2.HP < 0) {
+				Player2.Kill();
+			}
 		}
 
 		static void Draw() {
@@ -60,8 +74,7 @@ namespace PokemonRumble {
 			Arena.Draw();
 
 			Player1.Draw(dt);
-
-			
+			Player2.Draw(dt);
 		}
 	}
 }

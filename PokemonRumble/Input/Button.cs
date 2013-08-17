@@ -12,7 +12,7 @@ namespace PokemonRumble.Input {
 		}
 
 		Key key;
-		int btn;
+		JoystickButton btn;
 		JoystickAxis axis;
 		ButtonType buttonType;
 
@@ -22,7 +22,7 @@ namespace PokemonRumble.Input {
 			buttonType = ButtonType.Key;
 		}
 
-		public Button(int JoystickButton) {
+		public Button(JoystickButton JoystickButton) {
 			btn = JoystickButton;
 			buttonType = ButtonType.JSButton;
 		}
@@ -37,7 +37,7 @@ namespace PokemonRumble.Input {
 				case ButtonType.Axis:
 					return axis.IsDown();
 				case ButtonType.JSButton:
-					return JoystickManager.IsDown(0, btn);
+					return btn.IsDown();
 				case ButtonType.Key:
 					return KeyboardManager.IsDown(key);
 				default:
@@ -45,12 +45,16 @@ namespace PokemonRumble.Input {
 			}
 		}
 
+		public bool IsUp() {
+			return !IsDown();
+		}
+
 		public bool IsPressed() {
 			switch (buttonType) {
 				case ButtonType.Axis:
 					return axis.IsPressed();
 				case ButtonType.JSButton:
-					return JoystickManager.IsPressed(0, btn);
+					return btn.IsPressed();
 				case ButtonType.Key:
 					return KeyboardManager.IsPressed(key);
 				default:
@@ -63,7 +67,7 @@ namespace PokemonRumble.Input {
 				case ButtonType.Axis:
 					return axis.IsReleased();
 				case ButtonType.JSButton:
-					return JoystickManager.IsReleased(0, btn);
+					return btn.IsReleased();
 				case ButtonType.Key:
 					return KeyboardManager.IsReleased(key);
 				default:

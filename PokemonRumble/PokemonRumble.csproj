@@ -91,12 +91,18 @@
   <ItemGroup>
     <Compile Include="Animation.cs" />
     <Compile Include="BattleArena.cs" />
+    <Compile Include="DamageBox.cs" />
+    <Compile Include="FloatingCamera.cs" />
+    <Compile Include="IEntity.cs" />
     <Compile Include="Input\Button.cs" />
     <Compile Include="Input\ControlEnum.cs" />
     <Compile Include="Input\Controls.cs" />
+    <Compile Include="Input\ControlSet.cs" />
     <Compile Include="Input\JoystickAxis.cs" />
+    <Compile Include="Input\JoystickButton.cs" />
     <Compile Include="IronInterface\IronMove.cs" />
     <Compile Include="IronInterface\IronPokemon.cs" />
+    <Compile Include="MixItem.cs" />
     <Compile Include="Move.cs" />
     <Compile Include="OpenTKDebugDraw.cs" />
     <Compile Include="Player.cs" />

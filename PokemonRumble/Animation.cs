@@ -24,7 +24,7 @@ namespace PokemonRumble {
 			// Define mixing between animations.
 			stateData = new AnimationStateData(skeleton.Data);
 			state = new AnimationState(stateData);
-			state.SetAnimation("idle", false);
+			state.SetAnimation("idle", true);
 
 			skeleton.X = 0;
 			skeleton.Y = 0.1f;

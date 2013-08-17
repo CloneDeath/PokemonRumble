@@ -5,12 +5,14 @@ using System.Text;
 using GLImp;
 
 namespace PokemonRumble.Input {
-	class JoystickAxis {
+	public class JoystickAxis {
 		int AxisNumber;
 		double Threshold;
 		bool Previous = false;
+		int JoystickNumber;
 
-		public JoystickAxis(int AxisNumber, double Threshold) {
+		public JoystickAxis(int JoystickNumber, int AxisNumber, double Threshold) {
+			this.JoystickNumber = JoystickNumber;
 			this.AxisNumber = AxisNumber;
 			this.Threshold = Threshold;
 
@@ -19,7 +21,7 @@ namespace PokemonRumble.Input {
 		}
 
 		public bool IsDown() {
-			float Axis = JoystickManager.GetAxis(0, AxisNumber);
+			float Axis = JoystickManager.GetAxis(JoystickNumber, AxisNumber);
 			//Ensure that it is the same sign as the threshold, and beyond it.
 			return (Math.Abs(Axis) >= Math.Abs(Threshold)) 
 				&& (Math.Sign(Axis) == Math.Sign(Threshold));

@@ -9,7 +9,7 @@ using Box2DX.Collision;
 using Box2DX.Common;
 
 namespace PokemonRumble {
-	public class BattleArena {
+	public class BattleArena : ContactListener, IEntity {
 		protected AABB _worldAABB;
 		public World _world;
 
@@ -37,11 +37,16 @@ namespace PokemonRumble {
 			groundShapeDef.SetAsBox(50.0f, 10.0f);
 
 			// Add the ground shape to the ground body.
-			groundBody.CreateFixture(groundShapeDef);
+			Fixture fix = groundBody.CreateFixture(groundShapeDef);
+			fix.UserData = this;
 
 			DebugDraw draw = new OpenTKDebugDraw();
 			draw.Flags = DebugDraw.DrawFlags.Shape;
-			_world.SetDebugDraw(draw);
+			if (Program.DebugDraw) {
+				_world.SetDebugDraw(draw);
+			}
+
+			_world.SetContactListener(this);
 		}
 
 		internal void Update(float dt) {
@@ -72,6 +77,42 @@ namespace PokemonRumble {
 									 new Vector3d(10, 0.0001, 5),
 									 new Vector3d(10, 0.0001, -5),
 									 new Vector2d(2, 4));
+		}
+
+		public void OnCollides(IEntity other) {
+			//eh
+		}
+
+		public void OnSeperate(IEntity other) {
+			//eh
+		}
+
+		public void BeginContact(Contact contact) {
+			if (contact.FixtureA.UserData is IEntity && contact.FixtureB.UserData is IEntity) {
+				IEntity A = (IEntity)contact.FixtureA.UserData;
+				IEntity B = (IEntity)contact.FixtureB.UserData;
+
+				A.OnCollides(B);
+				B.OnCollides(A);
+			}
+		}
+
+		public void EndContact(Contact contact) {
+			if (contact.FixtureA.UserData is IEntity && contact.FixtureB.UserData is IEntity) {
+				IEntity A = (IEntity)contact.FixtureA.UserData;
+				IEntity B = (IEntity)contact.FixtureB.UserData;
+
+				A.OnSeperate(B);
+				B.OnSeperate(A);
+			}
+		}
+
+		public void PostSolve(Contact contact, ContactImpulse impulse) {
+			//eh
+		}
+
+		public void PreSolve(Contact contact, Manifold oldManifold) {
+			//eh
 		}
 	}
 }

@@ -6,6 +6,7 @@ from Move import *;
 Bulbasaur = Pokemon.Add("bulbasaur");
 Bulbasaur.DisplayName = "Bulbasaur";
 Bulbasaur.Speed = 3;
+Bulbasaur.HP = 100;
 
 Bulbasaur.Move[0] = Move.Find("tackle");
 Bulbasaur.Move[1] = Move.Find("leechseed");
