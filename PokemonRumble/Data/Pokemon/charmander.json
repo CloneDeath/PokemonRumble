@@ -173,6 +173,7 @@
 			},
 			"Head": {
 				"attachment": [
+					{ "time": 0, "name": "Head/Head_01" },
 					{ "time": 0.3333, "name": "Head/Head_03" }
 				],
 				"color": [
@@ -272,6 +273,7 @@
 		"slots": {
 			"Head": {
 				"attachment": [
+					{ "time": 0, "name": "Head/Head_01" },
 					{ "time": 0.1333, "name": "Head/Head_03" },
 					{ "time": 0.2333, "name": "Head/Head_04" },
 					{ "time": 0.3333, "name": "Head/Head_05" }
@@ -417,6 +419,11 @@
 			}
 		},
 		"slots": {
+			"Head": {
+				"attachment": [
+					{ "time": 0, "name": "Head/Head_01" }
+				]
+			},
 			"Tail": {
 				"attachment": [
 					{ "time": 0, "name": "Tail/Tail_On_02" },
@@ -538,6 +545,13 @@
 					{ "time": 0, "x": 1, "y": 1 }
 				]
 			}
+		},
+		"slots": {
+			"Head": {
+				"attachment": [
+					{ "time": 0, "name": "Head/Head_01" }
+				]
+			}
 		}
 	},
 	"scratch": {
@@ -610,6 +624,11 @@
 			}
 		},
 		"slots": {
+			"Head": {
+				"attachment": [
+					{ "time": 0, "name": "Head/Head_01" }
+				]
+			},
 			"Tail": {
 				"attachment": [
 					{ "time": 0, "name": "Tail/Tail_On_02" },
@@ -726,6 +745,11 @@
 			}
 		},
 		"slots": {
+			"Head": {
+				"attachment": [
+					{ "time": 0, "name": "Head/Head_01" }
+				]
+			},
 			"Tail": {
 				"attachment": [
 					{ "time": 0, "name": "Tail/Tail_On_02" },
