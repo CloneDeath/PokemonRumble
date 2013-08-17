@@ -7,14 +7,26 @@ using PokemonRumble.Input;
 using Box2DX.Common;
 using OpenTK;
 using GLImp;
+using Box2DX.Collision;
 
 namespace PokemonRumble {
 	class Player {
 		Body body;
 		Animation anim;
+		string PokemonName;
+		BattleArena World;
+
+		public Pokemon Pokemon {
+			get {
+				return PokemonManager.Find(PokemonName);
+			}
+		}
+
 		public Player(BattleArena arena) {
+			this.World = arena;
 			InitPhysics(arena);
-			anim = new Animation("Pokemon/bulbasaur");
+			PokemonName = "bulbasaur";
+			anim = new Animation("Pokemon/" + PokemonName);
 		}
 
 		public double X {
@@ -56,7 +68,7 @@ namespace PokemonRumble {
 		}
 
 		internal void Update(float dt) {
-			float speed = 3.0f;
+			float speed = Pokemon.Speed;
 			if (Controls.IsDown(Control.Left)) {
 				if (anim.state.Animation.Name != "walk") {
 					anim.state.SetAnimation("walk", true);
@@ -76,11 +88,19 @@ namespace PokemonRumble {
 				body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * speed, 0), new Vec2(.1f, .1f));
 			}
 
-			if (Controls.IsPressed(Control.Jump)){
+			if (Controls.IsPressed(Control.Jump) && System.Math.Abs(Accel.Y) == 0){
 				body.ApplyForce(new Vec2(0, 100), new Vec2(.1f, .1f));
 			}
 		}
 
+		Vec2 Accel {
+			get {
+				return CurrentVelocity - PreviousVelocity;
+			}
+		}
+
+		Vec2 PreviousVelocity = new Vec2();
+		Vec2 CurrentVelocity = new Vec2();
 		public void Draw(float dt) {
 			anim.state.Update(dt);
 
@@ -98,6 +118,9 @@ namespace PokemonRumble {
 					new Vector3d(anim.skeleton.X + 0.4, 0.002, 0.3),
 					new Vector3d(anim.skeleton.X - 0.4, 0.002, 0.3),
 					ResourceManager.Shadow);
+
+			PreviousVelocity = CurrentVelocity;
+			CurrentVelocity = body.GetLinearVelocity();
 		}
 
 		

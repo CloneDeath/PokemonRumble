@@ -61,9 +61,6 @@
     <Reference Include="Microsoft.Scripting">
       <HintPath>..\External\Microsoft.Scripting.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Scripting.AspNet">
-      <HintPath>..\External\Microsoft.Scripting.AspNet.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Scripting.Metadata">
       <HintPath>..\External\Microsoft.Scripting.Metadata.dll</HintPath>
     </Reference>

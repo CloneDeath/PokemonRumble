@@ -1,3 +1,4 @@
-print "Hello World";
-for i in range(10):
-	print "NO U" + str(i)
+from Pokemon import *;
+
+Bulbasaur = Pokemon.Add("bulbasaur");
+Bulbasaur.Speed = 10;

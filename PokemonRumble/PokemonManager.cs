@@ -6,5 +6,9 @@ using System.Text;
 namespace PokemonRumble {
 	class PokemonManager {
 		public static Dictionary<string, Pokemon> Pokemons = new Dictionary<string, Pokemon>();
+
+		internal static Pokemon Find(string PokemonName) {
+			return Pokemons[PokemonName];
+		}
 	}
 }

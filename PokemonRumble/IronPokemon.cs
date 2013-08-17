@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PokemonRumble {
 	public class IronPokemon {
-		public Pokemon AddPokemon(string Name) {
+		public Pokemon Add(string Name) {
 			Pokemon pkmn = new Pokemon(Name);
 			PokemonManager.Pokemons.Add(Name, pkmn);
 			return pkmn;
