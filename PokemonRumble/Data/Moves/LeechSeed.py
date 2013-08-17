@@ -13,14 +13,14 @@ def Attack(player):
 	seed.SetAnimation("seed", False);
 	seed.Z = Random.NextDouble() - 0.5;
 	seed.Permanent = True;
-	def Leech(other):
+	def Leech(self, other):
 		amount = other.HP / 10;
 		other.HP -= amount;
 		player.HP += amount;
 	seed.OnCollidePlayer = Leech;
 	
-	def Earth():
-		seed.SetAnimation("plant", False);
+	def Earth(self):
+		self.SetAnimation("plant", False);
 	seed.OnCollideEarth = Earth;
 		
 			

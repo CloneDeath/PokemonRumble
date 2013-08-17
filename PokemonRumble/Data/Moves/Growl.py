@@ -14,7 +14,7 @@ def Attack(player):
 		Hit.SetAnimation("idle", False);
 		if (player.Direction < 0):
 			Hit.FlipAnimation();
-		def AttackDown(other):
+		def AttackDown(self, other):
 			other.Disable(1);
 			other.Attack *= 0.9;
 		Hit.OnCollidePlayer = AttackDown;

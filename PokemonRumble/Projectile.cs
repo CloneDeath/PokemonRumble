@@ -13,8 +13,8 @@ namespace PokemonRumble {
 		Player creator;
 		Fixture fix;
 
-		public Action<Player> OnCollidePlayer;
-		public Action OnCollideEarth;
+		public Action<Projectile, Player> OnCollidePlayer;
+		public Action<Projectile> OnCollideEarth;
 
 		public float Duration = 1;
 
@@ -110,13 +110,13 @@ namespace PokemonRumble {
 		public void OnCollides(IEntity other) {
 			if (other is Player && other != creator) {
 				if (OnCollidePlayer != null) {
-					OnCollidePlayer((Player)other);
+					OnCollidePlayer(this, (Player)other);
 				}
 			}
 
 			if (other is BattleArena) {
 				if (OnCollideEarth != null) {
-					OnCollideEarth();
+					OnCollideEarth(this);
 				}
 			}
 		}

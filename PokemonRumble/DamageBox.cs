@@ -13,7 +13,7 @@ namespace PokemonRumble {
 		Player creator;
 		public float Duration = 1.0f;
 
-		public Action<Player> OnCollidePlayer;
+		public Action<DamageBox, Player> OnCollidePlayer;
 
 		Stopwatch Update = new Stopwatch();
 		Animation anim;
@@ -82,7 +82,7 @@ namespace PokemonRumble {
 		public void OnCollides(IEntity other) {
 			if (other is Player && other != creator) {
 				if (OnCollidePlayer != null) {
-					OnCollidePlayer((Player)other);
+					OnCollidePlayer(this, (Player)other);
 				}
 			}
 		}

@@ -14,15 +14,15 @@ def Attack(player):
 		fire.SetAnimation("idle", True);
 		fire.Z = Random.NextDouble() - 0.5;
 		fire.Permanent = True;
-		def Hit(other):
+		def Hit(self, other):
 			other.TakeSpecialDamage(7, player);
-			fire.SetAnimation("burn", True);
-			fire.Duration = 0.5;
-			fire.Permanent = False;
+			self.SetAnimation("burn", True);
+			self.Duration = 0.5;
+			self.Permanent = False;
 		fire.OnCollidePlayer = Hit;
 		
-		def Earth():
-			fire.Permanent = False;
-			fire.Unload();
+		def Earth(self):
+			self.Permanent = False;
+			self.Unload();
 		fire.OnCollideEarth = Earth;
 Ember.OnUse = Attack;

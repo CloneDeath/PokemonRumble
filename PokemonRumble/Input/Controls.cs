@@ -22,6 +22,8 @@ namespace PokemonRumble.Input {
 			Player1.AddKeymap(Control.Move1,	new JoystickButton(0, 2));
 			Player1.AddKeymap(Control.Move2,	new JoystickButton(0, 1));
 			Player1.AddKeymap(Control.Move3,	new JoystickButton(0, 3));
+			Player1.AddKeymap(Control.Pause,	new JoystickButton(0, 7));
+
 
 			Player2.AddKeymap(Control.Accept,	new JoystickButton(1, 0));
 			Player2.AddKeymap(Control.Cancel,	new JoystickButton(1, 1));
@@ -34,6 +36,7 @@ namespace PokemonRumble.Input {
 			Player2.AddKeymap(Control.Move1,	new JoystickButton(1, 2));
 			Player2.AddKeymap(Control.Move2,	new JoystickButton(1, 1));
 			Player2.AddKeymap(Control.Move3,	new JoystickButton(1, 3));
+			Player1.AddKeymap(Control.Pause,	new JoystickButton(1, 7));
 		}
 	}
 }
