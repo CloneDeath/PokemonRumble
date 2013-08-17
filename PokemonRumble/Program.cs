@@ -37,8 +37,8 @@ namespace PokemonRumble {
 			ResourceManager.Initialize();
 
 			Arena = new BattleArena();
-			Player1 = new Player(Arena, Controls.Player1);
-			Player2 = new Player(Arena, Controls.Player2);
+			Player1 = new Player(Arena, Controls.Player1, -1); //needs to be negative, thanks to box2d
+			Player2 = new Player(Arena, Controls.Player2, -2);
 
 			Player1.SetPosition(-5, 1);
 			Player2.SetPosition(5, 1);

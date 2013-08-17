@@ -1,0 +1,33 @@
+{
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "RazorLeaf", "bone": "root", "attachment": "RazorLeaf_04" }
+],
+"skins": {
+	"default": {
+		"RazorLeaf": {
+			"RazorLeaf_01": { "width": 20, "height": 11 },
+			"RazorLeaf_02": { "width": 20, "height": 11 },
+			"RazorLeaf_03": { "width": 20, "height": 11 },
+			"RazorLeaf_04": { "width": 20, "height": 11 }
+		}
+	}
+},
+"events": {},
+"animations": {
+	"idle": {
+		"slots": {
+			"RazorLeaf": {
+				"attachment": [
+					{ "time": 0, "name": "RazorLeaf_01" },
+					{ "time": 0.0666, "name": "RazorLeaf_04" },
+					{ "time": 0.1333, "name": "RazorLeaf_02" },
+					{ "time": 0.2, "name": "RazorLeaf_03" }
+				]
+			}
+		}
+	}
+}
+}

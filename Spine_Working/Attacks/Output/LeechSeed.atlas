@@ -1,0 +1,26 @@
+
+LeechSeed.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Plant_01
+  rotate: false
+  xy: 13, 3
+  size: 9, 5
+  orig: 9, 5
+  offset: 0, 0
+  index: -1
+Plant_02
+  rotate: false
+  xy: 2, 2
+  size: 9, 6
+  orig: 9, 6
+  offset: 0, 0
+  index: -1
+Seed
+  rotate: false
+  xy: 24, 3
+  size: 6, 5
+  orig: 6, 5
+  offset: 0, 0
+  index: -1

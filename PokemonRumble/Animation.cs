@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Spine;
+using GLImp;
+using System.Diagnostics;
 
 namespace PokemonRumble {
 	class Animation {
@@ -10,6 +12,9 @@ namespace PokemonRumble {
 		public Skeleton skeleton;
 		public AnimationState state;
 		public AnimationStateData stateData;
+		public Stopwatch drawtime;
+
+		public float Z = 0.0f;
 
 		public Animation(string AnimationFile) {
 			skeletonRenderer = new SkeletonRenderer();
@@ -24,11 +29,33 @@ namespace PokemonRumble {
 			// Define mixing between animations.
 			stateData = new AnimationStateData(skeleton.Data);
 			state = new AnimationState(stateData);
-			state.SetAnimation("idle", true);
+			//state.SetAnimation("idle", true);
 
 			skeleton.X = 0;
 			skeleton.Y = 0.1f;
 			skeleton.UpdateWorldTransform();
+
+			drawtime = new Stopwatch();
+			drawtime.Start();
+			GraphicsManager.Render += Draw;
+			
+		}
+
+
+		public void Draw() {
+			float dt = drawtime.ElapsedMilliseconds / 1000.0f;
+			drawtime.Restart();
+
+			state.Update(dt);
+			state.Apply(skeleton);
+			skeleton.RootBone.ScaleX = 1 / 50f;
+			skeleton.RootBone.ScaleY = 1 / 50f;
+			skeleton.UpdateWorldTransform();
+			skeletonRenderer.Draw(skeleton, Z);
+		}
+
+		internal void Unload() {
+			GraphicsManager.Render -= Draw;
 		}
 	}
 }

@@ -6,7 +6,6 @@ using GLImp;
 
 namespace PokemonRumble.Input {
 	public class JoystickButton {
-		bool Previous = false;
 		int JoystickNumber;
 		int ButtonNumber;
 

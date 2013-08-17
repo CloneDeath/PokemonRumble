@@ -17,6 +17,7 @@ namespace PokemonRumble {
 		public List<MixItem> MixQueue = new List<MixItem>();
 		Dictionary<string, string> AnimationAlias = new Dictionary<string, string>();
 		public float HP;
+		public string Animation;
 
 
 		public Pokemon(string Name) {

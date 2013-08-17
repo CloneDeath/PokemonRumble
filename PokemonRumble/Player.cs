@@ -17,7 +17,16 @@ namespace PokemonRumble {
 		BattleArena World;
 		bool Dead = false;
 
-		public float HP = 100;
+		private float _HP = 100;
+		public float HP {
+			get { return _HP; }
+			set {
+				if (value > Pokemon.HP) {
+					value = Pokemon.HP;
+				}
+				_HP = value;
+			}
+		}
 
 		float DisableTime = 0;
 
@@ -45,16 +54,21 @@ namespace PokemonRumble {
 
 		ControlSet Controls;
 
-		public Player(BattleArena arena, ControlSet Controls) {
+		public short ID;
+
+		public Player(BattleArena arena, ControlSet Controls, int ID) {
 			this.World = arena;
-			InitPhysics(arena);
 			PokemonName = "bulbasaur";
-			anim = new Animation("Pokemon/" + Pokemon.Name);
+			anim = new Animation(Pokemon.Animation);
+			anim.state.SetAnimation("idle", true);
 			foreach (MixItem item in Pokemon.MixQueue) {
 				anim.stateData.SetMix(item.From, item.To, item.Time);
 			}
 			this.Controls = Controls;
 			this.HP = Pokemon.HP;
+			this.ID = (short)ID;
+
+			InitPhysics(arena);
 		}
 
 		public double X {
@@ -88,6 +102,9 @@ namespace PokemonRumble {
 			// Add the shape to the body.
 			Fixture fix = body.CreateFixture(shapeDef);
 			fix.UserData = this;
+			fix.Filter.GroupIndex = this.ID;
+			fix.Filter.CategoryBits = 0x0002;
+			fix.Filter.MaskBits = 0xFFFF;
 
 			// Now tell the dynamic body to compute it's mass properties base
 			// on its shape.
@@ -124,16 +141,6 @@ namespace PokemonRumble {
 
 			DisableTime -= dt;
 
-			for (int i = 0; i < DamageBoxes.Count(); i++){
-				DamageBox box = DamageBoxes[i];
-				box.Update(dt);
-				if (!box.IsAlive) {
-					box.Unload();
-					DamageBoxes.Remove(box);
-					i--;
-				}
-			}
-
 			if (!Disabled) {
 				if (OnGround) {
 					if (Controls.IsDown(Control.Left)) {
@@ -166,11 +173,23 @@ namespace PokemonRumble {
 				if (Controls.IsPressed(Control.Move0)) {
 					Pokemon.Move[0].OnUse(this);
 				}
-			}
-		}
 
-		public void TakeDamage(float amount) {
-			this.HP -= amount;
+				if (Controls.IsPressed(Control.Move1)) {
+					Pokemon.Move[1].OnUse(this);
+				}
+
+				if (Controls.IsPressed(Control.Move2)) {
+					if (Pokemon.Move[2].OnUse != null) {
+						Pokemon.Move[2].OnUse(this);
+					}
+				}
+
+				if (Controls.IsPressed(Control.Move3)) {
+					if (Pokemon.Move[3].OnUse != null) {
+						Pokemon.Move[3].OnUse(this);
+					}
+				}
+			}
 		}
 
 		public void SetAnimation(string AnimationName, bool Loop) {
@@ -185,11 +204,12 @@ namespace PokemonRumble {
 			body.SetLinearVelocity(new Vec2(XVel, YVel));
 		}
 
-		List<DamageBox> DamageBoxes = new List<DamageBox>();
 		public DamageBox AddDamageBox(float x, float y, float width, float height) {
-			var box = new DamageBox(this, x, y, width, height);
-			DamageBoxes.Add(box);
-			return box;
+			return new DamageBox(this, x, y, width, height);
+		}
+
+		public Projectile AddProjectile(float x, float y, float width, float height) {
+			return new Projectile(this, x, y, width, height);
 		}
 
 		Vec2 Accel {
@@ -201,16 +221,8 @@ namespace PokemonRumble {
 		Vec2 PreviousVelocity = new Vec2();
 		Vec2 CurrentVelocity = new Vec2();
 		public void Draw(float dt) {
-			anim.state.Update(dt);
-
 			anim.skeleton.X = (float)this.X;
 			anim.skeleton.Y = (float)this.Y - 0.15f;
-
-			anim.state.Apply(anim.skeleton);
-			anim.skeleton.RootBone.ScaleX = 1 / 50f;
-			anim.skeleton.RootBone.ScaleY = 1 / 50f;
-			anim.skeleton.UpdateWorldTransform();
-			anim.skeletonRenderer.Draw(anim.skeleton);
 
 			GraphicsManager.DrawQuad(new Vector3d(anim.skeleton.X - 0.4, 0.002, -0.3),
 					new Vector3d(anim.skeleton.X + 0.4, 0.002, -0.3),

@@ -1,0 +1,38 @@
+{
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Plant", "bone": "root", "attachment": "Plant_01" }
+],
+"skins": {
+	"default": {
+		"Plant": {
+			"Plant_01": { "y": 2.6, "width": 9, "height": 5 },
+			"Plant_02": { "y": 3.16, "width": 9, "height": 6 },
+			"Seed": { "y": 2.51, "width": 6, "height": 5 }
+		}
+	}
+},
+"animations": {
+	"plant": {
+		"slots": {
+			"Plant": {
+				"attachment": [
+					{ "time": 0, "name": "Plant_01" },
+					{ "time": 1.8333, "name": "Plant_02" }
+				]
+			}
+		}
+	},
+	"seed": {
+		"slots": {
+			"Plant": {
+				"attachment": [
+					{ "time": 0, "name": "Seed" }
+				]
+			}
+		}
+	}
+}
+}

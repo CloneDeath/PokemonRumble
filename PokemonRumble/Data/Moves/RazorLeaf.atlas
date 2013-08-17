@@ -1,0 +1,33 @@
+
+RazorLeaf.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+RazorLeaf_01
+  rotate: false
+  xy: 2, 2
+  size: 20, 11
+  orig: 20, 11
+  offset: 0, 0
+  index: -1
+RazorLeaf_02
+  rotate: false
+  xy: 24, 2
+  size: 20, 11
+  orig: 20, 11
+  offset: 0, 0
+  index: -1
+RazorLeaf_03
+  rotate: false
+  xy: 46, 2
+  size: 20, 11
+  orig: 20, 11
+  offset: 0, 0
+  index: -1
+RazorLeaf_04
+  rotate: false
+  xy: 68, 2
+  size: 20, 11
+  orig: 20, 11
+  offset: 0, 0
+  index: -1

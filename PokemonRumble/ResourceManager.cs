@@ -26,6 +26,9 @@ namespace PokemonRumble {
 			var MoveModule = engine.CreateModule("Move");
 			MoveModule.SetVariable("Move", new IronMove());
 
+			var RandModule = engine.CreateModule("Random");
+			RandModule.SetVariable("Random", new Random());
+
 			RecursivelyRunScriptsIn(@"Data\", engine, scope);			
 		}
 
@@ -33,8 +36,6 @@ namespace PokemonRumble {
 			foreach (string file in Directory.GetFiles(Location)) {
 				if (Path.GetExtension(file) == ".py") {
 					ScriptScope script = engine.ExecuteFile(file, scope);
-					//PowerResult result1 = script.powerUpRack();
-					//PowerResult result2 = script.powerDownRack();
 				}
 			}
 

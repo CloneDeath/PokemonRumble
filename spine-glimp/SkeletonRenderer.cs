@@ -12,10 +12,10 @@ namespace Spine {
 			Bone.yDown = false;
 		}
 
-		public void Draw(Skeleton skeleton) {
+		public void Draw(Skeleton skeleton, float Z) {
 			List<Slot> DrawOrder = skeleton.DrawOrder;
 
-			float depth = 0;
+			float depth = Z;
 			float depth_offset = 0.0001f;
 			for (int i = 0; i < DrawOrder.Count; i++) {
 				Slot slot = DrawOrder[i];

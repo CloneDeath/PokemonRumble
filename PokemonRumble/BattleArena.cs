@@ -24,6 +24,7 @@ namespace PokemonRumble {
 			gravity.Set(0.0f, -10.0f);
 			bool doSleep = true;
 			_world = new World(_worldAABB, gravity, doSleep);
+			_world.SetContactFilter(new ContactFilter());
 
 			BodyDef groundBodyDef = new BodyDef();
 			groundBodyDef.Position.Set(0.0f, -10.0f);
@@ -39,6 +40,7 @@ namespace PokemonRumble {
 			// Add the ground shape to the ground body.
 			Fixture fix = groundBody.CreateFixture(groundShapeDef);
 			fix.UserData = this;
+			fix.Filter.CategoryBits = 0x0001;
 
 			DebugDraw draw = new OpenTKDebugDraw();
 			draw.Flags = DebugDraw.DrawFlags.Shape;
