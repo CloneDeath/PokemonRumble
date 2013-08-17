@@ -1,0 +1,19 @@
+
+ScaryFace.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+ScaryFace_01
+  rotate: false
+  xy: 2, 4
+  size: 41, 23
+  orig: 41, 23
+  offset: 0, 0
+  index: -1
+ScaryFace_Skew
+  rotate: false
+  xy: 45, 2
+  size: 29, 25
+  orig: 29, 25
+  offset: 0, 0
+  index: -1
