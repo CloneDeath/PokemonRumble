@@ -7,10 +7,12 @@ using System.Drawing;
 using System.Diagnostics;
 using OpenTK;
 using PokemonRumble.Input;
+using PokemonRumble.Arenas;
+using OpenTK.Graphics.OpenGL;
 
 namespace PokemonRumble {
 	class Program {
-		public static bool DebugDraw = true;
+		public static bool DebugDraw = false;
 
 		static Stopwatch DrawTime = new Stopwatch();
 		static Stopwatch UpdateTime = new Stopwatch();
@@ -21,6 +23,8 @@ namespace PokemonRumble {
 		static FloatingCamera Camera;
 
 		static void Main(string[] args) {
+			GraphicsManager.UseExperimentalFullAlpha = true;
+			GraphicsManager.DisableDepthTest = true;
 			GraphicsManager.SetTitle("Pokemon Rumble");
 			GraphicsManager.Render += new GraphicsManager.Renderer(Draw);
 			GraphicsManager.Update += new GraphicsManager.Updater(GraphicsManager_Update);
@@ -28,6 +32,7 @@ namespace PokemonRumble {
 			GraphicsManager.EnableMipmap = true;
 			GraphicsManager.CameraUp = Vector3.UnitY;
 			GraphicsManager.SetWindowState(WindowState.Maximized);
+			
 						
 
 			Initialize();
@@ -37,12 +42,12 @@ namespace PokemonRumble {
 		private static void Initialize() {
 			ResourceManager.Initialize();
 
-			Arena = new BattleArena();
-			Player1 = new Player(Arena, Controls.Player1, -1, "charmander"); //needs to be negative, thanks to box2d
+			Arena = new Forrest();
+			Player1 = new Player(Arena, Controls.Player1, -1, "squirtle"); //needs to be negative, thanks to box2d
 			Player2 = new Player(Arena, Controls.Player2, -2, "bulbasaur");
 
-			Player1.SetPosition(-5, 1);
-			Player2.SetPosition(5, 1);
+			Player1.SetPosition(-5, 3);
+			Player2.SetPosition(5, 3);
 			Player1.Direction = 1;
 
 			Camera = new FloatingCamera(Player1, Player2);
@@ -67,15 +72,19 @@ namespace PokemonRumble {
 			}
 		}
 
+		public static Action MiddleDrawQueue;
 		static void Draw() {
 			float dt = DrawTime.ElapsedMilliseconds / 1000f;
 			DrawTime.Restart();
 
 			Arena.Update(dt);
-			Arena.Draw();
-
+			Arena.DrawBehind();
 			Player1.Draw(dt);
 			Player2.Draw(dt);
+			if (MiddleDrawQueue != null) {
+				MiddleDrawQueue();
+			}
+			Arena.DrawFront();
 		}
 	}
 }

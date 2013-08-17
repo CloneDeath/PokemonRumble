@@ -1,0 +1,285 @@
+
+Squirtle.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+ArmBack/ArmBack_01
+  rotate: false
+  xy: 450, 21
+  size: 10, 9
+  orig: 10, 9
+  offset: 0, 0
+  index: -1
+ArmBack/ArmBack_02
+  rotate: false
+  xy: 41, 2
+  size: 10, 8
+  orig: 10, 8
+  offset: 0, 0
+  index: -1
+ArmBack/ArmBack_03
+  rotate: true
+  xy: 462, 21
+  size: 9, 10
+  orig: 9, 10
+  offset: 0, 0
+  index: -1
+ArmBack/ArmBack_04
+  rotate: false
+  xy: 334, 2
+  size: 12, 9
+  orig: 12, 9
+  offset: 0, 0
+  index: -1
+ArmFront/ArmFront_01
+  rotate: false
+  xy: 396, 2
+  size: 11, 10
+  orig: 11, 10
+  offset: 0, 0
+  index: -1
+ArmFront/ArmFront_02
+  rotate: false
+  xy: 2, 2
+  size: 11, 8
+  orig: 11, 8
+  offset: 0, 0
+  index: -1
+ArmFront/ArmFront_03
+  rotate: false
+  xy: 426, 19
+  size: 10, 11
+  orig: 10, 11
+  offset: 0, 0
+  index: -1
+ArmFront/ArmFront_04
+  rotate: false
+  xy: 287, 2
+  size: 14, 9
+  orig: 14, 9
+  offset: 0, 0
+  index: -1
+Body/Body_01
+  rotate: false
+  xy: 202, 12
+  size: 20, 18
+  orig: 20, 18
+  offset: 0, 0
+  index: -1
+Body/Body_02
+  rotate: false
+  xy: 224, 12
+  size: 20, 18
+  orig: 20, 18
+  offset: 0, 0
+  index: -1
+Body/Body_03
+  rotate: false
+  xy: 2, 12
+  size: 23, 18
+  orig: 23, 18
+  offset: 0, 0
+  index: -1
+Shell/Shell_02
+  rotate: false
+  xy: 2, 12
+  size: 23, 18
+  orig: 23, 18
+  offset: 0, 0
+  index: -1
+Head/Head_01
+  rotate: false
+  xy: 287, 13
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1
+Head/Head_02
+  rotate: false
+  xy: 307, 13
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1
+Head/Head_03
+  rotate: false
+  xy: 327, 13
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1
+Head/Head_04
+  rotate: true
+  xy: 246, 12
+  size: 18, 19
+  orig: 18, 19
+  offset: 0, 0
+  index: -1
+Head/Head_05
+  rotate: false
+  xy: 267, 12
+  size: 18, 18
+  orig: 18, 18
+  offset: 0, 0
+  index: -1
+Head/Head_06
+  rotate: false
+  xy: 347, 13
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1
+LegBack/LegBack_01
+  rotate: true
+  xy: 53, 2
+  size: 8, 9
+  orig: 8, 9
+  offset: 0, 0
+  index: -1
+LegBack/LegBack_02
+  rotate: false
+  xy: 64, 2
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+LegBack/LegBack_03
+  rotate: true
+  xy: 15, 2
+  size: 8, 11
+  orig: 8, 11
+  offset: 0, 0
+  index: -1
+LegBack/LegBack_04
+  rotate: false
+  xy: 319, 2
+  size: 13, 9
+  orig: 13, 9
+  offset: 0, 0
+  index: -1
+LegBack/LegBack_05
+  rotate: false
+  xy: 367, 2
+  size: 13, 11
+  orig: 13, 11
+  offset: 0, 0
+  index: -1
+LegBack/LegBack_06
+  rotate: false
+  xy: 28, 2
+  size: 11, 8
+  orig: 11, 8
+  offset: 0, 0
+  index: -1
+LegBack/LegBack_07
+  rotate: false
+  xy: 382, 2
+  size: 12, 10
+  orig: 12, 10
+  offset: 0, 0
+  index: -1
+LegFront/LegFront_01
+  rotate: true
+  xy: 474, 21
+  size: 9, 10
+  orig: 9, 10
+  offset: 0, 0
+  index: -1
+LegFront/LegFront_02
+  rotate: false
+  xy: 486, 21
+  size: 9, 9
+  orig: 9, 9
+  offset: 0, 0
+  index: -1
+LegFront/LegFront_03
+  rotate: true
+  xy: 348, 2
+  size: 9, 12
+  orig: 9, 12
+  offset: 0, 0
+  index: -1
+LegFront/LegFront_04
+  rotate: false
+  xy: 438, 19
+  size: 10, 11
+  orig: 10, 11
+  offset: 0, 0
+  index: -1
+LegFront/LegFront_05
+  rotate: false
+  xy: 303, 2
+  size: 14, 9
+  orig: 14, 9
+  offset: 0, 0
+  index: -1
+Shell/Shell_01
+  rotate: false
+  xy: 27, 12
+  size: 23, 18
+  orig: 23, 18
+  offset: 0, 0
+  index: -1
+Shell/Shell_03
+  rotate: false
+  xy: 52, 12
+  size: 23, 18
+  orig: 23, 18
+  offset: 0, 0
+  index: -1
+Shell/Shell_04
+  rotate: false
+  xy: 77, 12
+  size: 23, 18
+  orig: 23, 18
+  offset: 0, 0
+  index: -1
+Shell/Shell_05
+  rotate: false
+  xy: 102, 12
+  size: 23, 18
+  orig: 23, 18
+  offset: 0, 0
+  index: -1
+Shell/Shell_06
+  rotate: false
+  xy: 127, 12
+  size: 23, 18
+  orig: 23, 18
+  offset: 0, 0
+  index: -1
+Shell/Shell_07
+  rotate: false
+  xy: 152, 12
+  size: 23, 18
+  orig: 23, 18
+  offset: 0, 0
+  index: -1
+Shell/Shell_08
+  rotate: false
+  xy: 177, 12
+  size: 23, 18
+  orig: 23, 18
+  offset: 0, 0
+  index: -1
+Tail/Tail_01
+  rotate: false
+  xy: 367, 15
+  size: 18, 15
+  orig: 18, 15
+  offset: 0, 0
+  index: -1
+Tail/Tail_02
+  rotate: false
+  xy: 387, 14
+  size: 17, 16
+  orig: 17, 16
+  offset: 0, 0
+  index: -1
+Tail/Tail_03
+  rotate: false
+  xy: 406, 18
+  size: 18, 12
+  orig: 18, 12
+  offset: 0, 0
+  index: -1
