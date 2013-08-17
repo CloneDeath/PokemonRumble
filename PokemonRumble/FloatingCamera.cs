@@ -22,13 +22,19 @@ namespace PokemonRumble {
 
 		void Camera_OnRender() {
 			//P1 Health
+			Color HPColor = Color.Green;
+			if (Player1.HP < Player1.Pokemon.HP / 2) HPColor = Color.Yellow;
+			if (Player1.HP < Player1.Pokemon.HP / 5) HPColor = Color.Red;
 			GraphicsManager.DrawRectangle(10, 10, Player1.Pokemon.HP + 2, 20, Color.Black);
-			GraphicsManager.DrawRectangle(11, 11, Player1.HP, 18, Color.Green);
+			GraphicsManager.DrawRectangle(11, 11, Player1.HP, 18, HPColor);
 
 			//P2 Health
+			HPColor = Color.Green;
+			if (Player2.HP < Player2.Pokemon.HP / 2) HPColor = Color.Yellow;
+			if (Player2.HP < Player2.Pokemon.HP / 5) HPColor = Color.Red;
 			int Width = GraphicsManager.WindowWidth;
 			GraphicsManager.DrawRectangle(Width - 10, 10, -(Player2.Pokemon.HP + 2), 20, Color.Black);
-			GraphicsManager.DrawRectangle(Width - 11, 11, -(Player2.HP), 18, Color.Green);
+			GraphicsManager.DrawRectangle(Width - 11, 11, -(Player2.HP), 18, HPColor);
 		}
 
 		public Vector2d Center {

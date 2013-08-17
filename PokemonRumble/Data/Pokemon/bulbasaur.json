@@ -66,6 +66,85 @@
 	}
 },
 "animations": {
+	"dead": {
+		"bones": {
+			"Hip": {
+				"translate": [
+					{ "time": 0, "x": 0, "y": -3.87 }
+				]
+			},
+			"BackLeftLeg": {
+				"rotate": [
+					{ "time": 0, "angle": 50.35 }
+				]
+			},
+			"BackRightLeg": {
+				"rotate": [
+					{ "time": 0, "angle": -59.06 }
+				]
+			},
+			"FrontLeftLeg": {
+				"rotate": [
+					{ "time": 0, "angle": -43.45 }
+				]
+			},
+			"FrontRightLeg": {
+				"rotate": [
+					{ "time": 0, "angle": -44.92 }
+				]
+			},
+			"Head": {
+				"translate": [
+					{ "time": 0, "x": -0.19, "y": 2.21 }
+				]
+			},
+			"Bulb": {
+				"rotate": [
+					{ "time": 0, "angle": 8.24 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0.6, "y": 0.67 }
+				]
+			}
+		},
+		"slots": {
+			"BackLeftLeg": {
+				"color": [
+					{ "time": 0, "color": "ff6464ff" }
+				]
+			},
+			"BackRightLeg": {
+				"color": [
+					{ "time": 0, "color": "ff6464ff" }
+				]
+			},
+			"Body": {
+				"color": [
+					{ "time": 0, "color": "ff6464ff" }
+				]
+			},
+			"Bulb": {
+				"color": [
+					{ "time": 0, "color": "ff6464ff" }
+				]
+			},
+			"FrontLeftLeg": {
+				"color": [
+					{ "time": 0, "color": "ff6464ff" }
+				]
+			},
+			"FrontRightLeg": {
+				"color": [
+					{ "time": 0, "color": "ff6464ff" }
+				]
+			},
+			"Head": {
+				"color": [
+					{ "time": 0, "color": "ff6464ff" }
+				]
+			}
+		}
+	},
 	"growl": {
 		"bones": {
 			"Head": {

@@ -114,6 +114,9 @@ namespace PokemonRumble {
 
 		internal void Update(float dt) {
 			if (Dead) {
+				if (anim.state.Animation.Name != "dead") {
+					anim.state.SetAnimation("dead", true);
+				}
 				this.HP = 0;
 				body.ApplyForce(new Vec2(-body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
 				return;

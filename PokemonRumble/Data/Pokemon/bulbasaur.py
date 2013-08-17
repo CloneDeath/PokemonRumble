@@ -1,8 +1,6 @@
 from Pokemon import *;
 from Move import *;
 
-
-
 Bulbasaur = Pokemon.Add("bulbasaur");
 Bulbasaur.DisplayName = "Bulbasaur";
 Bulbasaur.Speed = 3;
@@ -23,3 +21,7 @@ Bulbasaur.SetMix("walk", "jump", 0.2);
 
 Bulbasaur.SetMix("idle", "jump", 0.2);
 Bulbasaur.SetMix("jump", "idle", 0.4);
+
+Bulbasaur.SetMix("idle", "dead", 2);
+Bulbasaur.SetMix("walk", "dead", 2);
+Bulbasaur.SetMix("jump", "dead", 2);

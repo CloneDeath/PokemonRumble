@@ -57,11 +57,11 @@ namespace PokemonRumble {
 			Player1.Update(dt);
 			Player2.Update(dt);
 
-			if (Player1.HP < 0) {
+			if (Player1.HP <= 0) {
 				Player1.Kill();
 			}
 
-			if (Player2.HP < 0) {
+			if (Player2.HP <= 0) {
 				Player2.Kill();
 			}
 		}
