@@ -5,35 +5,35 @@ filter: Nearest,Nearest
 repeat: none
 ArmBack/ArmBack_01
   rotate: false
-  xy: 450, 21
+  xy: 347, 2
   size: 10, 9
   orig: 10, 9
   offset: 0, 0
   index: -1
 ArmBack/ArmBack_02
   rotate: false
-  xy: 41, 2
+  xy: 28, 2
   size: 10, 8
   orig: 10, 8
   offset: 0, 0
   index: -1
 ArmBack/ArmBack_03
-  rotate: true
-  xy: 462, 21
+  rotate: false
+  xy: 460, 20
   size: 9, 10
   orig: 9, 10
   offset: 0, 0
   index: -1
 ArmBack/ArmBack_04
   rotate: false
-  xy: 334, 2
+  xy: 333, 2
   size: 12, 9
   orig: 12, 9
   offset: 0, 0
   index: -1
 ArmFront/ArmFront_01
   rotate: false
-  xy: 396, 2
+  xy: 395, 2
   size: 11, 10
   orig: 11, 10
   offset: 0, 0
@@ -47,14 +47,14 @@ ArmFront/ArmFront_02
   index: -1
 ArmFront/ArmFront_03
   rotate: false
-  xy: 426, 19
+  xy: 425, 19
   size: 10, 11
   orig: 10, 11
   offset: 0, 0
   index: -1
 ArmFront/ArmFront_04
   rotate: false
-  xy: 287, 2
+  xy: 286, 2
   size: 14, 9
   orig: 14, 9
   offset: 0, 0
@@ -89,126 +89,126 @@ Shell/Shell_02
   index: -1
 Head/Head_01
   rotate: false
-  xy: 287, 13
+  xy: 286, 13
   size: 18, 17
   orig: 18, 17
   offset: 0, 0
   index: -1
 Head/Head_02
   rotate: false
-  xy: 307, 13
+  xy: 306, 13
   size: 18, 17
   orig: 18, 17
   offset: 0, 0
   index: -1
 Head/Head_03
   rotate: false
-  xy: 327, 13
+  xy: 326, 13
   size: 18, 17
   orig: 18, 17
   offset: 0, 0
   index: -1
 Head/Head_04
-  rotate: true
-  xy: 246, 12
+  rotate: false
+  xy: 246, 11
   size: 18, 19
   orig: 18, 19
   offset: 0, 0
   index: -1
 Head/Head_05
   rotate: false
-  xy: 267, 12
+  xy: 266, 12
   size: 18, 18
   orig: 18, 18
   offset: 0, 0
   index: -1
 Head/Head_06
   rotate: false
-  xy: 347, 13
+  xy: 346, 13
   size: 18, 17
   orig: 18, 17
   offset: 0, 0
   index: -1
 LegBack/LegBack_01
-  rotate: true
-  xy: 53, 2
+  rotate: false
+  xy: 408, 7
   size: 8, 9
   orig: 8, 9
   offset: 0, 0
   index: -1
 LegBack/LegBack_02
   rotate: false
-  xy: 64, 2
+  xy: 40, 2
   size: 8, 8
   orig: 8, 8
   offset: 0, 0
   index: -1
 LegBack/LegBack_03
-  rotate: true
-  xy: 15, 2
+  rotate: false
+  xy: 482, 19
   size: 8, 11
   orig: 8, 11
   offset: 0, 0
   index: -1
 LegBack/LegBack_04
   rotate: false
-  xy: 319, 2
+  xy: 318, 2
   size: 13, 9
   orig: 13, 9
   offset: 0, 0
   index: -1
 LegBack/LegBack_05
   rotate: false
-  xy: 367, 2
+  xy: 366, 2
   size: 13, 11
   orig: 13, 11
   offset: 0, 0
   index: -1
 LegBack/LegBack_06
   rotate: false
-  xy: 28, 2
+  xy: 15, 2
   size: 11, 8
   orig: 11, 8
   offset: 0, 0
   index: -1
 LegBack/LegBack_07
   rotate: false
-  xy: 382, 2
+  xy: 381, 2
   size: 12, 10
   orig: 12, 10
   offset: 0, 0
   index: -1
 LegFront/LegFront_01
-  rotate: true
-  xy: 474, 21
+  rotate: false
+  xy: 471, 20
   size: 9, 10
   orig: 9, 10
   offset: 0, 0
   index: -1
 LegFront/LegFront_02
   rotate: false
-  xy: 486, 21
+  xy: 492, 21
   size: 9, 9
   orig: 9, 9
   offset: 0, 0
   index: -1
 LegFront/LegFront_03
-  rotate: true
-  xy: 348, 2
+  rotate: false
+  xy: 449, 18
   size: 9, 12
   orig: 9, 12
   offset: 0, 0
   index: -1
 LegFront/LegFront_04
   rotate: false
-  xy: 438, 19
+  xy: 437, 19
   size: 10, 11
   orig: 10, 11
   offset: 0, 0
   index: -1
 LegFront/LegFront_05
   rotate: false
-  xy: 303, 2
+  xy: 302, 2
   size: 14, 9
   orig: 14, 9
   offset: 0, 0
@@ -264,21 +264,21 @@ Shell/Shell_08
   index: -1
 Tail/Tail_01
   rotate: false
-  xy: 367, 15
+  xy: 366, 15
   size: 18, 15
   orig: 18, 15
   offset: 0, 0
   index: -1
 Tail/Tail_02
   rotate: false
-  xy: 387, 14
+  xy: 386, 14
   size: 17, 16
   orig: 17, 16
   offset: 0, 0
   index: -1
 Tail/Tail_03
   rotate: false
-  xy: 406, 18
+  xy: 405, 18
   size: 18, 12
   orig: 18, 12
   offset: 0, 0

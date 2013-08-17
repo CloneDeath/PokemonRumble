@@ -9,7 +9,7 @@ def Attack(player):
 	seed = player.AddProjectile(player.Direction * 0.3, 0, 0.1, 0.1);
 	seed.SetVelocity(player.Direction * 10, 2);
 	seed.CollisionMask = 0x0001;
-	seed.SetSkeleton("Moves/RazorLeaf");
+	seed.SetSkeleton("Moves/RazorLeaf/RazorLeaf");
 	seed.SetAnimation("idle", True);
 	seed.Z = 0.5;
 	seed.Permanent = True;

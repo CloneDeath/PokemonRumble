@@ -81,6 +81,7 @@
 		"slots": {
 			"Head": {
 				"attachment": [
+					{ "time": 0, "name": "Head/Head_02" },
 					{ "time": 0.1666, "name": "Head/Head_03" },
 					{ "time": 0.2333, "name": "Head/Head_05" },
 					{ "time": 0.3, "name": "Head/Head_04" },
@@ -231,6 +232,7 @@
 			},
 			"Head": {
 				"attachment": [
+					{ "time": 0, "name": "Head/Head_02" },
 					{ "time": 0.3333, "name": "Head/Head_01" }
 				],
 				"color": [
@@ -377,6 +379,13 @@
 					{ "time": 1.3333, "x": 1, "y": 1 }
 				]
 			}
+		},
+		"slots": {
+			"Head": {
+				"attachment": [
+					{ "time": 0, "name": "Head/Head_02" }
+				]
+			}
 		}
 	},
 	"jump": {
@@ -473,6 +482,13 @@
 				],
 				"scale": [
 					{ "time": 0, "x": 1, "y": 1 }
+				]
+			}
+		},
+		"slots": {
+			"Head": {
+				"attachment": [
+					{ "time": 0, "name": "Head/Head_02" }
 				]
 			}
 		}
@@ -582,6 +598,13 @@
 				"translate": [
 					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
 					{ "time": 0.8333, "x": 0, "y": 0 }
+				]
+			}
+		},
+		"slots": {
+			"Head": {
+				"attachment": [
+					{ "time": 0, "name": "Head/Head_02" }
 				]
 			}
 		}
@@ -705,6 +728,13 @@
 					{ "time": 0.5, "x": 0, "y": 0, "curve": "stepped" },
 					{ "time": 1.5, "x": 0, "y": 0, "curve": "stepped" },
 					{ "time": 2, "x": 0, "y": 0 }
+				]
+			}
+		},
+		"slots": {
+			"Head": {
+				"attachment": [
+					{ "time": 0, "name": "Head/Head_02" }
 				]
 			}
 		}
@@ -862,6 +892,7 @@
 			},
 			"Head": {
 				"attachment": [
+					{ "time": 0, "name": "Head/Head_02" },
 					{ "time": 0.26, "name": null }
 				]
 			},

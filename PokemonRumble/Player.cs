@@ -182,8 +182,10 @@ namespace PokemonRumble {
 					body.ApplyForce(new Vec2((Speed/10) - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
 					Direction = 1;
 				} else {
-					if (anim.state.Animation.Name != "idle") {
-						anim.state.SetAnimation("idle", true);
+					if (!Disabled) {
+						if (anim.state.Animation.Name != "idle") {
+							anim.state.SetAnimation("idle", true);
+						}
 					}
 					body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * (Speed), 0), new Vec2(.1f, .1f));
 				}

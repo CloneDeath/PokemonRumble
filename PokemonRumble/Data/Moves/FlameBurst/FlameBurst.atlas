@@ -1,0 +1,40 @@
+
+FlameBurst.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+FlameBurst_01
+  rotate: false
+  xy: 26, 3
+  size: 21, 22
+  orig: 21, 22
+  offset: 0, 0
+  index: -1
+FlameBurst_02
+  rotate: false
+  xy: 49, 3
+  size: 21, 22
+  orig: 21, 22
+  offset: 0, 0
+  index: -1
+FlameBurst_03
+  rotate: false
+  xy: 2, 2
+  size: 22, 23
+  orig: 22, 23
+  offset: 0, 0
+  index: -1
+FlameBurst_04
+  rotate: false
+  xy: 72, 3
+  size: 21, 22
+  orig: 21, 22
+  offset: 0, 0
+  index: -1
+FlameBurst_05
+  rotate: false
+  xy: 95, 8
+  size: 19, 17
+  orig: 19, 17
+  offset: 0, 0
+  index: -1

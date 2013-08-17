@@ -7,10 +7,10 @@ def Attack(player):
 	player.Disable(0.5);
 	player.Cooldown = 1;
 	for i in range(Random.Next(3) + 6):
-		fire = player.AddProjectile(player.Direction * 0.3, 0, 0.1, 0.1);
+		fire = player.AddProjectile(player.Direction * 0.3, 0.3, 0.1, 0.1);
 		fire.SetVelocity(player.Direction * (Random.NextDouble() + 4), 2 + (Random.NextDouble()/3));
 		fire.CollisionMask = 0x0001;
-		fire.SetSkeleton("Moves/Ember");
+		fire.SetSkeleton("Moves/Ember/Ember");
 		fire.SetAnimation("idle", True);
 		fire.Z = Random.NextDouble() - 0.5;
 		fire.Permanent = True;

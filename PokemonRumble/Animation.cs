@@ -15,6 +15,7 @@ namespace PokemonRumble {
 		public Stopwatch drawtime;
 
 		public float Z = 0.0f;
+		public float Scale = 1.0f / 50.0f;
 
 		public Animation(string AnimationFile) {
 			skeletonRenderer = new SkeletonRenderer();
@@ -48,8 +49,8 @@ namespace PokemonRumble {
 
 			state.Update(dt);
 			state.Apply(skeleton);
-			skeleton.RootBone.ScaleX = 1 / 50f;
-			skeleton.RootBone.ScaleY = 1 / 50f;
+			skeleton.RootBone.ScaleX = Scale;
+			skeleton.RootBone.ScaleY = Scale;
 			skeleton.UpdateWorldTransform();
 			skeletonRenderer.Draw(skeleton, Z);
 		}

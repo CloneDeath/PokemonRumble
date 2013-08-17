@@ -9,7 +9,7 @@ def Attack(player):
 	seed = player.AddProjectile(0, 0, 0.1, 0.1);
 	seed.SetVelocity((Random.NextDouble() + 1) * player.Direction, 3 + (Random.NextDouble() * 2));
 	seed.CollisionMask = 0x0001;
-	seed.SetSkeleton("Moves/LeechSeed");
+	seed.SetSkeleton("Moves/LeechSeed/LeechSeed");
 	seed.SetAnimation("seed", False);
 	seed.Z = Random.NextDouble() - 0.5;
 	seed.Permanent = True;

@@ -6,6 +6,7 @@ using Box2DX.Dynamics;
 using Box2DX.Common;
 using GLImp;
 using System.Diagnostics;
+using Box2DX.Collision;
 
 namespace PokemonRumble {
 	public class Projectile : IEntity {
@@ -15,6 +16,7 @@ namespace PokemonRumble {
 
 		public Action<Projectile, Player> OnCollidePlayer;
 		public Action<Projectile> OnCollideEarth;
+		public Action<Projectile, float> OnUpdate;
 
 		public float Duration = 1;
 
@@ -34,20 +36,25 @@ namespace PokemonRumble {
 
 		public void SetSkeleton(string name) {
 			anim = new Animation(name);
+			anim.skeleton.X = fix.Body.GetPosition().X;
+			anim.skeleton.Y = fix.Body.GetPosition().Y;
 		}
 
 		public void SetAnimation(string animation, bool loop) {
 			anim.state.SetAnimation(animation, loop);
 		}
 
+		public float Scale {
+			set {
+				anim.Scale = value;
+			}
+		}
+
 		Stopwatch UpdateTimer = new Stopwatch();
 
 		public bool Permanent = false;
-
+		float time = 0;
 		Fixture fix2;
-
-		GraphicsManager.Updater updateSubscription;
-
 
 		public Projectile(Player creator, float x, float y, float width, float height) {
 			this.creator = creator;
@@ -76,24 +83,41 @@ namespace PokemonRumble {
 			projectile.SetMassFromShapes();
 
 			UpdateTimer.Start();
-			updateSubscription = new GraphicsManager.Updater(GraphicsManager_Update);
-			GraphicsManager.Update += updateSubscription;
+			GraphicsManager.Update += GraphicsManager_Update;
 		}
 
 		void GraphicsManager_Update() {
 			float dt = UpdateTimer.ElapsedMilliseconds / 1000.0f;
 			UpdateTimer.Restart();
 
+			time += dt;
+			if (OnUpdate != null) {
+				OnUpdate(this, time);
+			}
+
 			anim.skeleton.X = projectile.GetPosition().X;
 			anim.skeleton.Y = projectile.GetPosition().Y;
+			//Console.WriteLine(anim.skeleton.Y);
 
 			Duration -= dt;
 			if ((Duration <= 0 && !Permanent) || Dead) {
-				GraphicsManager.Update -= updateSubscription;
+				GraphicsManager.Update -= GraphicsManager_Update;
 				projectile.DestroyFixture(fix);
 				projectile.DestroyFixture(fix2);
 				projectile.GetWorld().DestroyBody(projectile);
 				anim.Unload();
+			}
+		}
+
+		public void ApplyForce(float x, float y) {
+			projectile.ApplyForce(new Vec2(x, y), projectile.GetMassData().Center);
+		}
+
+		public float Mass {
+			set {
+				MassData data = projectile.GetMassData();
+				data.Mass = value;
+				projectile.SetMass(data);
 			}
 		}
 

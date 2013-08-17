@@ -6,10 +6,9 @@ def Attack(player):
 	player.Disable(0.25);
 	player.Cooldown = 1.0;
 	
-	
 	Hit = player.AddDamageBox(player.Direction * 0.8, 0, 0.8, 0.8);
 	Hit.Duration = 0.5;
-	Hit.SetSkeleton("Moves/Growl");
+	Hit.SetSkeleton("Moves/Growl/Growl");
 	Hit.SetAnimation("idle", False);
 	if (player.Direction < 0):
 		Hit.FlipAnimation();
