@@ -1,0 +1,47 @@
+
+Ember.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Ember_01
+  rotate: false
+  xy: 59, 26
+  size: 2, 3
+  orig: 2, 3
+  offset: 0, 0
+  index: -1
+Ember_02
+  rotate: false
+  xy: 2, 2
+  size: 4, 7
+  orig: 4, 7
+  offset: 0, 0
+  index: -1
+Ember_03
+  rotate: false
+  xy: 49, 17
+  size: 8, 12
+  orig: 8, 12
+  offset: 0, 0
+  index: -1
+Ember_04
+  rotate: false
+  xy: 2, 11
+  size: 15, 18
+  orig: 15, 18
+  offset: 0, 0
+  index: -1
+Ember_05
+  rotate: false
+  xy: 19, 12
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
+Ember_06
+  rotate: false
+  xy: 37, 16
+  size: 10, 13
+  orig: 10, 13
+  offset: 0, 0
+  index: -1

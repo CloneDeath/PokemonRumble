@@ -46,8 +46,13 @@ namespace PokemonRumble {
 
 		Fixture fix2;
 
+		GraphicsManager.Updater updateSubscription;
+
+
 		public Projectile(Player creator, float x, float y, float width, float height) {
 			this.creator = creator;
+
+			this.Dead = false;
 
 			BodyDef def = new BodyDef();
 			def.IsBullet = true;
@@ -71,7 +76,8 @@ namespace PokemonRumble {
 			projectile.SetMassFromShapes();
 
 			UpdateTimer.Start();
-			GraphicsManager.Update += GraphicsManager_Update;
+			updateSubscription = new GraphicsManager.Updater(GraphicsManager_Update);
+			GraphicsManager.Update += updateSubscription;
 		}
 
 		void GraphicsManager_Update() {
@@ -82,20 +88,16 @@ namespace PokemonRumble {
 			anim.skeleton.Y = projectile.GetPosition().Y;
 
 			Duration -= dt;
-			if (Duration <= 0 && !Permanent) {
-				Unload();
-			}
-
-			if (Dead) {
+			if ((Duration <= 0 && !Permanent) || Dead) {
+				GraphicsManager.Update -= updateSubscription;
 				projectile.DestroyFixture(fix);
 				projectile.DestroyFixture(fix2);
 				projectile.GetWorld().DestroyBody(projectile);
 				anim.Unload();
-				GraphicsManager.Update -= GraphicsManager_Update;
 			}
 		}
 
-		bool Dead = false;
+		bool Dead;
 
 		public void Unload() {
 			Dead = true;
