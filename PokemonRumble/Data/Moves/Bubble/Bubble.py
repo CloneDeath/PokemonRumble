@@ -32,7 +32,6 @@ def Attack(player):
 	player.SetAnimation("bubble", False);
 	player.Disable(0.5);
 	player.Cooldown = 1;
-	#for i in range(Random.Next(3) + 6):
 	bubble = ShootBubble(player);
 	
 	def Float(self, time):

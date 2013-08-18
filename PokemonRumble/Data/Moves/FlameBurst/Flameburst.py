@@ -21,9 +21,13 @@ def Attack(player):
 				self.Unload();
 			Fire.OnCollideEarth = Destroy;
 			
+			def FireParticle(self, other):
+				other.TakeSpecialDamage(5, player);
+			Fire.OnCollidePlayer = FireParticle;
+			
 		def Explosion(self, other):
 			other.SetVelocity(player.Direction * 2, 3);
 			other.Disable(1.0);
-			other.TakeSpecialDamage(20, player);
+			other.TakeSpecialDamage(15, player);
 		Hit.OnCollidePlayer = Explosion;
 Burst.OnUse = Attack;
