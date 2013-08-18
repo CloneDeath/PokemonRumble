@@ -34,3 +34,4 @@ Squirtle.SetMix("walk", "dead", 1);
 Squirtle.SetMix("jump", "dead", 1);
 
 Squirtle.AddAnimationAlias("tackle", "jump");
+Squirtle.AddAnimationAlias("tailwhip", "tail whip");

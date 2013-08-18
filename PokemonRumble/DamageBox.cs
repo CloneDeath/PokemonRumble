@@ -52,9 +52,16 @@ namespace PokemonRumble {
 			GraphicsManager.Update += GraphicsManager_Update;
 		}
 
+		float time = 0;
+		public Action<DamageBox, float> OnUpdate;
 		void GraphicsManager_Update() {
 			float dt = Update.ElapsedMilliseconds / 1000.0f;
 			Update.Restart();
+
+			time += dt;
+			if (OnUpdate != null) {
+				OnUpdate(this, time);
+			}
 
 			if (anim != null) {
 				anim.skeleton.X = fix.Body.GetPosition().X + xoff;
