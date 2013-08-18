@@ -3,7 +3,7 @@ Tackle = Move.Add("tackle");
 
 def Attack(player):
 	if (player.OnGround):
-		player.SetVelocity(player.Direction * 10, 3);
+		player.SetVelocity(player.Direction * 7, 3);
 		player.SetAnimation("tackle", False);
 		player.Disable(0.5);
 		player.Cooldown = 1.0;

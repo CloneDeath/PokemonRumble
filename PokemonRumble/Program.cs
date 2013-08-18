@@ -12,7 +12,7 @@ using OpenTK.Graphics.OpenGL;
 
 namespace PokemonRumble {
 	class Program {
-		public static bool DebugDraw = true;
+		public static bool DebugDraw = false;
 
 		static Stopwatch DrawTime = new Stopwatch();
 		static Stopwatch UpdateTime = new Stopwatch();
@@ -43,8 +43,8 @@ namespace PokemonRumble {
 			ResourceManager.Initialize();
 
 			Arena = new Forrest();
-			Player1 = new Player(Arena, Controls.Player1, -1, "squirtle");
-			Player2 = new Player(Arena, Controls.Player2, -2, "bulbasaur");
+			Player1 = new Player(Arena, Controls.Player1, -1, "bulbasaur");
+			Player2 = new Player(Arena, Controls.Player2, -2, "squirtle");
 
 			Player1.SetPosition(-5, 3);
 			Player2.SetPosition(5, 3);
