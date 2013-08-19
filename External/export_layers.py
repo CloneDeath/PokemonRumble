@@ -81,9 +81,9 @@ register(
 	proc_name=("python-fu-export-layers"),
 	blurb=("Export Layers as PNG"),
 	help=("Export layers as individual PNG files."),
-	author=("Chris Mohler <cr33dog@gmail.com>"),
-	copyright=("Chris Mohler"),
-	date=("2009"),
+	author=("Nicholas Rodine"),
+	copyright=("Nicholas Rodine"),
+	date=("2013"),
 	label=("as _PNG"),
 	imagetypes=("*"),
 	params=[
