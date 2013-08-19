@@ -4,6 +4,7 @@
 # Copyright 2009 Chris Mohler
 # "Only Visible" and filename formatting introduced by mh
 # Thanks to Michael Holzt for layer group code!
+# Upgraded and maintained by Nicholas Rodine
 # License: GPL v3+
 # Version 0.6
 # GIMP compatibilty 2.4.x -> 2.8.x
@@ -13,6 +14,27 @@ from gimpfu import *
 import os, re
 
 gettext.install("gimp20-python", gimp.locale_directory, unicode=True)
+
+#import sys;
+#sys.stderr = open( 'c:\\temp\\gimpstderr.txt', 'w');
+#sys.stdout = open( 'c:\\temp\\gimpstdout.txt', 'w');
+
+#===============================================================================
+#import gtk;
+#def MessageBox(message, title = None): # most for debugging
+#	dialog = gtk.MessageDialog(
+#		None,
+#		gtk.DIALOG_MODAL,
+#		gtk.MESSAGE_INFO,
+#		gtk.BUTTONS_OK,
+#		message
+#	)
+#	if not title:
+#		title = "Message"
+#	dialog.set_title(title)
+#	dialog.run()
+#	dialog.destroy()
+#===============================================================================
 
 def format_filename(img, layer):
 	imgname = img.name.decode('utf-8')
@@ -59,23 +81,26 @@ def get_layers(layers, only_visible):
 def export_layers(img, drw, path, only_visible=True, flatten=False, remove_offsets=False, crop=False):
 	dupe = img.duplicate()
 	layers = get_layers(dupe.layers, only_visible)
-
+		
+	for layer in dupe.layers:
+		layer.visible = 0;
+		
 	for layer in layers:
-		layer.visible = 1
+		#MessageBox(layer.name);
+		layer.visible = 1;
 		filename = format_filename(img, layer)
 		fullpath = os.path.join(path, filename);
 		if not os.path.exists(os.path.dirname(fullpath)):
 			os.makedirs(os.path.dirname(fullpath))
-		tmp = dupe.duplicate()
-		tmp.merge_visible_layers(0)
+			
 		if (flatten):
-			tmp.flatten()
+			dupe.flatten()
 		if (remove_offsets):
-			tmp.layers[0].set_offsets(0, 0) 
+			layer.set_offsets(0, 0) 
 		if (crop):
-			pdb.plug_in_zealouscrop(tmp, tmp.layers[0])
-		pdb.file_png_save(tmp, tmp.layers[0], fullpath, filename, 0, 9, 1, 1, 1, 1, 1)
-		dupe.remove_layer(layer)
+			pdb.plug_in_zealouscrop(dupe, layer)
+		pdb.file_png_save(dupe, layer, fullpath, filename, 0, 9, 1, 1, 1, 1, 1)
+	gimp.delete(dupe);
 			
 register(
 	proc_name=("python-fu-export-layers"),
