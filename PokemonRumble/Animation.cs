@@ -7,7 +7,7 @@ using GLImp;
 using System.Diagnostics;
 
 namespace PokemonRumble {
-	class Animation {
+	public class Animation {
 		public SkeletonRenderer skeletonRenderer;
 		public Skeleton skeleton;
 		public AnimationState state;

@@ -22,6 +22,12 @@ namespace PokemonRumble {
 		static Player Player2;
 		static FloatingCamera Camera;
 
+		public enum GameState {
+			MainMenu,
+			CharacterSelect,
+			Battle
+		}
+
 		static void Main(string[] args) {
 			GraphicsManager.UseExperimentalFullAlpha = true;
 			GraphicsManager.DisableDepthTest = true;

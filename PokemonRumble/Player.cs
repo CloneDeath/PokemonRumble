@@ -8,6 +8,7 @@ using Box2DX.Common;
 using OpenTK;
 using GLImp;
 using Box2DX.Collision;
+using PokemonRumble.HitBoxes;
 
 namespace PokemonRumble {
 	public class Player : IEntity {
