@@ -43,7 +43,7 @@ namespace PokemonSmash {
 		}
 
 
-		public void Draw() {
+		void Draw() {
 			float dt = drawtime.ElapsedMilliseconds / 1000.0f;
 			drawtime.Restart();
 

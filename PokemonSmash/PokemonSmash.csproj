@@ -92,6 +92,9 @@
     <Compile Include="Animation.cs" />
     <Compile Include="Arenas\BattleArena.cs" />
     <Compile Include="Arenas\Forrest.cs" />
+    <Compile Include="Battle.cs" />
+    <Compile Include="CharacterSelect.cs" />
+    <Compile Include="GameState.cs" />
     <Compile Include="HitBoxes\DamageBox.cs" />
     <Compile Include="FloatingCamera.cs" />
     <Compile Include="HitBoxes\HitBox.cs" />

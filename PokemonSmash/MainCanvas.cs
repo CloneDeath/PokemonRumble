@@ -31,8 +31,9 @@ namespace PokemonSmash
 			return canvas;
 		}
 
-		static Camera2D Camera = new Camera2D();
+		static Camera2D Camera;
 		static MainCanvas() {
+			Camera  = new Camera2D();
 			GraphicsManager.keyboard.KeyDown += Keyboard_KeyDown;
 			GraphicsManager.keyboard.KeyUp += Keyboard_KeyUp;
 
@@ -50,8 +51,6 @@ namespace PokemonSmash
 
 			Renderer = new Gwen.Renderer.OpenTK();
 			Skin = new Gwen.Skin.TexturedBase(Renderer, @"Data\DefaultSkin.png");
-			//skin = new Gwen.Skin.Simple(renderer);
-			//skin.DefaultFont = new Gwen.Font(renderer, "Courier", 10);
 			canvas = new Canvas(Skin);
 
 			input = new Gwen.Input.OpenTK(GraphicsManager.Instance);
@@ -60,7 +59,6 @@ namespace PokemonSmash
 			canvas.SetSize(GraphicsManager.WindowWidth, GraphicsManager.WindowHeight);
 			canvas.ShouldDrawBackground = false;
 			canvas.BackgroundColor = System.Drawing.Color.FromArgb(255, 150, 170, 170);
-			//canvas.KeyboardInputEnabled = true;
 		}
 
         static void OnWindowResize()
@@ -145,7 +143,7 @@ namespace PokemonSmash
 		public static void OnRenderFrame() {
 			GL.Disable(EnableCap.AlphaTest);
 			canvas.RenderCanvas();
-			GL.Enable(EnableCap.AlphaTest);
+			//GL.Enable(EnableCap.AlphaTest);
 		}
 	}
 }

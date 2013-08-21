@@ -270,8 +270,6 @@ namespace PokemonSmash {
 					new Vector3d(anim.skeleton.X - 0.4, 0.002, 0.3),
 					ResourceManager.Shadow);
 
-			anim.Draw();
-
 			PreviousVelocity = CurrentVelocity;
 			CurrentVelocity = body.GetLinearVelocity();
 		}
