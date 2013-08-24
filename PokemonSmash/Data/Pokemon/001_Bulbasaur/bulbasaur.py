@@ -3,7 +3,7 @@ from Move import *;
 
 Bulbasaur = Pokemon.Add("bulbasaur");
 Bulbasaur.DisplayName = "Bulbasaur";
-Bulbasaur.Animation = "Pokemon/bulbasaur"
+Bulbasaur.Animation = "Pokemon/001_Bulbasaur/bulbasaur"
 Bulbasaur.HP = 45;
 Bulbasaur.Attack = 49;
 Bulbasaur.Defense = 49;

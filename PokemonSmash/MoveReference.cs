@@ -29,12 +29,10 @@ namespace PokemonSmash {
 
 		public void OnUse(Player player) {
 			if (Cooldown <= 0) {
-				if (move.OnUse != null) {
+				if (move != null && move.OnUse != null) {
 					move.OnUse(player);
 				}
 			}
 		}
-
-		
 	}
 }

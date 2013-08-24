@@ -3,7 +3,7 @@ from Move import *;
 
 Squirtle = Pokemon.Add("squirtle");
 Squirtle.DisplayName = "Squirtle";
-Squirtle.Animation = "Pokemon/squirtle"
+Squirtle.Animation = "Pokemon/007_Squirtle/squirtle"
 Squirtle.HP = 44;
 Squirtle.Attack = 48;
 Squirtle.Defense = 63;

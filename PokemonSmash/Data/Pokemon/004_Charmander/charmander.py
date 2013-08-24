@@ -3,7 +3,7 @@ from Move import *;
 
 Charmander = Pokemon.Add("charmander");
 Charmander.DisplayName = "Charmander";
-Charmander.Animation = "Pokemon/charmander"
+Charmander.Animation = "Pokemon/004_Charmander/charmander"
 Charmander.HP = 39;
 Charmander.Attack = 52;
 Charmander.Defense = 43;

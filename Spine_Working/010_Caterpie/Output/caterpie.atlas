@@ -1,0 +1,82 @@
+
+caterpie.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Antenna
+  rotate: false
+  xy: 39, 5
+  size: 14, 9
+  orig: 14, 9
+  offset: 0, 0
+  index: -1
+BodyBottom/BodyBottom_01
+  rotate: false
+  xy: 64, 21
+  size: 17, 9
+  orig: 17, 9
+  offset: 0, 0
+  index: -1
+BodyBottom/BodyBottom_02
+  rotate: false
+  xy: 83, 21
+  size: 15, 9
+  orig: 15, 9
+  offset: 0, 0
+  index: -1
+BodyBottom/BodyBottom_03
+  rotate: false
+  xy: 100, 21
+  size: 15, 9
+  orig: 15, 9
+  offset: 0, 0
+  index: -1
+BodyTop/BodyTop_01
+  rotate: false
+  xy: 24, 17
+  size: 19, 13
+  orig: 19, 13
+  offset: 0, 0
+  index: -1
+BodyTop/BodyTop_02
+  rotate: false
+  xy: 45, 16
+  size: 17, 14
+  orig: 17, 14
+  offset: 0, 0
+  index: -1
+Butt
+  rotate: false
+  xy: 2, 3
+  size: 8, 7
+  orig: 8, 7
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 12
+  size: 20, 18
+  orig: 20, 18
+  offset: 0, 0
+  index: -1
+Tail/Tail_01
+  rotate: false
+  xy: 117, 16
+  size: 9, 14
+  orig: 9, 14
+  offset: 0, 0
+  index: -1
+Tail/Tail_02
+  rotate: false
+  xy: 24, 2
+  size: 13, 13
+  orig: 13, 13
+  offset: 0, 0
+  index: -1
+Tail/Tail_03
+  rotate: false
+  xy: 64, 5
+  size: 7, 14
+  orig: 7, 14
+  offset: 0, 0
+  index: -1
