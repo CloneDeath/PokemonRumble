@@ -15,6 +15,9 @@ namespace PokemonSmash {
 		public string PlayerOne;
 		public string PlayerTwo;
 
+		float DeadTimer;
+		const float AftergameTime = 5.0f;
+
 		public Battle(string player1, string player2) {
 			PlayerOne = player1;
 			PlayerTwo = player2;
@@ -30,13 +33,17 @@ namespace PokemonSmash {
 			Player1.Direction = 1;
 
 			Camera = new FloatingCamera(Player1, Player2);
+
+			DeadTimer = 0.0f;
 		}
 
 		public void Uninitialize() {
 			Arena = null;
+			Player1.Unload();
+			Player2.Unload();
 			Player1 = null;
 			Player2 = null;
-			Camera = null;
+			Camera.Disable();
 		}
 
 		public void Draw(float dt) {
@@ -60,6 +67,13 @@ namespace PokemonSmash {
 
 			if (Player2.HP <= 0) {
 				Player2.Kill();
+			}
+
+			if (Player1.HP <= 0 || Player2.HP <= 0) {
+				DeadTimer += dt;
+				if (DeadTimer > AftergameTime) {
+					Program.SwitchState(new CharacterSelect(Player1.Pokemon.Name, Player2.Pokemon.Name));
+				}
 			}
 		}
 	}

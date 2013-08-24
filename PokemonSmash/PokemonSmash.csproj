@@ -92,9 +92,12 @@
     <Compile Include="Animation.cs" />
     <Compile Include="Arenas\BattleArena.cs" />
     <Compile Include="Arenas\Forrest.cs" />
-    <Compile Include="Battle.cs" />
-    <Compile Include="CharacterSelect.cs" />
-    <Compile Include="GameState.cs" />
+    <Compile Include="GameStates\Battle.cs" />
+    <Compile Include="GameStates\CharacterSelectMenu\CharacterSelect.cs" />
+    <Compile Include="Animation2D.cs" />
+    <Compile Include="GameStates\CharacterSelectMenu\PlayerCursor.cs" />
+    <Compile Include="GameStates\CharacterSelectMenu\PokemonSlot.cs" />
+    <Compile Include="GameStates\GameState.cs" />
     <Compile Include="HitBoxes\DamageBox.cs" />
     <Compile Include="FloatingCamera.cs" />
     <Compile Include="HitBoxes\HitBox.cs" />

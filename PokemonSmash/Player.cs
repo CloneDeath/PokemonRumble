@@ -285,5 +285,9 @@ namespace PokemonSmash {
 		internal void Kill() {
 			this.Dead = true;
 		}
+
+		internal void Unload() {
+			anim.Unload();
+		}
 	}
 }

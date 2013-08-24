@@ -8,11 +8,11 @@ namespace Spine {
 	public class SkeletonRenderer {
 		float[] vertices = new float[8];
 
-		public SkeletonRenderer () {
-			Bone.yDown = false;
+		public SkeletonRenderer(bool YDown = false) {
+			Bone.yDown = YDown;
 		}
 
-		public void Draw(Skeleton skeleton, float Z) {
+		public void Draw(Skeleton skeleton, float Z = 0.0f) {
 			List<Slot> DrawOrder = skeleton.DrawOrder;
 
 			float depth = Z;

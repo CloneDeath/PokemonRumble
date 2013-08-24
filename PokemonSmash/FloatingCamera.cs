@@ -10,13 +10,14 @@ namespace PokemonSmash {
 	class FloatingCamera {
 		private Player Player1;
 		private Player Player2;
+		Camera2D Camera;
 
 		public FloatingCamera(Player Player1, Player Player2) {
 			this.Player1 = Player1;
 			this.Player2 = Player2;
 
-			GraphicsManager.Update += new GraphicsManager.Updater(GraphicsManager_Update);
-			Camera2D Camera = new Camera2D();
+			GraphicsManager.Update += GraphicsManager_Update;
+			Camera = new Camera2D();
 			Camera.OnRender += new GraphicsManager.Renderer(Camera_OnRender);
 		}
 
@@ -57,6 +58,11 @@ namespace PokemonSmash {
 			if (Dist < 3) Dist = 3;
 			GraphicsManager.SetCamera(new Vector3d(Center.X, Center.Y + 1, Dist));
 			GraphicsManager.SetLookAt(new Vector3d(Center.X, Center.Y, 0));
+		}
+
+		internal void Disable() {
+			Camera.Disable();
+			GraphicsManager.Update -= GraphicsManager_Update;
 		}
 	}
 }
