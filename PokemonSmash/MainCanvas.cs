@@ -59,6 +59,7 @@ namespace PokemonSmash
 			canvas.SetSize(GraphicsManager.WindowWidth, GraphicsManager.WindowHeight);
 			canvas.ShouldDrawBackground = false;
 			canvas.BackgroundColor = System.Drawing.Color.FromArgb(255, 150, 170, 170);
+			
 		}
 
         static void OnWindowResize()
@@ -143,7 +144,6 @@ namespace PokemonSmash
 		public static void OnRenderFrame() {
 			GL.Disable(EnableCap.AlphaTest);
 			canvas.RenderCanvas();
-			//GL.Enable(EnableCap.AlphaTest);
 		}
 	}
 }

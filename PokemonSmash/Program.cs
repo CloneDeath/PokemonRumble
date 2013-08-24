@@ -62,6 +62,7 @@ namespace PokemonSmash {
 
 		
 		static void Draw() {
+			GL.Disable(EnableCap.DepthTest);
 			float dt = DrawTime.ElapsedMilliseconds / 1000f;
 			DrawTime.Restart();
 
