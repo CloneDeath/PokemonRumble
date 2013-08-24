@@ -1,0 +1,30 @@
+from Pokemon import *;
+from Move import *;
+
+Diglett = Pokemon.Add("diglett");
+Diglett.DisplayName = "Diglett";
+Diglett.Animation = "Pokemon/050_Diglett/diglett"
+Diglett.HP = 10;
+Diglett.Attack = 55;
+Diglett.Defense = 25;
+Diglett.SpecialAttack = 35;
+Diglett.SpecialDefense = 45;
+Diglett.Speed = 95;
+
+Diglett.Width = .5;
+Diglett.Height =  .5;
+Diglett.Weight = 0.8;
+
+
+Diglett.SetMix("walk", "idle", 0.6);
+Diglett.SetMix("walk", "jump", 0.2);
+
+Diglett.SetMix("jump", "walk", 0.1);
+Diglett.SetMix("jump", "idle", 0.1);
+
+Diglett.SetMix("idle", "jump", 0.2);
+Diglett.SetMix("idle", "walk", 0.4);
+
+Diglett.SetMix("idle", "dead", 1);
+Diglett.SetMix("walk", "dead", 1);
+Diglett.SetMix("jump", "dead", 1);

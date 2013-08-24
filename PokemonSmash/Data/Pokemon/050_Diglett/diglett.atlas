@@ -1,0 +1,54 @@
+
+diglett.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Dirt/Dirt_01
+  rotate: false
+  xy: 38, 10
+  size: 34, 14
+  orig: 34, 14
+  offset: 0, 0
+  index: -1
+Dirt/Dirt_02
+  rotate: false
+  xy: 2, 7
+  size: 34, 17
+  orig: 34, 17
+  offset: 0, 0
+  index: -1
+Head/Head_01
+  rotate: false
+  xy: 156, 2
+  size: 16, 22
+  orig: 16, 22
+  offset: 0, 0
+  index: -1
+Head/Head_02
+  rotate: false
+  xy: 116, 2
+  size: 18, 22
+  orig: 18, 22
+  offset: 0, 0
+  index: -1
+Head/Head_03
+  rotate: false
+  xy: 74, 2
+  size: 19, 22
+  orig: 19, 22
+  offset: 0, 0
+  index: -1
+Head/Head_04
+  rotate: false
+  xy: 136, 2
+  size: 18, 22
+  orig: 18, 22
+  offset: 0, 0
+  index: -1
+Head/Head_05
+  rotate: false
+  xy: 95, 2
+  size: 19, 22
+  orig: 19, 22
+  offset: 0, 0
+  index: -1
