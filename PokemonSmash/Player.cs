@@ -196,7 +196,7 @@ namespace PokemonSmash {
 						anim.state.SetAnimation("jump", false);
 					}
 					Vec2 Vel = body.GetLinearVelocity();
-					body.ApplyForce(new Vec2(Vel.X, Speed * 5), new Vec2(.1f, .1f));
+					body.ApplyForce(new Vec2(Vel.X, 30 * 5), new Vec2(.1f, .1f));
 				}
 			}
 
