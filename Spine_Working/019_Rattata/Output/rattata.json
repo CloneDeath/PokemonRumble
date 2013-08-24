@@ -14,7 +14,6 @@
 	{ "name": "FrontWhisker", "parent": "Head", "length": 8.81, "x": 2.52, "y": -1.37, "rotation": -107.89 }
 ],
 "slots": [
-	{ "name": "Premade", "bone": "root", "color": "80ff6141", "attachment": "Premade" },
 	{ "name": "BackRightPaw", "bone": "BackRightLeg", "attachment": "BackPaw/BackPaw_01" },
 	{ "name": "FrontRightPaw", "bone": "FrontRightLeg", "attachment": "FrontRightPaw/FrontRightPaw_01" },
 	{ "name": "Tail", "bone": "Tail", "attachment": "Tail/Tail_01" },
@@ -81,9 +80,6 @@
 			"Head/Head_02": { "x": 8.49, "y": 2.71, "rotation": -114.64, "width": 26, "height": 21 },
 			"Head/Head_03": { "x": 7.9, "y": 2.71, "rotation": -114.64, "width": 26, "height": 22 },
 			"Head/Head_04": { "x": 7.58, "y": 0.88, "rotation": -114.64, "width": 26, "height": 20 }
-		},
-		"Premade": {
-			"Premade": { "x": -5.04, "y": 16.37, "width": 40, "height": 39 }
 		},
 		"Tail": {
 			"Tail/Tail_01": { "x": 9.48, "y": 6.81, "rotation": -59.32, "width": 15, "height": 23 },

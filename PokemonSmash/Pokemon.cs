@@ -22,6 +22,8 @@ namespace PokemonSmash {
 		public float Height;
 		public float Weight;
 
+		public bool CanJump = true;
+
 		public Move[] Move = new Move[4];
 		public List<MixItem> MixQueue = new List<MixItem>();
 		Dictionary<string, string> AnimationAlias = new Dictionary<string, string>();

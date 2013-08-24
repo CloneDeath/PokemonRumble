@@ -191,7 +191,7 @@ namespace PokemonSmash {
 					body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * (Speed), 0), new Vec2(.1f, .1f));
 				}
 
-				if (Controls.IsPressed(Control.Jump) && !Disabled) {
+				if (Controls.IsPressed(Control.Jump) && !Disabled && Pokemon.CanJump) {
 					if (anim.state.Animation.Name != "jump") {
 						anim.state.SetAnimation("jump", false);
 					}

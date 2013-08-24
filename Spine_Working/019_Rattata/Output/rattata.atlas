@@ -5,217 +5,210 @@ filter: Nearest,Nearest
 repeat: none
 BackEar
   rotate: false
-  xy: 160, 36
+  xy: 191, 2
   size: 6, 6
   orig: 6, 6
   offset: 0, 0
   index: -1
 BackPaw/BackPaw_01
   rotate: false
-  xy: 242, 50
+  xy: 265, 18
   size: 12, 12
   orig: 12, 12
   offset: 0, 0
   index: -1
 BackPaw/BackPaw_02
   rotate: false
-  xy: 226, 50
+  xy: 249, 18
   size: 14, 12
   orig: 14, 12
   offset: 0, 0
   index: -1
 BackPaw/BackPaw_03
   rotate: false
-  xy: 58, 9
+  xy: 319, 18
   size: 9, 12
   orig: 9, 12
   offset: 0, 0
   index: -1
 BackPaw/BackPaw_04
   rotate: false
-  xy: 43, 8
+  xy: 232, 2
   size: 13, 13
   orig: 13, 13
   offset: 0, 0
   index: -1
 BackPaw/BackPaw_05
   rotate: false
-  xy: 26, 8
+  xy: 232, 17
   size: 15, 13
   orig: 15, 13
   offset: 0, 0
   index: -1
 BackPaw/BackPaw_06
   rotate: false
-  xy: 68, 26
+  xy: 293, 18
   size: 11, 12
   orig: 11, 12
   offset: 0, 0
   index: -1
 BackWhisker/BackWhisker_01
   rotate: false
-  xy: 160, 31
+  xy: 134, 8
   size: 3, 3
   orig: 3, 3
   offset: 0, 0
   index: -1
 BackWhisker/BackWhisker_02
   rotate: false
-  xy: 51, 2
+  xy: 27, 2
   size: 4, 4
   orig: 4, 4
   offset: 0, 0
   index: -1
 Body/Body_01
   rotate: false
-  xy: 44, 23
+  xy: 110, 15
   size: 22, 15
   orig: 22, 15
   offset: 0, 0
   index: -1
 Body/Body_02
   rotate: false
-  xy: 2, 5
+  xy: 86, 14
   size: 22, 16
   orig: 22, 16
   offset: 0, 0
   index: -1
 FrontEar
   rotate: false
-  xy: 244, 37
+  xy: 122, 2
   size: 10, 11
   orig: 10, 11
   offset: 0, 0
   index: -1
 FrontLeftPaw/FrontLeftPaw_01
   rotate: false
-  xy: 69, 12
+  xy: 330, 18
   size: 9, 12
   orig: 9, 12
   offset: 0, 0
   index: -1
 FrontLeftPaw/FrontLeftPaw_02
   rotate: false
-  xy: 94, 27
+  xy: 341, 18
   size: 8, 12
   orig: 8, 12
   offset: 0, 0
   index: -1
 FrontLeftPaw/FrontLeftPaw_03
   rotate: false
-  xy: 146, 30
+  xy: 279, 18
   size: 12, 12
   orig: 12, 12
   offset: 0, 0
   index: -1
 FrontPaw/FrontPaw_01
   rotate: false
-  xy: 226, 38
+  xy: 86, 2
   size: 16, 10
   orig: 16, 10
   offset: 0, 0
   index: -1
 FrontPaw/FrontPaw_02
   rotate: false
-  xy: 128, 35
+  xy: 104, 2
   size: 16, 8
   orig: 16, 8
   offset: 0, 0
   index: -1
 FrontRightPaw/FrontRightPaw_01
   rotate: false
-  xy: 81, 28
+  xy: 306, 19
   size: 11, 11
   orig: 11, 11
   offset: 0, 0
   index: -1
 FrontRightPaw/FrontRightPaw_02
   rotate: false
-  xy: 104, 29
+  xy: 351, 19
   size: 9, 11
   orig: 9, 11
   offset: 0, 0
   index: -1
 FrontWhisker/FrontWhisker_01
   rotate: false
-  xy: 40, 2
+  xy: 16, 2
   size: 9, 4
   orig: 9, 4
   offset: 0, 0
   index: -1
 FrontWhisker/FrontWhisker_02
   rotate: false
-  xy: 26, 2
+  xy: 2, 2
   size: 12, 4
   orig: 12, 4
   offset: 0, 0
   index: -1
 Head/Head_01
   rotate: false
-  xy: 128, 45
+  xy: 134, 13
   size: 20, 17
   orig: 20, 17
   offset: 0, 0
   index: -1
 Head/Head_02
   rotate: false
-  xy: 72, 41
+  xy: 30, 9
   size: 26, 21
   orig: 26, 21
   offset: 0, 0
   index: -1
 Head/Head_03
   rotate: false
-  xy: 44, 40
+  xy: 2, 8
   size: 26, 22
   orig: 26, 22
   offset: 0, 0
   index: -1
 Head/Head_04
   rotate: false
-  xy: 100, 42
+  xy: 58, 10
   size: 26, 20
   orig: 26, 20
   offset: 0, 0
   index: -1
-Premade
-  rotate: false
-  xy: 2, 23
-  size: 40, 39
-  orig: 40, 39
-  offset: 0, 0
-  index: -1
 Tail/Tail_01
   rotate: false
-  xy: 168, 39
+  xy: 174, 7
   size: 15, 23
   orig: 15, 23
   offset: 0, 0
   index: -1
 Tail/Tail_02
   rotate: false
-  xy: 150, 44
+  xy: 156, 12
   size: 16, 18
   orig: 16, 18
   offset: 0, 0
   index: -1
 Tail/Tail_03
   rotate: false
-  xy: 185, 42
+  xy: 191, 10
   size: 15, 20
   orig: 15, 20
   offset: 0, 0
   index: -1
 Tail/Tail_04
   rotate: false
-  xy: 202, 36
+  xy: 208, 4
   size: 12, 26
   orig: 12, 26
   offset: 0, 0
   index: -1
 Tail/Tail_05
   rotate: false
-  xy: 216, 37
+  xy: 222, 5
   size: 8, 25
   orig: 8, 25
   offset: 0, 0
