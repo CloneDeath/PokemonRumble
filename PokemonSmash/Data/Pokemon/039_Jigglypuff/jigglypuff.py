@@ -3,7 +3,7 @@ from Move import *;
 
 Jigglypuff = Pokemon.Add("jigglypuff");
 Jigglypuff.DisplayName = "Jigglypuff";
-Jigglypuff.Animation = "Pokemon/027_Jigglypuff/jigglypuff"
+Jigglypuff.Animation = "Pokemon/039_Jigglypuff/jigglypuff"
 Jigglypuff.HP = 115;
 Jigglypuff.Attack = 45;
 Jigglypuff.Defense = 20;

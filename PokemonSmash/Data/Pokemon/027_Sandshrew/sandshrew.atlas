@@ -4,64 +4,57 @@ format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 Arms/BackArm
-  rotate: true
-  xy: 52, 34
+  rotate: false
+  xy: 108, 20
   size: 7, 10
   orig: 7, 10
   offset: 0, 0
   index: -1
 Arms/FrontArm
   rotate: false
-  xy: 97, 49
+  xy: 95, 19
   size: 11, 11
   orig: 11, 11
   offset: 0, 0
   index: -1
 Body/Body_01
   rotate: false
-  xy: 2, 2
+  xy: 2, 7
   size: 20, 23
   orig: 20, 23
   offset: 0, 0
   index: -1
 Body/Body_02
   rotate: false
-  xy: 39, 43
+  xy: 24, 13
   size: 23, 17
   orig: 23, 17
   offset: 0, 0
   index: -1
 Head/Head_01
   rotate: false
-  xy: 64, 42
+  xy: 49, 12
   size: 18, 18
   orig: 18, 18
   offset: 0, 0
   index: -1
 Legs/BackLeg
-  rotate: false
-  xy: 39, 28
+  rotate: true
+  xy: 69, 2
   size: 11, 13
   orig: 11, 13
   offset: 0, 0
   index: -1
 Legs/FrontLeg
   rotate: false
-  xy: 84, 47
+  xy: 82, 17
   size: 11, 13
   orig: 11, 13
   offset: 0, 0
   index: -1
-Premade
-  rotate: false
-  xy: 2, 27
-  size: 35, 33
-  orig: 35, 33
-  offset: 0, 0
-  index: -1
 Tail/Tail_01
   rotate: false
-  xy: 24, 10
+  xy: 69, 15
   size: 11, 15
   orig: 11, 15
   offset: 0, 0
