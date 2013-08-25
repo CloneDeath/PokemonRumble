@@ -4,8 +4,8 @@ format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
 Antenna
-  rotate: false
-  xy: 39, 5
+  rotate: true
+  xy: 117, 16
   size: 14, 9
   orig: 14, 9
   offset: 0, 0
@@ -46,8 +46,8 @@ BodyTop/BodyTop_02
   offset: 0, 0
   index: -1
 Butt
-  rotate: false
-  xy: 2, 3
+  rotate: true
+  xy: 2, 2
   size: 8, 7
   orig: 8, 7
   offset: 0, 0
@@ -60,8 +60,8 @@ Head
   offset: 0, 0
   index: -1
 Tail/Tail_01
-  rotate: false
-  xy: 117, 16
+  rotate: true
+  xy: 39, 5
   size: 9, 14
   orig: 9, 14
   offset: 0, 0
@@ -74,8 +74,8 @@ Tail/Tail_02
   offset: 0, 0
   index: -1
 Tail/Tail_03
-  rotate: false
-  xy: 64, 5
+  rotate: true
+  xy: 64, 12
   size: 7, 14
   orig: 7, 14
   offset: 0, 0
