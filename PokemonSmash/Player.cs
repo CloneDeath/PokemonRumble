@@ -118,6 +118,9 @@ namespace PokemonSmash {
 
 			// Add the shape to the body.
 			Fixture fix = body.CreateFixture(shapeDef);
+			fix.Density = 1;
+			fix.Friction = 0.3f;
+			fix.Restitution = 0.1f;
 			fix.UserData = this;
 			fix.Filter.GroupIndex = this.ID;
 			fix.Filter.CategoryBits = 0x0002;
@@ -125,9 +128,8 @@ namespace PokemonSmash {
 
 			// Now tell the dynamic body to compute it's mass properties base
 			// on its shape.
-			body.SetMassFromShapes();
 			var mass = body.GetMassData();
-			mass.Mass = Pokemon.Weight / 10;
+			mass.Mass = Pokemon.Weight;
 			body.SetMass(mass);
 
 			body.SetFixedRotation(true);
@@ -170,17 +172,20 @@ namespace PokemonSmash {
 			DisableTime -= dt;
 
 			if (OnGround) {
+				float MoveSpeed = (float)System.Math.Sqrt(Speed + 50);
 				if (Controls.IsDown(Control.Left) && !Disabled) {
 					if (anim.state.Animation.Name != "walk") {
 						anim.state.SetAnimation("walk", true);
 					}
-					body.ApplyForce(new Vec2(-(Speed/10) - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
+					//body.SetLinearVelocity(new Vec2(vel.X * 1.1f, vel.Y));
+					body.ApplyForce(new Vec2(-MoveSpeed - (body.GetLinearVelocity().X * 2), 0));
 					Direction = -1;
 				} else if (Controls.IsDown(Control.Right) && !Disabled) {
 					if (anim.state.Animation.Name != "walk") {
 						anim.state.SetAnimation("walk", true);
 					}
-					body.ApplyForce(new Vec2((Speed/10) - body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
+					//body.SetLinearVelocity(new Vec2(vel.X * 0.9f, vel.Y));
+					body.ApplyForce(new Vec2(MoveSpeed - (body.GetLinearVelocity().X * 2), 0));
 					Direction = 1;
 				} else {
 					if (!Disabled) {
@@ -188,7 +193,8 @@ namespace PokemonSmash {
 							anim.state.SetAnimation("idle", true);
 						}
 					}
-					body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * (Speed), 0), new Vec2(.1f, .1f));
+
+					body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * MoveSpeed * 3, 0), new Vec2(.1f, .1f));
 				}
 
 				if (Controls.IsPressed(Control.Jump) && !Disabled && Pokemon.CanJump) {
@@ -196,7 +202,7 @@ namespace PokemonSmash {
 						anim.state.SetAnimation("jump", false);
 					}
 					Vec2 Vel = body.GetLinearVelocity();
-					body.ApplyForce(new Vec2(Vel.X, 30 * 5), new Vec2(.1f, .1f));
+					body.ApplyImpulse(new Vec2(Vel.X, 3 * MoveSpeed));
 				}
 			}
 
