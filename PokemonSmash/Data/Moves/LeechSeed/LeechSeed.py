@@ -1,5 +1,5 @@
-from Move import *;
-from Random import *;
+import Move;
+import Random;
 Tackle = Move.Add("leechseed");
 
 def Attack(player):

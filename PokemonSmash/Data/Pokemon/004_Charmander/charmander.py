@@ -1,5 +1,5 @@
-from Pokemon import *;
-from Move import *;
+import Pokemon;
+import Move;
 
 Charmander = Pokemon.Add("charmander");
 Charmander.DisplayName = "Charmander";

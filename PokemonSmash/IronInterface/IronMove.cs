@@ -5,9 +5,9 @@ using System.Text;
 
 namespace PokemonSmash.IronInterface {
 	public class IronMove {
-		public static Dictionary<string, Move> Moves = new Dictionary<string, Move>();
+		internal static Dictionary<string, Move> Moves = new Dictionary<string, Move>();
 
-		public Move Add(string name) {
+		public static Move Add(string name) {
 			if (Moves.ContainsKey(name)) {
 				return Moves[name];
 			} else {
@@ -17,7 +17,7 @@ namespace PokemonSmash.IronInterface {
 			}
 		}
 
-		public Move Find(string name) {
+		public static Move Find(string name) {
 			return Add(name);
 		}
 	}

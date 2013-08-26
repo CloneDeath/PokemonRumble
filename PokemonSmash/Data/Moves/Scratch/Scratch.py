@@ -1,4 +1,4 @@
-from Move import *;
+import Move;
 Scratch = Move.Add("scratch");
 
 def Attack(player):

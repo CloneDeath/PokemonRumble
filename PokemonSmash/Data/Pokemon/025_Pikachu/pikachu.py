@@ -1,5 +1,5 @@
-from Pokemon import *;
-from Move import *;
+import Pokemon;
+import Move;
 
 Pikachu = Pokemon.Add("pikachu");
 Pikachu.DisplayName = "Pikachu";

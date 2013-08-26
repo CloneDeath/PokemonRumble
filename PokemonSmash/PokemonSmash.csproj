@@ -95,6 +95,7 @@
     <Compile Include="GameStates\Battle.cs" />
     <Compile Include="GameStates\CharacterSelectMenu\CharacterSelect.cs" />
     <Compile Include="Animation2D.cs" />
+    <Compile Include="GameStates\CharacterSelectMenu\CursorPosition.cs" />
     <Compile Include="GameStates\CharacterSelectMenu\PlayerCursor.cs" />
     <Compile Include="GameStates\CharacterSelectMenu\PokemonSlot.cs" />
     <Compile Include="GameStates\GameState.cs" />

@@ -1,4 +1,4 @@
-from Move import *;
+import Move;
 Tackle = Move.Add("tackle");
 
 def Attack(player):

@@ -1,4 +1,4 @@
-from Move import *;
+import Move;
 Whip = Move.Add("tailwhip");
 
 def Attack(player):

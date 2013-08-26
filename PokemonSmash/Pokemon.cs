@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace PokemonSmash {
 	
@@ -23,6 +24,8 @@ namespace PokemonSmash {
 		public float Weight;
 
 		public bool CanJump = true;
+		public bool CastsShadow = true;
+		public Color Color = Color.Gray;
 
 		public Move[] Move = new Move[4];
 		public List<MixItem> MixQueue = new List<MixItem>();

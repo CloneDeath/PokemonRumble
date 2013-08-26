@@ -270,11 +270,13 @@ namespace PokemonSmash {
 			anim.skeleton.X = (float)this.X;
 			anim.skeleton.Y = (float)this.Y - (Pokemon.Height / 2);
 
-			GraphicsManager.DrawQuad(new Vector3d(anim.skeleton.X - 0.4, 0.002, -0.3),
-					new Vector3d(anim.skeleton.X + 0.4, 0.002, -0.3),
-					new Vector3d(anim.skeleton.X + 0.4, 0.002, 0.3),
-					new Vector3d(anim.skeleton.X - 0.4, 0.002, 0.3),
-					ResourceManager.Shadow);
+			if (Pokemon.CastsShadow) {
+				GraphicsManager.DrawQuad(new Vector3d(anim.skeleton.X - 0.4, 0.002, -0.3),
+						new Vector3d(anim.skeleton.X + 0.4, 0.002, -0.3),
+						new Vector3d(anim.skeleton.X + 0.4, 0.002, 0.3),
+						new Vector3d(anim.skeleton.X - 0.4, 0.002, 0.3),
+						ResourceManager.Shadow);
+			}
 
 			PreviousVelocity = CurrentVelocity;
 			CurrentVelocity = body.GetLinearVelocity();

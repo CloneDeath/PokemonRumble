@@ -1,5 +1,5 @@
-from Move import *;
-from Random import *;
+import Move;
+import Random;
 Razor = Move.Add("razorleaf");
 
 def Attack(player):

@@ -1,5 +1,5 @@
-from Move import *;
-from Random import *;
+import Move;
+import Random;
 Burst = Move.Add("flameburst");
 
 def Attack(player):

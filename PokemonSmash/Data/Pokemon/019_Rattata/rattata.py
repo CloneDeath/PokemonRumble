@@ -1,5 +1,5 @@
-from Pokemon import *;
-from Move import *;
+import Pokemon;
+import Move;
 
 Rattata = Pokemon.Add("rattata");
 Rattata.DisplayName = "Rattata";

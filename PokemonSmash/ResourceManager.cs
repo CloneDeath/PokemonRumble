@@ -8,6 +8,8 @@ using Microsoft.Scripting.Hosting;
 using IronPython.Hosting;
 using System.IO;
 using PokemonSmash.IronInterface;
+using System.Drawing;
+using System.Reflection;
 
 namespace PokemonSmash {
 	class ResourceManager {
@@ -15,19 +17,59 @@ namespace PokemonSmash {
 			InitializeScripts();
 		}
 
+
+		public delegate object AllFunctions(params object[] input);
+		private static void CreateModuleFromClass(ScriptEngine engine, Type t, string ModuleName)
+		{
+			var Module = engine.CreateModule(ModuleName);
+			foreach (MemberInfo m in t.GetMembers(BindingFlags.Public | BindingFlags.Static)){
+				
+				if (m.MemberType == MemberTypes.Method){
+					MethodInfo method = (MethodInfo)m;
+					Module.SetVariable(m.Name, (AllFunctions)delegate(object[] input){ return method.Invoke(null, input);});
+					continue;
+				}
+
+				if (m.MemberType == MemberTypes.Property){
+					MethodInfo method = ((PropertyInfo)m).GetGetMethod();
+					Module.SetVariable(m.Name, method.Invoke(null, null));
+					continue;
+				}
+
+				Console.WriteLine("Not supported: " + m.Name + " for module: " + ModuleName);
+			}
+		}
+
+		private static void CreateModuleFromClass(ScriptEngine engine, object t, string ModuleName)
+		{
+			var Module = engine.CreateModule(ModuleName);
+			foreach (MemberInfo m in t.GetType().GetMembers(BindingFlags.Public | BindingFlags.Instance)) {
+
+				if (m.MemberType == MemberTypes.Method) {
+					MethodInfo method = (MethodInfo)m;
+					Module.SetVariable(m.Name, (AllFunctions)delegate(object[] input) { return method.Invoke(t, input); });
+					continue;
+				}
+
+				if (m.MemberType == MemberTypes.Property) {
+					MethodInfo method = ((PropertyInfo)m).GetGetMethod();
+					Module.SetVariable(m.Name, method.Invoke(t, null));
+					continue;
+				}
+
+				Console.WriteLine("Not supported: " + m.Name + " for module: " + ModuleName);
+			}
+		}
+
 		private static void InitializeScripts() {
 			ScriptEngine engine = Python.CreateEngine();
 
 			ScriptScope scope = engine.Runtime.CreateScope();
 
-			var PokemonModule = engine.CreateModule("Pokemon");
-			PokemonModule.SetVariable("Pokemon", new IronPokemon());
-
-			var MoveModule = engine.CreateModule("Move");
-			MoveModule.SetVariable("Move", new IronMove());
-
-			var RandModule = engine.CreateModule("Random");
-			RandModule.SetVariable("Random", new Random());
+			CreateModuleFromClass(engine, typeof(IronPokemon), "Pokemon");
+			CreateModuleFromClass(engine, typeof(Color), "Color");
+			CreateModuleFromClass(engine, typeof(IronMove), "Move");
+			CreateModuleFromClass(engine, new Random(), "Random");
 
 			RecursivelyRunScriptsIn(@"Data\", engine, scope);			
 		}

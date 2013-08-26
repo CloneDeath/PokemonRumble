@@ -1,5 +1,5 @@
-from Move import *;
-from Random import *;
+import Move;
+import Random;
 Bubble = Move.Add("bubble");
 
 def ShootBubble(player):

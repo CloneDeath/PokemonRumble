@@ -1,5 +1,5 @@
-from Pokemon import *;
-from Move import *;
+import Pokemon;
+import Move;
 
 Jigglypuff = Pokemon.Add("jigglypuff");
 Jigglypuff.DisplayName = "Jigglypuff";

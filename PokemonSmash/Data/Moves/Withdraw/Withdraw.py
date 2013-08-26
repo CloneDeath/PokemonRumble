@@ -1,4 +1,4 @@
-from Move import *;
+import Move;
 Withdraw = Move.Add("withdraw");
 
 def Attack(player):

@@ -1,5 +1,6 @@
-from Pokemon import *;
-from Move import *;
+import Pokemon;
+import Move;
+import Color;
 
 Bulbasaur = Pokemon.Add("bulbasaur");
 Bulbasaur.DisplayName = "Bulbasaur";
@@ -10,6 +11,8 @@ Bulbasaur.Defense = 49;
 Bulbasaur.SpecialAttack = 65;
 Bulbasaur.SpecialDefense = 65;
 Bulbasaur.Speed = 45;
+Bulbasaur.Color = Color.Green;
+
 
 Bulbasaur.Width = .8;
 Bulbasaur.Height = .5;

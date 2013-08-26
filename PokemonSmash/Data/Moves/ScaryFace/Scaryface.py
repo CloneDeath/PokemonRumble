@@ -1,4 +1,4 @@
-from Move import *;
+import Move;
 Face = Move.Add("scaryface");
 
 def Attack(player):

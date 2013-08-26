@@ -1,5 +1,5 @@
-from Move import *;
-from Random import *;
+import Move;
+import Random;
 Ember = Move.Add("ember");
 
 def Attack(player):

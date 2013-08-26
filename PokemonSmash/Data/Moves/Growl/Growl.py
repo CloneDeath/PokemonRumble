@@ -1,4 +1,4 @@
-from Move import *;
+import Move;
 Growl = Move.Add("growl");
 
 def Attack(player):

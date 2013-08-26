@@ -1,5 +1,5 @@
-from Pokemon import *;
-from Move import *;
+import Pokemon;
+import Move;
 
 Squirtle = Pokemon.Add("squirtle");
 Squirtle.DisplayName = "Squirtle";

@@ -5,10 +5,12 @@ using System.Text;
 using GLImp;
 using PokemonSmash.Input;
 using OpenTK;
+using PokemonSmash.GameStates.CharacterSelectMenu;
 
 namespace PokemonSmash {
 	class PlayerCursor {
-		public PlayerCursor(int playernumber, int pos, ControlSet contr, string tokenloc, string slotloc, Vector2 corner) {
+		public PlayerCursor(int playernumber, CursorPosition pos, ControlSet contr, string tokenloc, string slotloc, Vector2 corner)
+		{
 			this.Position = pos;
 			this.control = contr;
 			Token = new Texture(tokenloc);
@@ -16,7 +18,7 @@ namespace PokemonSmash {
 			this.Corner = corner;
 			this.PlayerNumber = playernumber;
 		}
-		public int Position;
+		public CursorPosition Position;
 		public ControlSet control;
 		public bool ready = false;
 		public Texture Token;

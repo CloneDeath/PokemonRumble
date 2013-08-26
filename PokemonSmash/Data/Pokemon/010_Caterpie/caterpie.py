@@ -1,5 +1,5 @@
-from Pokemon import *;
-from Move import *;
+import Pokemon;
+import Move;
 
 Caterpie = Pokemon.Add("caterpie");
 Caterpie.DisplayName = "Caterpie";

@@ -1,5 +1,5 @@
-from Pokemon import *;
-from Move import *;
+import Pokemon;
+import Move;
 
 Sandshrew = Pokemon.Add("sandshrew");
 Sandshrew.DisplayName = "Sandshrew";
