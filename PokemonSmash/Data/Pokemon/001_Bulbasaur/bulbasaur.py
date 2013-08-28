@@ -18,6 +18,20 @@ Bulbasaur.Width = .8;
 Bulbasaur.Height = .5;
 Bulbasaur.Weight = 6.9;
  
+Bulbasaur.Moves.Add("tackle");
+Bulbasaur.Moves.Add("growl");
+Bulbasaur.Moves.Add("leechseed");
+Bulbasaur.Moves.Add("vinewhip");
+Bulbasaur.Moves.Add("poisonpowder");
+Bulbasaur.Moves.Add("sleeppowder");
+Bulbasaur.Moves.Add("takedown");
+Bulbasaur.Moves.Add("razorleaf");
+Bulbasaur.Moves.Add("sweetscent");
+Bulbasaur.Moves.Add("growth");
+Bulbasaur.Moves.Add("doubleedge");
+Bulbasaur.Moves.Add("worryseed");
+Bulbasaur.Moves.Add("synthesis");
+Bulbasaur.Moves.Add("seedbomb");
 
 Bulbasaur.Move[0] = Move.Find("tackle");
 Bulbasaur.Move[1] = Move.Find("leechseed");

@@ -8,21 +8,26 @@ using System.Drawing;
 
 namespace PokemonSmash{
 	class PokemonSlot {
-		public PokemonSlot(Pokemon pkmn, Animation2D anim){
-			this.pokemon = pkmn;
-			this.animation = anim;
+		public PokemonSlot(){
 			this.Position = new Vector2(0, 0);
 			this.Size = new Vector2(32, 32);
+			Pokemon = null;
+			Animation = null;
 		}
-		public Pokemon pokemon;
-		public Animation2D animation;
+		public Pokemon Pokemon;
+		public Animation2D Animation;
 		public Vector2 Position;
 		public Vector2 Size;
 
 		internal void Draw()
 		{
-			GraphicsManager.DrawRectangle((Vector2d)Position, (Vector2d)(Position + Size), pokemon.Color);
-			animation.Draw2D(Position.X + (Size.X / 2), Position.Y + Size.Y - 10);
+			if (Pokemon != null) {
+				Color temp = Color.FromArgb(100, Pokemon.Color.R, Pokemon.Color.G, Pokemon.Color.B);
+				GraphicsManager.DrawRectangle((Vector2d)Position, (Vector2d)(Position + Size), temp);
+				Animation.Draw2D(Position.X + (Size.X / 2), Position.Y + Size.Y - 10);
+			} else {
+				GraphicsManager.DrawRectangle((Vector2d)Position, (Vector2d)(Position + Size), Color.Gray);
+			}
 		}
 	}
 }

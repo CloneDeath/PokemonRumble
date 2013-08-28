@@ -170,24 +170,55 @@ namespace PokemonSmash {
 			}
 
 			DisableTime -= dt;
+			float MoveSpeed = (float)System.Math.Sqrt(Speed + 50);
 
-			if (OnGround) {
-				float MoveSpeed = (float)System.Math.Sqrt(Speed + 50);
+			if (Pokemon.Hovers && !Disabled) {
+				body.ApplyForce(-body.GetWorld().Gravity * 0.1f);
+				Vec2 Desire = new Vec2();
+				if (Controls.IsDown(Control.Left)) {
+					Desire.X -= 1;
+					Direction = -1;
+				}
+
+				if (Controls.IsDown(Control.Right)) {
+					Desire.X += 1;
+					Direction = 1;
+				}
+
+				if (Controls.IsDown(Control.Up)) {
+					Desire.Y += 1;
+				}
+
+				if (Controls.IsDown(Control.Down)) {
+					Desire.Y -= 1;
+				}
+
+				var speed = body.GetLinearVelocity();
+
+				if (Desire.X == 0 && Desire.Y == 0) {
+					body.ApplyForce(-speed * 0.4f);
+				} else {
+					body.ApplyForce((Desire * MoveSpeed) - speed);
+				}
+			}
+
+			if (!Pokemon.Hovers) {
+				float FrictionModifier = OnGround ? 1 : 0.1f;
 				if (Controls.IsDown(Control.Left) && !Disabled) {
 					if (anim.state.Animation.Name != "walk") {
 						anim.state.SetAnimation("walk", true);
 					}
 					//body.SetLinearVelocity(new Vec2(vel.X * 1.1f, vel.Y));
-					body.ApplyForce(new Vec2(-MoveSpeed - (body.GetLinearVelocity().X * 2), 0));
+					body.ApplyForce(new Vec2(-(MoveSpeed * FrictionModifier) - (body.GetLinearVelocity().X * 2), 0));
 					Direction = -1;
 				} else if (Controls.IsDown(Control.Right) && !Disabled) {
 					if (anim.state.Animation.Name != "walk") {
 						anim.state.SetAnimation("walk", true);
 					}
 					//body.SetLinearVelocity(new Vec2(vel.X * 0.9f, vel.Y));
-					body.ApplyForce(new Vec2(MoveSpeed - (body.GetLinearVelocity().X * 2), 0));
+					body.ApplyForce(new Vec2((MoveSpeed * FrictionModifier) - (body.GetLinearVelocity().X * 2), 0));
 					Direction = 1;
-				} else {
+				} else if (OnGround) {
 					if (!Disabled) {
 						if (anim.state.Animation.Name != "idle") {
 							anim.state.SetAnimation("idle", true);

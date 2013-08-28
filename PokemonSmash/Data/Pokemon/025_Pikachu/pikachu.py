@@ -1,5 +1,6 @@
 import Pokemon;
 import Move;
+import Color;
 
 Pikachu = Pokemon.Add("pikachu");
 Pikachu.DisplayName = "Pikachu";
@@ -10,6 +11,7 @@ Pikachu.Defense = 30;
 Pikachu.SpecialAttack = 50;
 Pikachu.SpecialDefense = 40;
 Pikachu.Speed = 90;
+Pikachu.Color = Color.Yellow;
 
 Pikachu.Width = .5;
 Pikachu.Height =  .5;

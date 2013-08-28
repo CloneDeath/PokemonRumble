@@ -1,5 +1,6 @@
 import Pokemon;
 import Move;
+import Color;
 
 Charmander = Pokemon.Add("charmander");
 Charmander.DisplayName = "Charmander";
@@ -10,6 +11,7 @@ Charmander.Defense = 43;
 Charmander.SpecialAttack = 60;
 Charmander.SpecialDefense = 50;
 Charmander.Speed = 65;
+Charmander.Color = Color.Red;
 
 Charmander.Width = .4;
 Charmander.Height =  .6;

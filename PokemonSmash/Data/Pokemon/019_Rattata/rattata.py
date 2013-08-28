@@ -1,5 +1,6 @@
 import Pokemon;
 import Move;
+import Color;
 
 Rattata = Pokemon.Add("rattata");
 Rattata.DisplayName = "Rattata";
@@ -10,6 +11,7 @@ Rattata.Defense = 35;
 Rattata.SpecialAttack = 25;
 Rattata.SpecialDefense = 35;
 Rattata.Speed = 72;
+Rattata.Color = Color.Purple;
 
 Rattata.Width = .5;
 Rattata.Height =  .5;

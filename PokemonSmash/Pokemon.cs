@@ -25,9 +25,11 @@ namespace PokemonSmash {
 
 		public bool CanJump = true;
 		public bool CastsShadow = true;
+		public bool Hovers = false;
 		public Color Color = Color.Gray;
 
 		public Move[] Move = new Move[4];
+		public List<string> Moves = new List<string>();
 		public List<MixItem> MixQueue = new List<MixItem>();
 		Dictionary<string, string> AnimationAlias = new Dictionary<string, string>();
 		

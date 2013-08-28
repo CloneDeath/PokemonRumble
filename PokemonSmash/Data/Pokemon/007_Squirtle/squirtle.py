@@ -1,5 +1,6 @@
 import Pokemon;
 import Move;
+import Color;
 
 Squirtle = Pokemon.Add("squirtle");
 Squirtle.DisplayName = "Squirtle";
@@ -10,6 +11,7 @@ Squirtle.Defense = 63;
 Squirtle.SpecialAttack = 50;
 Squirtle.SpecialDefense = 64;
 Squirtle.Speed = 43;
+Squirtle.Color = Color.Blue;
 
 Squirtle.Width = .5;
 Squirtle.Height =  .5;

@@ -1,5 +1,6 @@
 import Pokemon;
 import Move;
+import Color;
 
 Caterpie = Pokemon.Add("caterpie");
 Caterpie.DisplayName = "Caterpie";
@@ -10,6 +11,7 @@ Caterpie.Defense = 35;
 Caterpie.SpecialAttack = 20;
 Caterpie.SpecialDefense = 20;
 Caterpie.Speed = 45;
+Caterpie.Color = Color.Green;
 
 Caterpie.Width = .5;
 Caterpie.Height =  .5;

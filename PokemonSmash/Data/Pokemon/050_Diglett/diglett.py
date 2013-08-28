@@ -1,5 +1,6 @@
 import Pokemon;
 import Move;
+import Color;
 
 Diglett = Pokemon.Add("diglett");
 Diglett.DisplayName = "Diglett";
@@ -10,6 +11,7 @@ Diglett.Defense = 25;
 Diglett.SpecialAttack = 35;
 Diglett.SpecialDefense = 45;
 Diglett.Speed = 95;
+Diglett.Color = Color.Brown;
 
 Diglett.CanJump = False;
 Diglett.CastsShadow = False;

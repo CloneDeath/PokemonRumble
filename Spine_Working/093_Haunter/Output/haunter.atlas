@@ -1,0 +1,89 @@
+
+haunter.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Head/Head_01
+  rotate: false
+  xy: 52, 22
+  size: 45, 40
+  orig: 45, 40
+  offset: 0, 0
+  index: -1
+Head/Head_02
+  rotate: false
+  xy: 99, 20
+  size: 45, 42
+  orig: 45, 42
+  offset: 0, 0
+  index: -1
+Head/Head_03
+  rotate: false
+  xy: 146, 21
+  size: 45, 41
+  orig: 45, 41
+  offset: 0, 0
+  index: -1
+Head/Head_04
+  rotate: false
+  xy: 193, 22
+  size: 44, 40
+  orig: 44, 40
+  offset: 0, 0
+  index: -1
+Head/Head_05
+  rotate: false
+  xy: 239, 23
+  size: 45, 39
+  orig: 45, 39
+  offset: 0, 0
+  index: -1
+Head/Head_06
+  rotate: false
+  xy: 2, 22
+  size: 48, 40
+  orig: 48, 40
+  offset: 0, 0
+  index: -1
+Head/Head_07
+  rotate: false
+  xy: 286, 23
+  size: 45, 39
+  orig: 45, 39
+  offset: 0, 0
+  index: -1
+LeftHand/LeftHand_01
+  rotate: false
+  xy: 2, 6
+  size: 20, 14
+  orig: 20, 14
+  offset: 0, 0
+  index: -1
+LeftHand/LeftHand_02
+  rotate: false
+  xy: 146, 2
+  size: 21, 17
+  orig: 21, 17
+  offset: 0, 0
+  index: -1
+LeftHand/LeftHand_03
+  rotate: false
+  xy: 333, 26
+  size: 15, 14
+  orig: 15, 14
+  offset: 0, 0
+  index: -1
+RightHand/RightHand_01
+  rotate: false
+  xy: 169, 5
+  size: 18, 14
+  orig: 18, 14
+  offset: 0, 0
+  index: -1
+RightHand/RightHand_02
+  rotate: false
+  xy: 333, 42
+  size: 23, 20
+  orig: 23, 20
+  offset: 0, 0
+  index: -1

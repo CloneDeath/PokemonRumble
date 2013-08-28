@@ -29,10 +29,10 @@ namespace Spine {
 					byte g = (byte)(skeleton.G * slot.G * 255);
 					byte b = (byte)(skeleton.B * slot.B * 255);
 					byte a = (byte)(skeleton.A * slot.A * 255);
-					item.vertexTL.Color = Color.FromArgb(r, g, b, a);
-					item.vertexBL.Color = Color.FromArgb(r, g, b, a);
-					item.vertexBR.Color = Color.FromArgb(r, g, b, a);
-					item.vertexTR.Color = Color.FromArgb(r, g, b, a);
+					item.vertexTL.Color = Color.FromArgb(a, r, g, b);
+					item.vertexBL.Color = Color.FromArgb(a, r, g, b);
+					item.vertexBR.Color = Color.FromArgb(a, r, g, b);
+					item.vertexTR.Color = Color.FromArgb(a, r, g, b);
 
 					float[] vertices = this.vertices;
 					regionAttachment.ComputeVertices(skeleton.X, skeleton.Y, slot.Bone, vertices);
@@ -69,10 +69,10 @@ namespace Spine {
 			GL.BindTexture(TextureTarget.Texture2D, item.Texture.ID);
 			GL.Begin(BeginMode.Quads);
 			{
-				GL.TexCoord2(item.vertexTL.TextureCoordinate); GL.Color3(item.vertexTL.Color); GL.Vertex3(item.vertexTL.Position);
-				GL.TexCoord2(item.vertexTR.TextureCoordinate); GL.Color3(item.vertexTR.Color); GL.Vertex3(item.vertexTR.Position);
-				GL.TexCoord2(item.vertexBR.TextureCoordinate); GL.Color3(item.vertexBR.Color); GL.Vertex3(item.vertexBR.Position);
-				GL.TexCoord2(item.vertexBL.TextureCoordinate); GL.Color3(item.vertexBL.Color); GL.Vertex3(item.vertexBL.Position);
+				GL.TexCoord2(item.vertexTL.TextureCoordinate); GL.Color4(item.vertexTL.Color); GL.Vertex3(item.vertexTL.Position);
+				GL.TexCoord2(item.vertexTR.TextureCoordinate); GL.Color4(item.vertexTR.Color); GL.Vertex3(item.vertexTR.Position);
+				GL.TexCoord2(item.vertexBR.TextureCoordinate); GL.Color4(item.vertexBR.Color); GL.Vertex3(item.vertexBR.Position);
+				GL.TexCoord2(item.vertexBL.TextureCoordinate); GL.Color4(item.vertexBL.Color); GL.Vertex3(item.vertexBL.Position);
 			}
 			GL.End();
 		}

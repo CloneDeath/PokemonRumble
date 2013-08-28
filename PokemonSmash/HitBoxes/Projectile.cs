@@ -42,7 +42,6 @@ namespace PokemonSmash.HitBoxes {
 		}
 
 		void Cleanup(HitBox target) {
-			projectile.DestroyFixture(fix2);
 			projectile.GetWorld().DestroyBody(projectile);
 		}
 
