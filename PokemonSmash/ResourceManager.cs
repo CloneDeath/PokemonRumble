@@ -61,6 +61,21 @@ namespace PokemonSmash {
 			}
 		}
 
+		private static void CreateModuleFromEnum(ScriptEngine engine, Type t, string ModuleName)
+		{
+			var Module = engine.CreateModule(ModuleName);
+			foreach (MemberInfo m in t.GetMembers(BindingFlags.Public | BindingFlags.Static)) {
+				if (m.MemberType == MemberTypes.Field) {
+					Module.SetVariable(m.Name, ((FieldInfo)m).GetValue(null));
+					continue;
+				}
+
+				Console.WriteLine("Not supported: " + m.Name + " for module: " + ModuleName);
+			}
+		}
+
+		
+
 		private static void InitializeScripts() {
 			ScriptEngine engine = Python.CreateEngine();
 
@@ -70,6 +85,7 @@ namespace PokemonSmash {
 			CreateModuleFromClass(engine, typeof(Color), "Color");
 			CreateModuleFromClass(engine, typeof(IronMove), "Move");
 			CreateModuleFromClass(engine, new Random(), "Random");
+			CreateModuleFromEnum(engine, typeof(PokemonType), "Type");
 
 			RecursivelyRunScriptsIn(@"Data\", engine, scope);			
 		}

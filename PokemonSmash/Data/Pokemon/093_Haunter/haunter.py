@@ -1,6 +1,7 @@
 import Pokemon;
 import Move;
 import Color;
+import Type;
 
 Haunter = Pokemon.Add("haunter");
 Haunter.DisplayName = "Haunter";
@@ -12,6 +13,8 @@ Haunter.SpecialAttack = 115;
 Haunter.SpecialDefense = 55;
 Haunter.Speed = 95;
 Haunter.Color = Color.Purple;
+Haunter.PrimaryType = Type.Ghost;
+Haunter.SecondaryType = Type.Poison;
 
 Haunter.Hovers = True;
 Haunter.CastsShadow = False;

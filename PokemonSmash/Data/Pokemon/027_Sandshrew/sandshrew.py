@@ -1,6 +1,7 @@
 import Pokemon;
 import Move;
 import Color;
+import Type;
 
 Sandshrew = Pokemon.Add("sandshrew");
 Sandshrew.DisplayName = "Sandshrew";
@@ -12,6 +13,7 @@ Sandshrew.SpecialAttack = 20;
 Sandshrew.SpecialDefense = 30;
 Sandshrew.Speed = 40;
 Sandshrew.Color = Color.Yellow;
+Sandshrew.PrimaryType = Type.Ground;
 
 Sandshrew.Width = .5;
 Sandshrew.Height = .5;

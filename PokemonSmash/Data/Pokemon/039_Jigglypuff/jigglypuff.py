@@ -1,6 +1,7 @@
 import Pokemon;
 import Move;
 import Color;
+import Type;
 
 Jigglypuff = Pokemon.Add("jigglypuff");
 Jigglypuff.DisplayName = "Jigglypuff";
@@ -12,6 +13,8 @@ Jigglypuff.SpecialAttack = 45;
 Jigglypuff.SpecialDefense = 25;
 Jigglypuff.Speed = 20;
 Jigglypuff.Color = Color.Pink;
+Jigglypuff.PrimaryType = Type.Normal;
+Jigglypuff.SecondaryType = Type.Fairy;
 
 Jigglypuff.Width = .5;
 Jigglypuff.Height = .5;

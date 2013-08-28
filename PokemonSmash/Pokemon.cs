@@ -35,9 +35,42 @@ namespace PokemonSmash {
 		
 		public string Animation;
 
+		public PokemonType[] Types
+		{
+			get;
+			private set;
+		}
+
+		public PokemonType PrimaryType
+		{
+			get
+			{
+				return Types[0];
+			}
+			set
+			{
+				Types[0] = value;
+			}
+		}
+
+		public PokemonType SecondaryType
+		{
+			get
+			{
+				return Types[1];
+			}
+			set 
+			{
+				Types[1] = value;
+			}
+		}
+
 
 		public Pokemon(string Name) {
 			this.Name = Name;
+			Types = new PokemonType[2];
+			PrimaryType = PokemonType.None;
+			SecondaryType = PokemonType.None;
 		}
 
 		

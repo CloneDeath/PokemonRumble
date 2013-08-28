@@ -124,7 +124,11 @@ namespace PokemonSmash {
 			fix.UserData = this;
 			fix.Filter.GroupIndex = this.ID;
 			fix.Filter.CategoryBits = 0x0002;
-			fix.Filter.MaskBits = 0xFFFF;
+			if (Pokemon.Types.Contains(PokemonType.Ghost)){
+				fix.Filter.MaskBits = 0xFFFF - 0x0002;
+			} else {
+				fix.Filter.MaskBits = 0xFFFF;
+			}
 
 			// Now tell the dynamic body to compute it's mass properties base
 			// on its shape.
@@ -173,7 +177,7 @@ namespace PokemonSmash {
 			float MoveSpeed = (float)System.Math.Sqrt(Speed + 50);
 
 			if (Pokemon.Hovers && !Disabled) {
-				body.ApplyForce(-body.GetWorld().Gravity * 0.1f);
+				body.ApplyForce(-body.GetWorld().Gravity * Pokemon.Weight);
 				Vec2 Desire = new Vec2();
 				if (Controls.IsDown(Control.Left)) {
 					Desire.X -= 1;
@@ -203,7 +207,7 @@ namespace PokemonSmash {
 			}
 
 			if (!Pokemon.Hovers) {
-				float FrictionModifier = OnGround ? 1 : 0.1f;
+				float FrictionModifier = OnGround ? 1 : 0.5f;
 				if (Controls.IsDown(Control.Left) && !Disabled) {
 					if (anim.state.Animation.Name != "walk") {
 						anim.state.SetAnimation("walk", true);

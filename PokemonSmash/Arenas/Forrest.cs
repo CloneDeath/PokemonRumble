@@ -18,8 +18,8 @@ namespace PokemonSmash.Arenas {
 		public Forrest() : base(){
 			Random rand = new Random();
 			List<Vector3d> Trees = new List<Vector3d>();
-			for (int i = 0; i < 1200; i++) {
-				Trees.Add(new Vector3d((rand.NextDouble() - 0.5) * 200, (-(rand.NextDouble()) * 50) + 2, (rand.NextDouble() + 5)));
+			for (int i = 0; i < 900; i++) {
+				Trees.Add(new Vector3d((rand.NextDouble() - 0.5) * 200, (-(rand.NextDouble()) * 75) + 2, (rand.NextDouble() + 5)));
 			}
 
 			Trees.Sort((Comparison<Vector3d>)delegate(Vector3d a, Vector3d b) { return b.Y > a.Y ? -1 : 1; });
