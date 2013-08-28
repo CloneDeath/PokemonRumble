@@ -7,9 +7,9 @@ using OpenTK;
 
 namespace PokemonSmash.Arenas {
 	class Forrest : BattleArena {
-		private static Texture DirtTex = new Texture(@"Data\Dirt.JPG");
-		private static Texture GrassTex = new Texture(@"Data\Grass 00 seamless.jpg");
-		private static Texture TreeTex = new Texture(@"Data\christmas_tree_by_omagrandmother-d33pa5y.png");
+		private static Texture DirtTex = new Texture(@"Data\Dirt.png", false);
+		private static Texture GrassTex = new Texture(@"Data\Grass.png");
+		private static Texture TreeTex = new Texture(@"Data\Tree.png", false);
 
 		List<Vector3d> BackTrees = new List<Vector3d>();
 		List<Vector3d> FrontTrees = new List<Vector3d>();
@@ -48,11 +48,11 @@ namespace PokemonSmash.Arenas {
 
 		private static void DrawTreeList(List<Vector3d> Trees) {
 			foreach (var tree in Trees) {
-				if (Math.Abs(tree.X) < 10 && Math.Abs(tree.Y) < 5) {
+				if (Math.Abs(tree.X) < 12 && Math.Abs(tree.Y) < 8) {
 					continue;
 				}
-				double left = tree.X - 2;
-				double right = tree.X + 2;
+				double left = tree.X - 3;
+				double right = tree.X + 3;
 
 				
 				GraphicsManager.DrawQuad(new Vector3d(left, tree.Z, tree.Y),
@@ -85,7 +85,7 @@ namespace PokemonSmash.Arenas {
 									 new Vector3d(-10, 0.0001, 5),
 									 new Vector3d(10, 0.0001, 5),
 									 new Vector3d(10, 0.0001, -5),
-									 new Vector2d(2, 4));
+									 new Vector2d(1, 1));
 		}
 	}
 }
