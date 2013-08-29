@@ -22,12 +22,23 @@ namespace PokemonSmash{
 		internal void Draw()
 		{
 			if (Pokemon != null) {
-				Color temp = Color.FromArgb(100, Pokemon.Color.R, Pokemon.Color.G, Pokemon.Color.B);
-				GraphicsManager.DrawRectangle((Vector2d)Position, (Vector2d)(Position + Size), temp);
+				DrawBackgroundColor(Color.FromArgb(100, Pokemon.Color.R, Pokemon.Color.G, Pokemon.Color.B));
+				if (Pokemon.PrimaryType != PokemonType.None) {
+					Pokemon.PrimaryType.Image.Draw(Position.X + 1, Position.Y + 1);
+				}
+				if (Pokemon.SecondaryType != PokemonType.None) {
+					Pokemon.SecondaryType.Image.Draw(Position.X + 34, Position.Y + 1);
+				}
 				Animation.Draw2D(Position.X + (Size.X / 2), Position.Y + Size.Y - 10);
 			} else {
-				GraphicsManager.DrawRectangle((Vector2d)Position, (Vector2d)(Position + Size), Color.Gray);
+				DrawBackgroundColor(Color.Gray);
 			}
+		}
+
+		private Color DrawBackgroundColor(Color temp)
+		{
+			GraphicsManager.DrawRectangle((Vector2d)Position, (Vector2d)(Position + Size), temp);
+			return temp;
 		}
 	}
 }
