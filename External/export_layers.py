@@ -52,18 +52,21 @@ def format_filename(img, layer):
 	return filename
 	
 def export_layer(image, layer, path, remove_offsets, crop):
+	#gotta make duplicates to avoid sticking our dicks in the original
 	dupe = image.duplicate()
-	layer.visible = 1;
-	filename = format_filename(dupe, layer)
+	newlayer = layer.copy(True);
+	
+	newlayer.visible = 1;
+	filename = format_filename(image, layer) #Use original, because the copy's name and parents are all fucked up
 	fullpath = os.path.join(path, filename);
 	if not os.path.exists(os.path.dirname(fullpath)):
 		os.makedirs(os.path.dirname(fullpath))
 		
 	if (remove_offsets):
-		layer.set_offsets(0, 0) 
+		newlayer.set_offsets(0, 0) 
 	if (crop):
-		pdb.plug_in_zealouscrop(dupe, layer)
-	pdb.file_png_save(dupe, layer, fullpath, filename, 0, 9, 1, 1, 1, 1, 1)
+		pdb.plug_in_zealouscrop(dupe, newlayer)
+	pdb.file_png_save(dupe, newlayer, fullpath, filename, 0, 9, 1, 1, 1, 1, 1)
 	gimp.delete(dupe)
 
 def get_layers(image, layers, path, only_visible, remove_offsets, crop):
