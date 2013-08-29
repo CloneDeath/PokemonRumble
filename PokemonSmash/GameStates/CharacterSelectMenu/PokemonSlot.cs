@@ -29,7 +29,9 @@ namespace PokemonSmash{
 				if (Pokemon.SecondaryType != PokemonType.None) {
 					Pokemon.SecondaryType.Image.Draw(Position.X + 34, Position.Y + 1);
 				}
+				Text.DrawString(Position.X + 1, Position.Y + 14, Pokemon.DisplayName, 0.9);
 				Animation.Draw2D(Position.X + (Size.X / 2), Position.Y + Size.Y - 10);
+				
 			} else {
 				DrawBackgroundColor(Color.Gray);
 			}
