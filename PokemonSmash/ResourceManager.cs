@@ -36,6 +36,11 @@ namespace PokemonSmash {
 					continue;
 				}
 
+				if (m.MemberType == MemberTypes.Field) {
+					FieldInfo field = (FieldInfo)m;
+					Module.SetVariable(field.Name, field.GetValue(null));
+				}
+
 				Console.WriteLine("Not supported: " + m.Name + " for module: " + ModuleName);
 			}
 		}
@@ -79,26 +84,25 @@ namespace PokemonSmash {
 		private static void InitializeScripts() {
 			ScriptEngine engine = Python.CreateEngine();
 
-			ScriptScope scope = engine.Runtime.CreateScope();
-
 			CreateModuleFromClass(engine, typeof(IronPokemon), "Pokemon");
 			CreateModuleFromClass(engine, typeof(Color), "Color");
 			CreateModuleFromClass(engine, typeof(IronMove), "Move");
 			CreateModuleFromClass(engine, new Random(), "Random");
-			CreateModuleFromEnum(engine, typeof(PokemonType), "Type");
+			CreateModuleFromClass(engine, typeof(PokemonType), "Type");
 
-			RecursivelyRunScriptsIn(@"Data\", engine, scope);			
+			RecursivelyRunScriptsIn(@"Data\", engine);			
 		}
 
-		private static void RecursivelyRunScriptsIn(string Location, ScriptEngine engine, ScriptScope scope) {
+		private static void RecursivelyRunScriptsIn(string Location, ScriptEngine engine) {
 			foreach (string file in Directory.GetFiles(Location)) {
 				if (Path.GetExtension(file) == ".py") {
+					ScriptScope scope = engine.Runtime.CreateScope();
 					ScriptScope script = engine.ExecuteFile(file, scope);
 				}
 			}
 
 			foreach (string Dir in Directory.GetDirectories(Location)) {
-				RecursivelyRunScriptsIn(Dir, engine, scope);
+				RecursivelyRunScriptsIn(Dir, engine);
 			}
 		}
 

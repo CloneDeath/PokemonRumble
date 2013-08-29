@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using PokemonSmash.PokemonTypesData;
 
 namespace PokemonSmash {
 	
@@ -35,13 +36,13 @@ namespace PokemonSmash {
 		
 		public string Animation;
 
-		public PokemonType[] Types
+		public PokemonTypeInfo[] Types
 		{
 			get;
 			private set;
 		}
 
-		public PokemonType PrimaryType
+		public PokemonTypeInfo PrimaryType
 		{
 			get
 			{
@@ -53,7 +54,7 @@ namespace PokemonSmash {
 			}
 		}
 
-		public PokemonType SecondaryType
+		public PokemonTypeInfo SecondaryType
 		{
 			get
 			{
@@ -68,7 +69,7 @@ namespace PokemonSmash {
 
 		public Pokemon(string Name) {
 			this.Name = Name;
-			Types = new PokemonType[2];
+			Types = new PokemonTypeInfo[2];
 			PrimaryType = PokemonType.None;
 			SecondaryType = PokemonType.None;
 		}

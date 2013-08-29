@@ -13,7 +13,7 @@ Mew.SpecialAttack = 100;
 Mew.SpecialDefense = 100;
 Mew.Speed = 100;
 Mew.Color = Color.Pink;
-Bulbasaur.PrimaryType = Type.Psychic;
+Mew.PrimaryType = Type.Psychic;
 
 Mew.Hovers = True;
 Mew.CastsShadow = True;
