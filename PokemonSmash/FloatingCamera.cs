@@ -56,7 +56,7 @@ namespace PokemonSmash {
 
 			double Dist = ((1.0 / Math.Tan(30 * DegToRad)) * Height);
 			if (Dist < 3) Dist = 3;
-			GraphicsManager.SetCamera(new Vector3d(Center.X, Center.Y + 1, Dist));
+			GraphicsManager.SetCamera(new Vector3d(Center.X, Center.Y - 1 + Math.Sqrt(Dist), Dist));
 			GraphicsManager.SetLookAt(new Vector3d(Center.X, Center.Y, 0));
 		}
 

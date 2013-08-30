@@ -19,6 +19,9 @@ Caterpie.Width = .5;
 Caterpie.Height =  .5;
 Caterpie.Weight = 2.9;
 
+Caterpie.CanLearn("tackle");
+Caterpie.CanLearn("stringshot");
+Caterpie.CanLearn("bugbite");
 
 Caterpie.SetMix("walk", "idle", 0.6);
 Caterpie.SetMix("walk", "jump", 0.2);

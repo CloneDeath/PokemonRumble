@@ -1,5 +1,7 @@
 import Move;
+import Type;
 Growl = Move.Add("growl");
+Growl.DisplayName = "Growl";
 
 def Attack(player):
 	player.SetAnimation("growl", False);
@@ -17,3 +19,5 @@ def Attack(player):
 		other.Attack *= 0.9;
 	Hit.OnCollidePlayer = AttackDown;
 Growl.OnUse = Attack;
+Growl.Type = Type.Normal;
+Growl.Category = Type.Status;

@@ -20,6 +20,21 @@ Jigglypuff.Width = .5;
 Jigglypuff.Height = .5;
 Jigglypuff.Weight = 5.5;
 
+Jigglypuff.CanLearn("sing");
+Jigglypuff.CanLearn("defensecurl");
+Jigglypuff.CanLearn("pound");
+Jigglypuff.CanLearn("disable");
+Jigglypuff.CanLearn("round");
+Jigglypuff.CanLearn("rollout");
+Jigglypuff.CanLearn("doubleslap");
+Jigglypuff.CanLearn("rest");
+Jigglypuff.CanLearn("bodyslam");
+Jigglypuff.CanLearn("gyroball");
+Jigglypuff.CanLearn("wakeupslap");
+Jigglypuff.CanLearn("mimic");
+Jigglypuff.CanLearn("hypervoice");
+Jigglypuff.CanLearn("doubleedge");
+
 
 Jigglypuff.SetMix("walk", "idle", 0.6);
 Jigglypuff.SetMix("walk", "jump", 0.2);

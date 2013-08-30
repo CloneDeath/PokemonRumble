@@ -1,5 +1,4 @@
 import Pokemon;
-import Move;
 import Color;
 import Type;
 
@@ -19,10 +18,19 @@ Charmander.Width = .4;
 Charmander.Height =  .6;
 Charmander.Weight = 8.5;
 
-Charmander.Move[0] = Move.Find("scratch");
-Charmander.Move[1] = Move.Find("ember");
-Charmander.Move[2] = Move.Find("flameburst");
-Charmander.Move[3] = Move.Find("scaryface");
+Charmander.CanLearn("scratch");
+Charmander.CanLearn("growl");
+Charmander.CanLearn("ember");
+Charmander.CanLearn("smokescreen");
+Charmander.CanLearn("dragonrage");
+Charmander.CanLearn("scaryface");
+Charmander.CanLearn("firefang");
+Charmander.CanLearn("flameburst");
+Charmander.CanLearn("slash");
+Charmander.CanLearn("flamethrower");
+Charmander.CanLearn("firespin");
+Charmander.CanLearn("inferno");
+
 
 Charmander.SetMix("walk", "idle", 0.6);
 Charmander.SetMix("walk", "jump", 0.2);

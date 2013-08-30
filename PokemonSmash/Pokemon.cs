@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using PokemonSmash.PokemonTypesData;
+using PokemonSmash.IronInterface;
 
 namespace PokemonSmash {
 	
@@ -30,11 +31,16 @@ namespace PokemonSmash {
 		public Color Color = Color.Gray;
 
 		public Move[] Move = new Move[4];
-		public List<string> Moves = new List<string>();
+		public List<Move> Moves = new List<Move>();
 		public List<MixItem> MixQueue = new List<MixItem>();
 		Dictionary<string, string> AnimationAlias = new Dictionary<string, string>();
 		
 		public string Animation;
+
+		public void CanLearn(string move)
+		{
+			this.Moves.Add(IronMove.Find(move));
+		}
 
 		public PokemonTypeInfo[] Types
 		{

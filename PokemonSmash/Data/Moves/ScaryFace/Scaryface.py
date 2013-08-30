@@ -1,5 +1,7 @@
 import Move;
+import Type;
 Face = Move.Add("scaryface");
+Face.DisplayName = "Scary Face";
 
 def Attack(player):
 	player.SetAnimation("ember", False);
@@ -18,3 +20,5 @@ def Attack(player):
 		other.Defense *= 0.9;
 	Hit.OnCollidePlayer = DefDown;
 Face.OnUse = Attack;
+Face.Type = Type.Normal;
+Face.Category = Type.Status;

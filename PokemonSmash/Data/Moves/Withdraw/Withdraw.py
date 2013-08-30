@@ -1,5 +1,7 @@
 import Move;
+import Type;
 Withdraw = Move.Add("withdraw");
+Withdraw.DisplayName = "Withdraw";
 
 def Attack(player):
 	player.SetAnimation("withdraw", False);
@@ -16,3 +18,5 @@ def Attack(player):
 			self.Unload();
 	Hit.OnUpdate = Withdraw;
 Withdraw.OnUse = Attack;
+Withdraw.Type = Type.Water;
+Withdraw.Category = Type.Status;

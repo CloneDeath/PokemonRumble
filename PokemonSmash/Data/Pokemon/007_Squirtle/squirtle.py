@@ -19,10 +19,20 @@ Squirtle.Width = .5;
 Squirtle.Height =  .5;
 Squirtle.Weight = 9.0;
 
-Squirtle.Move[0] = Move.Find("tackle");
-Squirtle.Move[1] = Move.Find("bubble");
-Squirtle.Move[2] = Move.Find("withdraw");
-Squirtle.Move[3] = Move.Find("tailwhip");
+Squirtle.CanLearn("tackle");
+Squirtle.CanLearn("tailwhip");
+Squirtle.CanLearn("bubble");
+Squirtle.CanLearn("withdraw");
+Squirtle.CanLearn("watergun");
+Squirtle.CanLearn("bite");
+Squirtle.CanLearn("rapidspin");
+Squirtle.CanLearn("protect");
+Squirtle.CanLearn("waterpulse");
+Squirtle.CanLearn("squatail");
+Squirtle.CanLearn("skullbash");
+Squirtle.CanLearn("irondefense");
+Squirtle.CanLearn("raindance");
+Squirtle.CanLearn("hydropump");
 
 Squirtle.SetMix("walk", "idle", 0.6);
 Squirtle.SetMix("walk", "jump", 0.2);

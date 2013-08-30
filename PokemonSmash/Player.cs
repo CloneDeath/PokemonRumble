@@ -64,9 +64,9 @@ namespace PokemonSmash {
 
 		public short ID;
 
-		public Player(BattleArena arena, ControlSet Controls, int ID, string pokemon) {
+		public Player(BattleArena arena, ControlSet Controls, int ID, PlayerDef definition) {
 			this.World = arena;
-			PokemonName = pokemon;
+			PokemonName = definition.Pokemon.Name;
 			anim = new Animation(Pokemon.Animation);
 			anim.state.SetAnimation("idle", true);
 			foreach (MixItem item in Pokemon.MixQueue) {
@@ -82,7 +82,7 @@ namespace PokemonSmash {
 			this.ID = (short)ID;
 
 			for (int i = 0; i < 4; i++) {
-				Move[i] = new MoveInstance(Pokemon.Move[i]);
+				Move[i] = new MoveInstance(definition.Moves[i]);
 			}
 
 			InitPhysics(arena);

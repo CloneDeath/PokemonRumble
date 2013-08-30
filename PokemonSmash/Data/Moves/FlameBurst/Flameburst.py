@@ -1,6 +1,8 @@
 import Move;
 import Random;
+import Type;
 Burst = Move.Add("flameburst");
+Burst.DisplayName = "Flame Burst";
 
 def Attack(player):
 	if (player.OnGround):
@@ -31,3 +33,5 @@ def Attack(player):
 			other.TakeSpecialDamage(15, player);
 		Hit.OnCollidePlayer = Explosion;
 Burst.OnUse = Attack;
+Burst.Type = Type.Fire;
+Burst.Category = Type.Special;

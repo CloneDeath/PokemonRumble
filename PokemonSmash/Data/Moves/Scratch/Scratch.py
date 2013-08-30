@@ -1,5 +1,7 @@
 import Move;
+import Type;
 Scratch = Move.Add("scratch");
+Scratch.DisplayName = "Scratch";
 
 def Attack(player):
 	player.SetAnimation("scratch", False);
@@ -17,3 +19,5 @@ def Attack(player):
 		other.TakeDamage(10, player);
 	Hit.OnCollidePlayer = KnockBack;
 Scratch.OnUse = Attack;
+Scratch.Type = Type.Normal;
+Scratch.Category = Type.Physical;

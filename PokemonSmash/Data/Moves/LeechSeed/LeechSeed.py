@@ -1,6 +1,8 @@
 import Move;
 import Random;
-Tackle = Move.Add("leechseed");
+import Type;
+Seed = Move.Add("leechseed");
+Seed.DisplayName = "Leech Seed";
 
 def Attack(player):
 	player.SetAnimation("leech_seed", False);
@@ -24,4 +26,6 @@ def Attack(player):
 	seed.OnCollideEarth = Earth;
 		
 			
-Tackle.OnUse = Attack;
+Seed.OnUse = Attack;
+Seed.Type = Type.Grass;
+Seed.Category = Type.Status;
