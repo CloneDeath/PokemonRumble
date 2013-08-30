@@ -1,5 +1,6 @@
 import Move;
 import Random;
+import Type;
 Ember = Move.Add("ember");
 
 def Attack(player):
@@ -26,3 +27,5 @@ def Attack(player):
 			self.Unload();
 		fire.OnCollideEarth = Earth;
 Ember.OnUse = Attack;
+Ember.Type = Type.Fire;
+Ember.Category = Type.Special;

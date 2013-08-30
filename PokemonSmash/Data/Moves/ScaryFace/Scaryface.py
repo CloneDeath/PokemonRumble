@@ -1,4 +1,5 @@
 import Move;
+import Type;
 Face = Move.Add("scaryface");
 
 def Attack(player):
@@ -18,3 +19,5 @@ def Attack(player):
 		other.Defense *= 0.9;
 	Hit.OnCollidePlayer = DefDown;
 Face.OnUse = Attack;
+Face.Type = Type.Normal;
+Face.Category = Type.Status;

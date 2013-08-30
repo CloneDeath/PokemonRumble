@@ -1,4 +1,5 @@
 import Move;
+import Type;
 Growl = Move.Add("growl");
 
 def Attack(player):
@@ -17,3 +18,5 @@ def Attack(player):
 		other.Attack *= 0.9;
 	Hit.OnCollidePlayer = AttackDown;
 Growl.OnUse = Attack;
+Growl.Type = Type.Normal;
+Growl.Category = Type.Status;

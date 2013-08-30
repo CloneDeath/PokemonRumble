@@ -1,4 +1,5 @@
 import Move;
+import Type;
 Whip = Move.Add("tailwhip");
 
 def Attack(player):
@@ -13,3 +14,5 @@ def Attack(player):
 		other.Defense *= 0.9;
 	Hit.OnCollidePlayer = AttackDown;
 Whip.OnUse = Attack;
+Whip.Type = Type.Normal;
+Whip.Category = Type.Status;

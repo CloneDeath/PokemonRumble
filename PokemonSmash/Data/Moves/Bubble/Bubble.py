@@ -1,5 +1,6 @@
 import Move;
 import Random;
+import Type;
 Bubble = Move.Add("bubble");
 
 def ShootBubble(player):
@@ -43,3 +44,5 @@ def Attack(player):
 	bubble.OnUpdate = Float;
 	
 Bubble.OnUse = Attack;
+Bubble.Type = Type.Water;
+Bubble.Category = Type.Special;

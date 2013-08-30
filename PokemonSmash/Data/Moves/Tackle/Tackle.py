@@ -1,4 +1,5 @@
 import Move;
+import Type;
 Tackle = Move.Add("tackle");
 
 def Attack(player):
@@ -16,3 +17,5 @@ def Attack(player):
 			other.TakeDamage(10, player);
 		Hit.OnCollidePlayer = KnockBack;
 Tackle.OnUse = Attack;
+Tackle.Type = Type.Normal;
+Tackle.Category = Type.Physical;

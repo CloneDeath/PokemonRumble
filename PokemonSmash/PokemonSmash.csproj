@@ -119,6 +119,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="Pokemon.cs" />
     <Compile Include="PokemonManager.cs" />
+    <Compile Include="PokemonTypesData\PokemonMoveInfo.cs" />
     <Compile Include="PokemonTypesData\PokemonTypeInfo.cs" />
     <Compile Include="PokemonTypesData\PokemonTypes.cs" />
     <Compile Include="Program.cs" />

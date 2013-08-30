@@ -1,5 +1,6 @@
 import Move;
 import Random;
+import Type;
 Razor = Move.Add("razorleaf");
 
 def Attack(player):
@@ -14,7 +15,7 @@ def Attack(player):
 	seed.Z = 0.5;
 	seed.Permanent = True;
 	def Razor(self, other):
-		other.TakeSpecialDamage(7, player);
+		other.TakeDamage(7, player);
 		self.Unload();
 	seed.OnCollidePlayer = Razor;
 	
@@ -22,3 +23,5 @@ def Attack(player):
 		self.Unload();
 	seed.OnCollideEarth = Earth;
 Razor.OnUse = Attack;
+Razor.Type = Type.Grass;
+Razor.Category = Type.Physical;
