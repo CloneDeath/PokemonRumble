@@ -18,6 +18,21 @@ Diglett.PrimaryType = Type.Ground;
 Diglett.CanJump = False;
 Diglett.CastsShadow = False;
 
+Diglett.CanLearn("scratch");
+Diglett.CanLearn("sandattack");
+Diglett.CanLearn("growl");
+Diglett.CanLearn("astonish");
+Diglett.CanLearn("mudslap");
+Diglett.CanLearn("magnitude");
+Diglett.CanLearn("bulldoze");
+Diglett.CanLearn("suckerpunch");
+Diglett.CanLearn("mudbomb");
+Diglett.CanLearn("earthpower");
+Diglett.CanLearn("dig");
+Diglett.CanLearn("slash");
+Diglett.CanLearn("earthquake");
+Diglett.CanLearn("fissure");
+
 Diglett.Width = .5;
 Diglett.Height =  .5;
 Diglett.Weight = 0.8;

@@ -96,6 +96,8 @@
     <Compile Include="GameStates\CharacterSelectMenu\CharacterSelect.cs" />
     <Compile Include="Animation2D.cs" />
     <Compile Include="GameStates\CharacterSelectMenu\CursorPosition.cs" />
+    <Compile Include="GameStates\CharacterSelectMenu\MoveList.cs" />
+    <Compile Include="GameStates\CharacterSelectMenu\MoveSlot.cs" />
     <Compile Include="GameStates\CharacterSelectMenu\PlayerCursor.cs" />
     <Compile Include="GameStates\CharacterSelectMenu\PokemonSlot.cs" />
     <Compile Include="GameStates\GameState.cs" />
@@ -117,6 +119,7 @@
     <Compile Include="MoveReference.cs" />
     <Compile Include="OpenTKDebugDraw.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="PlayerDef.cs" />
     <Compile Include="Pokemon.cs" />
     <Compile Include="PokemonManager.cs" />
     <Compile Include="PokemonTypesData\PokemonMoveInfo.cs" />

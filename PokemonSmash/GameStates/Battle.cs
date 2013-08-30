@@ -12,13 +12,13 @@ namespace PokemonSmash {
 		Player Player2;
 		FloatingCamera Camera;
 
-		public string PlayerOne;
-		public string PlayerTwo;
+		public PlayerDef PlayerOne;
+		public PlayerDef PlayerTwo;
 
 		float DeadTimer;
 		const float AftergameTime = 5.0f;
 
-		public Battle(string player1, string player2) {
+		public Battle(PlayerDef player1, PlayerDef player2) {
 			PlayerOne = player1;
 			PlayerTwo = player2;
 		}

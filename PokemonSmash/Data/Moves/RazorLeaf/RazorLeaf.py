@@ -2,6 +2,7 @@ import Move;
 import Random;
 import Type;
 Razor = Move.Add("razorleaf");
+Razor.DisplayName = "Razor Leaf";
 
 def Attack(player):
 	player.SetAnimation("leech_seed", False);

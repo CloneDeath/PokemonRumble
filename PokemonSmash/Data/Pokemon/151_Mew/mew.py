@@ -16,7 +16,20 @@ Mew.Color = Color.Pink;
 Mew.PrimaryType = Type.Psychic;
 
 Mew.Hovers = True;
-Mew.CastsShadow = True;
+
+Mew.CanLearn("pound");
+Mew.CanLearn("reflecttype");
+Mew.CanLearn("transform");
+Mew.CanLearn("megapunch");
+Mew.CanLearn("metronome");
+Mew.CanLearn("psychic");
+Mew.CanLearn("barrier");
+Mew.CanLearn("ancientpower");
+Mew.CanLearn("amnesia");
+Mew.CanLearn("mefirst");
+Mew.CanLearn("batonpass");
+Mew.CanLearn("nastyplot");
+Mew.CanLearn("aurasphere");
 
 Mew.Width = .5;
 Mew.Height =  .5;

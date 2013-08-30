@@ -19,6 +19,20 @@ Pikachu.Width = .5;
 Pikachu.Height =  .5;
 Pikachu.Weight = 6.0;
 
+Pikachu.CanLearn("growl");
+Pikachu.CanLearn("thundershock");
+Pikachu.CanLearn("tailwhip");
+Pikachu.CanLearn("thunderwave");
+Pikachu.CanLearn("quickattack");
+Pikachu.CanLearn("electroball");
+Pikachu.CanLearn("doubleteam");
+Pikachu.CanLearn("slam");
+Pikachu.CanLearn("thunderbolt");
+Pikachu.CanLearn("feint");
+Pikachu.CanLearn("agility");
+Pikachu.CanLearn("discharge");
+Pikachu.CanLearn("lightscreen");
+Pikachu.CanLearn("thunder");
 
 Pikachu.SetMix("walk", "idle", 0.6);
 Pikachu.SetMix("walk", "jump", 0.2);

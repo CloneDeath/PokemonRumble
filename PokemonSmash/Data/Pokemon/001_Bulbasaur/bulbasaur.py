@@ -1,5 +1,4 @@
 import Pokemon;
-import Move;
 import Color;
 import Type;
 
@@ -20,25 +19,20 @@ Bulbasaur.Width = .8;
 Bulbasaur.Height = .5;
 Bulbasaur.Weight = 6.9;
  
-Bulbasaur.Moves.Add("tackle");
-Bulbasaur.Moves.Add("growl");
-Bulbasaur.Moves.Add("leechseed");
-Bulbasaur.Moves.Add("vinewhip");
-Bulbasaur.Moves.Add("poisonpowder");
-Bulbasaur.Moves.Add("sleeppowder");
-Bulbasaur.Moves.Add("takedown");
-Bulbasaur.Moves.Add("razorleaf");
-Bulbasaur.Moves.Add("sweetscent");
-Bulbasaur.Moves.Add("growth");
-Bulbasaur.Moves.Add("doubleedge");
-Bulbasaur.Moves.Add("worryseed");
-Bulbasaur.Moves.Add("synthesis");
-Bulbasaur.Moves.Add("seedbomb");
-
-Bulbasaur.Move[0] = Move.Find("tackle");
-Bulbasaur.Move[1] = Move.Find("leechseed");
-Bulbasaur.Move[2] = Move.Find("razorleaf");
-Bulbasaur.Move[3] = Move.Find("growl");
+Bulbasaur.CanLearn("tackle");
+Bulbasaur.CanLearn("growl");
+Bulbasaur.CanLearn("leechseed");
+Bulbasaur.CanLearn("vinewhip");
+Bulbasaur.CanLearn("poisonpowder");
+Bulbasaur.CanLearn("sleeppowder");
+Bulbasaur.CanLearn("takedown");
+Bulbasaur.CanLearn("razorleaf");
+Bulbasaur.CanLearn("sweetscent");
+Bulbasaur.CanLearn("growth");
+Bulbasaur.CanLearn("doubleedge");
+Bulbasaur.CanLearn("worryseed");
+Bulbasaur.CanLearn("synthesis");
+Bulbasaur.CanLearn("seedbomb");
 
 Bulbasaur.AddAnimationAlias("tackle", "jump");
 

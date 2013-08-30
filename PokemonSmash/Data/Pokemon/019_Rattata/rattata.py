@@ -19,6 +19,20 @@ Rattata.Width = .5;
 Rattata.Height =  .5;
 Rattata.Weight = 3.5;
 
+Rattata.CanLearn("tackle");
+Rattata.CanLearn("tailwhip");
+Rattata.CanLearn("quickattack");
+Rattata.CanLearn("focusenergy");
+Rattata.CanLearn("bite");
+Rattata.CanLearn("pursuit");
+Rattata.CanLearn("hyperfang");
+Rattata.CanLearn("suckerpunch");
+Rattata.CanLearn("crunch");
+Rattata.CanLearn("assurance");
+Rattata.CanLearn("superfang");
+Rattata.CanLearn("doubleedge");
+Rattata.CanLearn("endeavor");
+
 
 Rattata.SetMix("walk", "idle", 0.6);
 Rattata.SetMix("walk", "jump", 0.2);

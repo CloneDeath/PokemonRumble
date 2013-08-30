@@ -1,6 +1,7 @@
 import Move;
 import Type;
 Tackle = Move.Add("tackle");
+Tackle.DisplayName = "Tackle";
 
 def Attack(player):
 	if (player.OnGround):

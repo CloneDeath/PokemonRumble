@@ -1,6 +1,7 @@
 import Move;
 import Type;
 Withdraw = Move.Add("withdraw");
+Withdraw.DisplayName = "Withdraw";
 
 def Attack(player):
 	player.SetAnimation("withdraw", False);

@@ -19,6 +19,23 @@ Haunter.SecondaryType = Type.Poison;
 Haunter.Hovers = True;
 Haunter.CastsShadow = False;
 
+Haunter.CanLearn("hypnosis");
+Haunter.CanLearn("lick");
+Haunter.CanLearn("spite");
+Haunter.CanLearn("meanlook");
+Haunter.CanLearn("curse");
+Haunter.CanLearn("nightshade");
+Haunter.CanLearn("confuseray");
+Haunter.CanLearn("suckerpunch");
+Haunter.CanLearn("shadowpunch");
+Haunter.CanLearn("payback");
+Haunter.CanLearn("shadowball");
+Haunter.CanLearn("dreameater");
+Haunter.CanLearn("darkpulse");
+Haunter.CanLearn("destinybond");
+Haunter.CanLearn("hex");
+Haunter.CanLearn("nightmare");
+
 Haunter.Width = .5;
 Haunter.Height =  .5;
 Haunter.Weight = 0.1;

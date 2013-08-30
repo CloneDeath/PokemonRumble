@@ -2,6 +2,7 @@ import Move;
 import Random;
 import Type;
 Seed = Move.Add("leechseed");
+Seed.DisplayName = "Leech Seed";
 
 def Attack(player):
 	player.SetAnimation("leech_seed", False);

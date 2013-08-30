@@ -14,7 +14,7 @@ namespace PokemonSmash.PokemonTypesData
 		public PokemonMoveInfo(string Displayname, string Imagelocation)
 		{
 			this.Name = Displayname;
-			this.Image = new Texture(Imagelocation);
+			this.Image = new Texture(Imagelocation, false);
 		}
 	}
 }

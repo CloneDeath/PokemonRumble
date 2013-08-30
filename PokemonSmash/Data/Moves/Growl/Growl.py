@@ -1,6 +1,7 @@
 import Move;
 import Type;
 Growl = Move.Add("growl");
+Growl.DisplayName = "Growl";
 
 def Attack(player):
 	player.SetAnimation("growl", False);

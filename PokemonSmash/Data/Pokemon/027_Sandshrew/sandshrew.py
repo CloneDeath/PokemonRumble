@@ -19,6 +19,24 @@ Sandshrew.Width = .5;
 Sandshrew.Height = .5;
 Sandshrew.Weight = 12.0;
 
+Sandshrew.CanLearn("scratch");
+Sandshrew.CanLearn("defensecurl");
+Sandshrew.CanLearn("sandattack");
+Sandshrew.CanLearn("poisonsting");
+Sandshrew.CanLearn("rollout");
+Sandshrew.CanLearn("rapidspin");
+Sandshrew.CanLearn("swift");
+Sandshrew.CanLearn("furycutter");
+Sandshrew.CanLearn("magnitude");
+Sandshrew.CanLearn("furyswipes");
+Sandshrew.CanLearn("sandtomb");
+Sandshrew.CanLearn("slash");
+Sandshrew.CanLearn("dig");
+Sandshrew.CanLearn("gyroball");
+Sandshrew.CanLearn("swordsdance");
+Sandshrew.CanLearn("sandstorm");
+Sandshrew.CanLearn("earthquake");
+
 
 Sandshrew.SetMix("walk", "idle", 0.6);
 Sandshrew.SetMix("walk", "jump", 0.2);

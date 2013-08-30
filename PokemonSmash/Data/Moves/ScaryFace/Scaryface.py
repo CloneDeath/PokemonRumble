@@ -1,6 +1,7 @@
 import Move;
 import Type;
 Face = Move.Add("scaryface");
+Face.DisplayName = "Scary Face";
 
 def Attack(player):
 	player.SetAnimation("ember", False);

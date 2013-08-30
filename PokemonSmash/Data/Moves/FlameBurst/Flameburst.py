@@ -2,6 +2,7 @@ import Move;
 import Random;
 import Type;
 Burst = Move.Add("flameburst");
+Burst.DisplayName = "Flame Burst";
 
 def Attack(player):
 	if (player.OnGround):

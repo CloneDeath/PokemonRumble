@@ -2,6 +2,7 @@ import Move;
 import Random;
 import Type;
 Ember = Move.Add("ember");
+Ember.DisplayName = "Ember";
 
 def Attack(player):
 	player.SetAnimation("ember", False);

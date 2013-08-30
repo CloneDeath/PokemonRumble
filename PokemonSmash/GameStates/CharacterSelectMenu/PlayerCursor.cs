@@ -26,11 +26,16 @@ namespace PokemonSmash {
 			State = CursorState.PokemonSelect;
 		}
 		public CursorPosition Position;
+		public CursorPosition MovePos;
 		public ControlSet control;
 		public CursorState State;
 		public Texture Token;
 		public Texture Slot;
 		public Vector2 Corner;
 		public int PlayerNumber;
+
+
+		public Pokemon Pokemon;
+		public Move[] Moves = new Move[4];
 	}
 }

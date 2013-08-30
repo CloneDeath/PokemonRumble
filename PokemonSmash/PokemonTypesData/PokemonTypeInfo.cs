@@ -15,8 +15,8 @@ namespace PokemonSmash.PokemonTypesData
 		public PokemonTypeInfo(string Name, string FileLocation, string PanelLocation)
 		{
 			this.DisplayName = Name;
-			this.Image = new Texture(FileLocation);
-			this.Panel = new Texture(PanelLocation);
+			this.Image = new Texture(FileLocation, false);
+			this.Panel = new Texture(PanelLocation, false);
 		}
 	}
 }

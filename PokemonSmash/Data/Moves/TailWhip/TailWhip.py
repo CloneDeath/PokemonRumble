@@ -1,6 +1,7 @@
 import Move;
 import Type;
 Whip = Move.Add("tailwhip");
+Whip.DisplayName = "Tail Whip";
 
 def Attack(player):
 	player.SetAnimation("tailwhip", False);

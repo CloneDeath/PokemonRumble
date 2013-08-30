@@ -1,6 +1,7 @@
 import Move;
 import Type;
 Scratch = Move.Add("scratch");
+Scratch.DisplayName = "Scratch";
 
 def Attack(player):
 	player.SetAnimation("scratch", False);
