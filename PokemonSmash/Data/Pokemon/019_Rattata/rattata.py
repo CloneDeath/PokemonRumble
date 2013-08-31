@@ -19,6 +19,8 @@ Rattata.Width = .5;
 Rattata.Height =  .5;
 Rattata.Weight = 3.5;
 
+Rattata.AddAnimationAlias("tackle", "jump");
+
 Rattata.CanLearn("tackle");
 Rattata.CanLearn("tailwhip");
 Rattata.CanLearn("quickattack");

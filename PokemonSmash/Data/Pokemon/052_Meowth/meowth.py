@@ -19,6 +19,22 @@ Meowth.Width = .5;
 Meowth.Height = .5;
 Meowth.Weight = 4.2;
 
+Meowth.CanLearn("scratch");
+Meowth.CanLearn("growl");
+Meowth.CanLearn("bite");
+Meowth.CanLearn("fakeout");
+Meowth.CanLearn("furyswipes");
+Meowth.CanLearn("screech");
+Meowth.CanLearn("faintattack");
+Meowth.CanLearn("taunt");
+Meowth.CanLearn("payday");
+Meowth.CanLearn("slash");
+Meowth.CanLearn("nastyplot");
+Meowth.CanLearn("assurance");
+Meowth.CanLearn("captivate");
+Meowth.CanLearn("nightslash");
+Meowth.CanLearn("feint");
+
 Meowth.SetMix("walk", "idle", 0.6);
 Meowth.SetMix("walk", "jump", 0.2);
 
