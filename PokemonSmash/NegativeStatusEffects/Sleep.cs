@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PokemonSmash.NegativeStatusEffects
 {
-	class Sleep : StatusEffect
+	public class Sleep : StatusEffect
 	{
 		public Sleep(Player p, float d) : base(p, d) { }
 

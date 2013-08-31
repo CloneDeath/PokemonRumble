@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PokemonSmash.NegativeStatusEffects
 {
-	class Poison : StatusEffect
+	public class Poison : StatusEffect
 	{
 		float DPS = 0;
 
