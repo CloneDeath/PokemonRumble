@@ -28,7 +28,7 @@ Squirtle.CanLearn("bite");
 Squirtle.CanLearn("rapidspin");
 Squirtle.CanLearn("protect");
 Squirtle.CanLearn("waterpulse");
-Squirtle.CanLearn("squatail");
+Squirtle.CanLearn("aquatail");
 Squirtle.CanLearn("skullbash");
 Squirtle.CanLearn("irondefense");
 Squirtle.CanLearn("raindance");

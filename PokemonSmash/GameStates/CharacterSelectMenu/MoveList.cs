@@ -41,7 +41,7 @@ namespace PokemonSmash.GameStates.CharacterSelectMenu
 			for (int i = 0; i < 4; i++) {
 				if (pc.Moves[i] != null) {
 					pc.Moves[i].Type.Panel.Draw(x + 10, y + 300 + (i * Height));
-					Text.DrawString(x + 20, y + 310 + (i * Height), pc.Moves[i].DisplayName);
+					Text.DrawString(x + 20, y + 310 + (i * Height), pc.Moves[i].DisplayName, 0.5f);
 				}
 			}
 		}

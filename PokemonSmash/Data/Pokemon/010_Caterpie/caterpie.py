@@ -35,3 +35,5 @@ Caterpie.SetMix("idle", "walk", 0.4);
 Caterpie.SetMix("idle", "dead", 1);
 Caterpie.SetMix("walk", "dead", 1);
 Caterpie.SetMix("jump", "dead", 1);
+
+Caterpie.AddAnimationAlias("tackle", "jump");
