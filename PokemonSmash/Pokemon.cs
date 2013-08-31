@@ -27,6 +27,7 @@ namespace PokemonSmash {
 
 		public bool CanJump = true;
 		public bool CastsShadow = true;
+		public bool CanFly = false;
 		public bool Hovers = false;
 		public Color Color = Color.Gray;
 

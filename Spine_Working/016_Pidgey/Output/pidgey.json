@@ -178,6 +178,120 @@
 				]
 			}
 		}
+	},
+	"jump": {
+		"bones": {
+			"FrontWing": {
+				"rotate": [
+					{ "time": 0, "angle": 77.47 },
+					{ "time": 0.1666, "angle": 55.86 },
+					{ "time": 0.3333, "angle": 20.47 },
+					{ "time": 0.5, "angle": 11.44 }
+				],
+				"translate": [
+					{ "time": 0.3333, "x": -0.57, "y": -1.25 }
+				]
+			},
+			"BackWing": {
+				"rotate": [
+					{ "time": 0, "angle": 190.99 },
+					{ "time": 0.1666, "angle": 202.28 },
+					{ "time": 0.5, "angle": 256.19 }
+				],
+				"translate": [
+					{ "time": 0.1666, "x": -1.99, "y": -4.99 },
+					{ "time": 0.3333, "x": 0.62, "y": -18.16 },
+					{ "time": 0.5, "x": 3.56, "y": -14.65 }
+				]
+			}
+		},
+		"slots": {
+			"BackWing": {
+				"attachment": [
+					{ "time": 0, "name": "WingBack/WingBack_02" },
+					{ "time": 0.3333, "name": "WingBack/WingBack_07" }
+				]
+			},
+			"FrontWing": {
+				"attachment": [
+					{ "time": 0, "name": "WingFront/WingFront_02" },
+					{ "time": 0.3333, "name": "WingFront/WingFront_04" }
+				]
+			}
+		}
+	},
+	"walk": {
+		"bones": {
+			"FrontLeg": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 0,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.5,
+						"angle": 337.43,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 1, "angle": 0 }
+				],
+				"translate": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.5,
+						"x": -0.26,
+						"y": 8.35,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 1, "x": 0, "y": 0 }
+				]
+			},
+			"BackLeg": {
+				"translate": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.5,
+						"x": 0.31,
+						"y": -10.05,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 1, "x": 0, "y": 0 }
+				]
+			},
+			"BackWing": {
+				"rotate": [
+					{ "time": 0, "angle": 0, "curve": "stepped" },
+					{ "time": 1, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0 },
+					{ "time": 0.5, "x": 0.18, "y": -2.36 },
+					{ "time": 1, "x": 0, "y": 0 }
+				]
+			},
+			"FrontWing": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.5, "angle": -19.85 },
+					{ "time": 1, "angle": 0 }
+				],
+				"translate": [
+					{ "time": 0, "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 1, "x": 0, "y": 0 }
+				]
+			}
+		}
 	}
 }
 }

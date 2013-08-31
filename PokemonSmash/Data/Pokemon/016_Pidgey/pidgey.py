@@ -16,9 +16,13 @@ Pidgey.Color = Color.Brown;
 Pidgey.PrimaryType = Type.Normal;
 Pidgey.SecondaryType = Type.Flying;
 
+Pidgey.CanFly = True;
+
 Pidgey.Width = .5;
 Pidgey.Height =  .5;
 Pidgey.Weight = 1.8;
+
+Pidgey.AddAnimationAlias("tackle", "jump");
 
 Pidgey.CanLearn("tackle");
 Pidgey.CanLearn("sandattack");

@@ -207,7 +207,7 @@ namespace PokemonSmash {
 			}
 
 			if (!Pokemon.Hovers) {
-				float FrictionModifier = OnGround ? 1 : 0.5f;
+				float FrictionModifier = (OnGround || Pokemon.CanFly) ? 1 : 0.5f;
 				if (Controls.IsDown(Control.Left) && !Disabled) {
 					if (anim.state.Animation.Name != "walk") {
 						anim.state.SetAnimation("walk", true);
@@ -232,12 +232,16 @@ namespace PokemonSmash {
 					body.ApplyForce(new Vec2(-body.GetLinearVelocity().X * MoveSpeed * 3, 0), new Vec2(.1f, .1f));
 				}
 
-				if (Controls.IsPressed(Control.Jump) && !Disabled && Pokemon.CanJump) {
+				if (Controls.IsPressed(Control.Jump) && !Disabled && Pokemon.CanJump && (OnGround || Pokemon.CanFly)) {
 					if (anim.state.Animation.Name != "jump") {
 						anim.state.SetAnimation("jump", false);
 					}
 					Vec2 Vel = body.GetLinearVelocity();
-					body.ApplyImpulse(new Vec2(Vel.X, 3 * MoveSpeed));
+					if (OnGround) {
+						body.ApplyImpulse(new Vec2(Vel.X, 3 * MoveSpeed));
+					} else {
+						body.ApplyImpulse(new Vec2(Vel.X, MoveSpeed));
+					}
 				}
 			}
 
