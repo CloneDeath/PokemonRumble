@@ -120,6 +120,7 @@
     <Compile Include="Move.cs" />
     <Compile Include="MoveReference.cs" />
     <Compile Include="NegativeStatusEffects\Poison.cs" />
+    <Compile Include="NegativeStatusEffects\Sleep.cs" />
     <Compile Include="OpenTKDebugDraw.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerDef.cs" />

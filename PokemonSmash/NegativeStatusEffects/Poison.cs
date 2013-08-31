@@ -20,6 +20,7 @@ namespace PokemonSmash.NegativeStatusEffects
 
 		public override void Update(Player p, float dt)
 		{
+			base.Update(p, dt);
 			p.TakeSpecialDamage(DPS * dt, Owner);
 		}
 

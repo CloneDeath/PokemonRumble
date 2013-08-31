@@ -36,6 +36,8 @@ Haunter.CanLearn("destinybond");
 Haunter.CanLearn("hex");
 Haunter.CanLearn("nightmare");
 
+Haunter.AddAnimationAlias("hypnosis", "idle");
+
 Haunter.Width = .5;
 Haunter.Height =  .5;
 Haunter.Weight = 0.1;

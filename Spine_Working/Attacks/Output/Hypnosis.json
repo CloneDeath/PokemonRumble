@@ -1,0 +1,18 @@
+{
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "Hypnosis", "bone": "root", "attachment": "Hypnosis" }
+],
+"skins": {
+	"default": {
+		"Hypnosis": {
+			"Hypnosis": { "width": 23, "height": 23 }
+		}
+	}
+},
+"animations": {
+	"idle": {}
+}
+}

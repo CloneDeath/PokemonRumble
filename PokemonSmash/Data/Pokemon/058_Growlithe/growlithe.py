@@ -18,10 +18,24 @@ Growlithe.Width = .5;
 Growlithe.Height = .5;
 Growlithe.Weight = 19.0;
 
-Growlithe.CanLearn("tackle");
-Growlithe.CanLearn("growl");
-
-Growlithe.AddAnimationAlias("tackle", "jump");
+Growlithe.CanLearn("bite");
+Growlithe.CanLearn("roar");
+Growlithe.CanLearn("ember");
+Growlithe.CanLearn("leer");
+Growlithe.CanLearn("odorsleuth");
+Growlithe.CanLearn("helpinghand");
+Growlithe.CanLearn("flamewheel");
+Growlithe.CanLearn("reversal");
+Growlithe.CanLearn("firefang");
+Growlithe.CanLearn("takedown");
+Growlithe.CanLearn("flameburst");
+Growlithe.CanLearn("agility");
+Growlithe.CanLearn("retaliate");
+Growlithe.CanLearn("flamethrower");
+Growlithe.CanLearn("crunch");
+Growlithe.CanLearn("heatwave");
+Growlithe.CanLearn("outrage");
+Growlithe.CanLearn("flareblitz");
 
 Growlithe.SetMix("walk", "idle", 0.6);
 Growlithe.SetMix("walk", "jump", 0.2);

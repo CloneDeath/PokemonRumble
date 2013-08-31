@@ -18,6 +18,7 @@ namespace PokemonSmash {
 		BattleArena World;
 		bool Dead = false;
 		List<StatusEffect> Effects = new List<StatusEffect>();
+		bool Asleep = false;
 
 		private float _HP = 100;
 		public float HP {
@@ -174,11 +175,21 @@ namespace PokemonSmash {
 				return;
 			}
 
+			if (Asleep) {
+				if (anim.state.Animation.Name != "dead") {
+					anim.state.SetAnimation("dead", false);
+				}
+				body.ApplyForce(new Vec2(-body.GetLinearVelocity().X, 0), new Vec2(.1f, .1f));
+				return;
+			}
+
 			DisableTime -= dt;
 			float MoveSpeed = (float)System.Math.Sqrt(Speed + 50);
 
-			if (Pokemon.Hovers && !Disabled) {
+			if (Pokemon.Hovers) {
 				body.ApplyForce(-body.GetWorld().Gravity * Pokemon.Weight);
+			}
+			if (Pokemon.Hovers && !Disabled) {
 				Vec2 Desire = new Vec2();
 				if (Controls.IsDown(Control.Left)) {
 					Desire.X -= 1;
@@ -354,6 +365,16 @@ namespace PokemonSmash {
 		{
 			Effects.Remove(effect);
 			effect.Uninitialize(this);
+		}
+
+		internal void Sleep()
+		{
+			Asleep = true;
+		}
+
+		internal void Awake()
+		{
+			Asleep = false;
 		}
 	}
 }

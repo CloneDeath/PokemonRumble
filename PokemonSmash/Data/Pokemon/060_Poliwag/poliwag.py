@@ -18,10 +18,21 @@ Poliwag.Width = .5;
 Poliwag.Height = .5;
 Poliwag.Weight = 12.4;
 
-Poliwag.CanLearn("tackle");
-Poliwag.CanLearn("growl");
+Poliwag.CanLearn("watersport");
+Poliwag.CanLearn("bubble");
+Poliwag.CanLearn("hypnosis");
+Poliwag.CanLearn("watergun");
+Poliwag.CanLearn("doubleslap");
+Poliwag.CanLearn("raindance");
+Poliwag.CanLearn("bodyslam");
+Poliwag.CanLearn("bubblebeam");
+Poliwag.CanLearn("mudshot");
+Poliwag.CanLearn("bellydrum");
+Poliwag.CanLearn("wakeupslap");
+Poliwag.CanLearn("hydropump");
+Poliwag.CanLearn("mudbomb");
 
-Poliwag.AddAnimationAlias("tackle", "jump");
+Poliwag.AddAnimationAlias("hypnosis", "idle");
 
 Poliwag.SetMix("walk", "idle", 0.6);
 Poliwag.SetMix("walk", "jump", 0.1);
