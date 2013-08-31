@@ -1,0 +1,33 @@
+
+PoisonPowder.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+PoisonPowder_01
+  rotate: false
+  xy: 2, 7
+  size: 3, 3
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+PoisonPowder_02
+  rotate: false
+  xy: 2, 2
+  size: 3, 3
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+PoisonPowder_03
+  rotate: false
+  xy: 7, 7
+  size: 3, 3
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+PoisonPowder_04
+  rotate: false
+  xy: 7, 2
+  size: 3, 3
+  orig: 3, 3
+  offset: 0, 0
+  index: -1

@@ -90,6 +90,7 @@ namespace PokemonSmash {
 			CreateModuleFromClass(Engine, new Random(), "Random");
 			CreateModuleFromClass(Engine, typeof(PokemonType), "Type");
 			CreateModuleFromClass(Engine, typeof(IronTimer), "Timer");
+			CreateModuleFromClass(Engine, typeof(IronStatusEffects), "StatusEffect");
 
 			RecursivelyRunScriptsIn(@"Data\", Engine);			
 		}

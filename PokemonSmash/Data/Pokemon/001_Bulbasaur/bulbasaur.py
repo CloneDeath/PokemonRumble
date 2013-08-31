@@ -36,6 +36,7 @@ Bulbasaur.CanLearn("seedbomb");
 
 Bulbasaur.AddAnimationAlias("tackle", "jump");
 Bulbasaur.AddAnimationAlias("vinewhip", "leech_seed");
+Bulbasaur.AddAnimationAlias("poisonpowder", "leech_seed");
 
 Bulbasaur.SetMix("walk", "idle", 0.6);
 Bulbasaur.SetMix("walk", "jump", 0.2);

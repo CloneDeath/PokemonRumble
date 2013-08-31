@@ -17,6 +17,7 @@ namespace PokemonSmash {
 		string PokemonName;
 		BattleArena World;
 		bool Dead = false;
+		List<StatusEffect> Effects = new List<StatusEffect>();
 
 		private float _HP = 100;
 		public float HP {
@@ -267,6 +268,10 @@ namespace PokemonSmash {
 					Move[3].OnUse(this);
 				}
 			}
+
+			foreach (StatusEffect effect in Effects) {
+				effect.Update(this, dt);
+			}
 		}
 
 		public void SetAnimation(string AnimationName, bool Loop) {
@@ -335,6 +340,20 @@ namespace PokemonSmash {
 
 		internal void Unload() {
 			anim.Unload();
+		}
+
+		
+
+		public void AddEffect(StatusEffect effect)
+		{
+			Effects.Add(effect);
+			effect.Initialize(this);
+		}
+
+		internal void RemoveEffect(StatusEffect effect)
+		{
+			Effects.Remove(effect);
+			effect.Uninitialize(this);
 		}
 	}
 }

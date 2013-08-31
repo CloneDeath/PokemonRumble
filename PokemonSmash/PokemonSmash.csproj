@@ -113,11 +113,13 @@
     <Compile Include="Input\JoystickButton.cs" />
     <Compile Include="IronInterface\IronMove.cs" />
     <Compile Include="IronInterface\IronPokemon.cs" />
+    <Compile Include="IronInterface\IronStatusEffects.cs" />
     <Compile Include="IronInterface\IronTimer.cs" />
     <Compile Include="MainCanvas.cs" />
     <Compile Include="MixItem.cs" />
     <Compile Include="Move.cs" />
     <Compile Include="MoveReference.cs" />
+    <Compile Include="NegativeStatusEffects\Poison.cs" />
     <Compile Include="OpenTKDebugDraw.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerDef.cs" />
@@ -130,6 +132,7 @@
     <Compile Include="HitBoxes\Projectile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceManager.cs" />
+    <Compile Include="NegativeStatusEffects\StatusEffect.cs" />
     <Compile Include="Text.cs" />
   </ItemGroup>
   <ItemGroup>

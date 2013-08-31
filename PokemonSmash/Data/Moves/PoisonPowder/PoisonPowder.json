@@ -1,0 +1,33 @@
+{
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "PoisonPowder_01", "bone": "root", "attachment": "PoisonPowder_01" }
+],
+"skins": {
+	"default": {
+		"PoisonPowder_01": {
+			"PoisonPowder_01": { "width": 3, "height": 3 },
+			"PoisonPowder_02": { "width": 3, "height": 3 },
+			"PoisonPowder_03": { "width": 3, "height": 3 },
+			"PoisonPowder_04": { "width": 3, "height": 3 }
+		}
+	}
+},
+"animations": {
+	"idle": {
+		"slots": {
+			"PoisonPowder_01": {
+				"attachment": [
+					{ "time": 0, "name": "PoisonPowder_01" },
+					{ "time": 0.1, "name": "PoisonPowder_02" },
+					{ "time": 0.2, "name": "PoisonPowder_03" },
+					{ "time": 0.3, "name": "PoisonPowder_04" },
+					{ "time": 0.4, "name": "PoisonPowder_01" }
+				]
+			}
+		}
+	}
+}
+}
