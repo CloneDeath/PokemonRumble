@@ -1,0 +1,40 @@
+
+poliwag.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+BackLeg/BackLeg_01
+  rotate: false
+  xy: 27, 4
+  size: 10, 5
+  orig: 10, 5
+  offset: 0, 0
+  index: -1
+Body/Body_01
+  rotate: false
+  xy: 1, 1
+  size: 24, 25
+  orig: 24, 25
+  offset: 0, 0
+  index: -1
+FrontLeg/FrontLeg_01
+  rotate: false
+  xy: 56, 9
+  size: 7, 6
+  orig: 7, 6
+  offset: 0, 0
+  index: -1
+FrontLeg/FrontLeg_02
+  rotate: false
+  xy: 56, 17
+  size: 7, 9
+  orig: 7, 9
+  offset: 0, 0
+  index: -1
+Tail/Tail_01
+  rotate: false
+  xy: 27, 11
+  size: 27, 15
+  orig: 27, 15
+  offset: 0, 0
+  index: -1
