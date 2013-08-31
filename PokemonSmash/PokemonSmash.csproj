@@ -113,6 +113,7 @@
     <Compile Include="Input\JoystickButton.cs" />
     <Compile Include="IronInterface\IronMove.cs" />
     <Compile Include="IronInterface\IronPokemon.cs" />
+    <Compile Include="IronInterface\IronTimer.cs" />
     <Compile Include="MainCanvas.cs" />
     <Compile Include="MixItem.cs" />
     <Compile Include="Move.cs" />

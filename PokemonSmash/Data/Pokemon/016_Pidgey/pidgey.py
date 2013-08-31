@@ -5,7 +5,7 @@ import Type;
 
 Pidgey = Pokemon.Add("pidgey");
 Pidgey.DisplayName = "Pidgey";
-Pidgey.Animation = "Pokemon/010_Pidgey/pidgey"
+Pidgey.Animation = "Pokemon/016_Pidgey/pidgey"
 Pidgey.HP = 40;
 Pidgey.Attack = 45;
 Pidgey.Defense = 40;

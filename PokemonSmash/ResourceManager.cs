@@ -79,18 +79,19 @@ namespace PokemonSmash {
 			}
 		}
 
-		
+		public static ScriptEngine Engine;
 
 		private static void InitializeScripts() {
-			ScriptEngine engine = Python.CreateEngine();
+			Engine = Python.CreateEngine();
 
-			CreateModuleFromClass(engine, typeof(IronPokemon), "Pokemon");
-			CreateModuleFromClass(engine, typeof(Color), "Color");
-			CreateModuleFromClass(engine, typeof(IronMove), "Move");
-			CreateModuleFromClass(engine, new Random(), "Random");
-			CreateModuleFromClass(engine, typeof(PokemonType), "Type");
+			CreateModuleFromClass(Engine, typeof(IronPokemon), "Pokemon");
+			CreateModuleFromClass(Engine, typeof(Color), "Color");
+			CreateModuleFromClass(Engine, typeof(IronMove), "Move");
+			CreateModuleFromClass(Engine, new Random(), "Random");
+			CreateModuleFromClass(Engine, typeof(PokemonType), "Type");
+			CreateModuleFromClass(Engine, typeof(IronTimer), "Timer");
 
-			RecursivelyRunScriptsIn(@"Data\", engine);			
+			RecursivelyRunScriptsIn(@"Data\", Engine);			
 		}
 
 		private static void RecursivelyRunScriptsIn(string Location, ScriptEngine engine) {
