@@ -24,7 +24,17 @@ namespace PokemonSmash {
 		}
 
 		public void Initialize() {
-			Arena = new Forrest();
+
+            if (LoadableBattleArena.Arenas.Count > 0)
+            {
+                Arena = LoadableBattleArena.Arenas[0];
+                Arena.Bind();
+            }
+            else
+            {
+                Arena = new Forrest();
+            }
+                
 			Player1 = new Player(Arena, Controls.Player1, -1, PlayerOne);
 			Player2 = new Player(Arena, Controls.Player2, -2, PlayerTwo);
 

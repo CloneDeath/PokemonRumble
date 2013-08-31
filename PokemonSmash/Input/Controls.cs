@@ -54,7 +54,7 @@ namespace PokemonSmash.Input {
 			Player1.AddKeymap(Control.Pause,	Key.Enter);
 
 
-			Player2.AddKeymap(Control.Accept,	Key.KeypadEnter);
+			Player2.AddKeymap(Control.Accept,	Key.F);
 			Player2.AddKeymap(Control.Cancel,	Key.BackSpace);
 			Player2.AddKeymap(Control.Down,		Key.Keypad5);
 			Player2.AddKeymap(Control.Left,		Key.Keypad4);

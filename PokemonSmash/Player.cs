@@ -104,7 +104,7 @@ namespace PokemonSmash {
 			// Define the dynamic body. We set its position and call the body factory.
 			BodyDef bodyDef = new BodyDef();
 			bodyDef.Position.Set(0.0f, 4.0f);
-			body = arena._world.CreateBody(bodyDef);
+			body = arena.world.CreateBody(bodyDef);
 
 			// Define another box shape for our dynamic body.
 			PolygonDef shapeDef = new PolygonDef();

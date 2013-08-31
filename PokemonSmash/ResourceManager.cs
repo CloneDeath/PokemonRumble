@@ -10,6 +10,7 @@ using System.IO;
 using PokemonSmash.IronInterface;
 using System.Drawing;
 using System.Reflection;
+using PokemonSmash.Arenas;
 
 namespace PokemonSmash {
 	class ResourceManager {
@@ -90,6 +91,7 @@ namespace PokemonSmash {
 			CreateModuleFromClass(Engine, new Random(), "Random");
 			CreateModuleFromClass(Engine, typeof(PokemonType), "Type");
 			CreateModuleFromClass(Engine, typeof(IronTimer), "Timer");
+            CreateModuleFromClass(Engine, typeof(LoadableBattleArena), "Arena");
 
 			RecursivelyRunScriptsIn(@"Data\", Engine);			
 		}

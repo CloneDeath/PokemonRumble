@@ -12,7 +12,7 @@ using OpenTK.Graphics.OpenGL;
 
 namespace PokemonSmash {
 	class Program {
-		public static bool DebugDraw = true;
+		public static bool DebugDraw = false;
 
 		static Stopwatch DrawTime = new Stopwatch();
 		static Stopwatch UpdateTime = new Stopwatch();

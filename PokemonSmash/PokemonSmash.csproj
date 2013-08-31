@@ -91,6 +91,10 @@
   <ItemGroup>
     <Compile Include="Animation.cs" />
     <Compile Include="Arenas\BattleArena.cs" />
+    <Compile Include="Arenas\Data\BlockEntity.cs" />
+    <Compile Include="Arenas\Data\DepthLayer.cs" />
+    <Compile Include="Arenas\DepthLayer.cs" />
+    <Compile Include="Arenas\LoadableBattleArena.cs" />
     <Compile Include="Arenas\Forrest.cs" />
     <Compile Include="GameStates\Battle.cs" />
     <Compile Include="GameStates\CharacterSelectMenu\CharacterSelect.cs" />
