@@ -16,6 +16,9 @@ namespace PokemonSmash.Arenas {
 		
 
 		public Forrest() : base(){
+
+            Bind();
+
 			Random rand = new Random();
 			List<Vector3d> Trees = new List<Vector3d>();
 			for (int i = 0; i < 900; i++) {
